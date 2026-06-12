@@ -8,7 +8,7 @@
 
 \section{Introduction}
 
-This is a crucial ingredient in understanding almost anything that has to do with Numerical Relativity, the art of solving EFEs by the help of numerical methods. I will closely follow the treatment given by David Malament in his book on the foundations of GR and Newtonian gravity. In my opinion, among all the GR textbooks, this one has the most systematic treatment of this topic. Though, being written by a philosopher, the main idea of the book is not to teach differential geometry so that one can use it in research, rather it is to present only that much which forms the core of our understanding of the topic. But in my opinion, this much is actually sufficient for diving deep into a proper numerical relativity textbook.
+This is a crucial ingredient in understanding almost anything that has to do with Numerical Relativity, the art of solving EFEs by the help of numerical methods. I will closely follow the treatment given by David Malament in his book on the foundations of GR and Newtonian gravity. In my opinion, among all the GR textbooks, this one has the most systematic treatment of this topic. Though, being written by a philosopher, the main idea of the book is not to teach differential geometry so that one can use it in research, rather it is to present only that much which forms the core of our understanding of the topic. However, this much is actually sufficient for diving deep into a proper numerical relativity textbook.
 
 
 
@@ -35,9 +35,9 @@ In this and the next few sections, let me fix S to be a k-dimensional imbedded s
 
 At a point p, we can talk about tensors with respect to the atlas of M, or with respect to the atlas of S. We refer to the former as M-tensors, and the later as S-tensors. The S-tensors are S's own objects and we do not need to refer to M at all while talking about them. We will use a tilde over the name of the tensor to show that it is an S-tensor. 
 
-One interesting thing is, given S to be a metric submanifold of M ( I will explain what a metric submanifold is in a bit), we can divide $T_pM$ into two subspaces, one would be a subspace of vectors "tangent" to S, and one "normal" to S. 
+Given S to be a metric submanifold of M ( I will explain what a metric submanifold is in a bit), we can divide $T_pM$ into two subspaces, one would be a subspace of vectors ``tangent'' to S, and one ``normal'' to S. 
 
-So what then, is an M-vector at p that is "tangent" to S? (I am using quotes because this tangent is not related to the word "tangent" in "tangent vector"). 
+So what, then, is an M-vector at p that is ``tangent'' to S? (I am using quotes because this tangent is not related to the word ``tangent'' in ``tangent vector''). 
 
 \begin{definition}
     A vector $X\in T_pM$ is \textit{tangent} to S if $X\in (id_p)_*(T_p S)$.
@@ -93,23 +93,23 @@ While the M-vectors tangent to S come directly from S via a push forward map, th
     Now, let $(id_p)^*(\eta)=0$ where $\eta \in T_p^*M $\\
     For any $\Tilde{X} \in T_pS$,
     \begin{align*}
-        \lera{(id_p)^*(\eta)}(\Tilde{X}) &=0 \\
-        \implies \eta \lera{(id_p)_*(\Tilde{X})} &=0 \\
+        &\lera{(id_p)^*(\eta)}(\Tilde{X}) =0 \\
+        \implies & \eta \lera{(id_p)_*(\Tilde{X})} =0 \\
     \end{align*}
     this means $\eta$ acting on any member of $\perp_p$ is zero. And that means $\eta \in N^*_p$.
     
 \end{proof}
 
 
-Now,more general M-tensors at p can also be tangent and normal, in different indices. For example, we can say when a (2,3) M-tensor $T^{ab}_{cde}$ at p is tangent in the first upper index a, or normal in the third lower index e. The definition that will follow can be easily generalized to the most general case, but I will only give a restricted special case definition, because writing down the most general one is more annoying than illuminating.
+Now, more general M-tensors at p can also be tangent and normal, in different indices. For example, we can say when a (2,3) M-tensor $T^{ab}_{cde}$ at p is tangent in the first upper index a, or normal in the third lower index e. The definition that will follow can be easily generalized to the most general case, but I will only give a restricted special case definition, because writing down the most general one is more annoying than illuminating.
 \begin{definition}
-    A (2,3) M-tensor $\tensor{T}{ab}{\quad cde}$ at point p is tangent to S in the second upper index b if for any $\eta \in N^*_p$, $\tensor{T}{ab}{\quad cde} \eta_a =0$. It is normal to S in the third lower index e if for any $X \in \perp_p$ , $\tensor{T}{ab}{\quad cdn}X^n=0$. And so on for tensors of different index structures.
+    A (2,3) M-tensor $\tensor{T}{ab}{\quad cde}$ at point p is tangent to S in the second upper index b if for any $\eta \in N^*_p$, $\tensor{T}{ab}{\quad cde} \eta_b =0$. It is normal to S in the third lower index e if for any $X \in \perp_p$ , $\tensor{T}{ab}{\quad cdn}X^n=0$. And so on for tensors of different index structures.
 \end{definition}
 
 So far we are only considering being tangent on an upper index, and being normal on a lower index. But it is also possible to be normal on an upper index and to be tangent on a lower index if the manifold M is a metric manifold (even at this point I do not need the submanifold to have a metric).
 
 \begin{definition}
-    $\tensor{T}{ab}{\quad cde}$ is normal in the first upper index a if $g_{am}\tensor{T}{mb}{\quad cde}$ is normal in the index a. Similarly T is tangent in the second lower index d if $g^{dm}\tensor{T}{ab}{\quad cme}$ is tangent in the index d. And so on for tensors of other index structure. 
+    $\tensor{T}{ab}{\quad cde}$ is normal in the first upper index a if $ T_{a}^{\;\;b}_{cde} = \tt{g}{}{am}\tt{T}{mb}{cde}$ is normal in the index a. Similarly T is tangent in the second lower index d if $ T^{ab}_{\;\;\;c}^{\;d}_{\;\;\;e}=g^{dm}\tensor{T}{ab}{\quad cme}$ is tangent in the index d. And so on for tensors of other index structure. 
 \end{definition}
 
 Basically, this definition says, we need to raise or lower an index. Then if after raising a lower index the tensor is tangent, then it is tangent in that index in it's lower form too. And if after lowering an index, the tensor is normal, then that tensor is normal in that index in the raised form too.
