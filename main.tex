@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LECTURE NOTES TEMPLATE
+%  Professional typesetting for academic notes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt, oneside, a4paper]{book}
+
+% ============================================================
+% PACKAGES
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Geometry and layout
+\usepackage[a4paper, width=150mm, top=25mm, bottom=25mm, bindingoffset=6mm]{geometry}
+
+% Typography and fonts
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+
+% Mathematics
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{slashed}
+\usepackage{physics}  % Provides \dd, \pd, \comm, etc.
+
+% Graphics and colors
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, positioning, calc, automata}
+
+% Tables and lists
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{tabularx}
+
+% Quantum mechanics & Feynman diagrams
+\usepackage{braket}
+\usepackage{simpler-wick}
+\usepackage{simplewick}
+
+% Text and formatting utilities
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{paracol}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{comment}
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{appendix}
+
+% Bibliography
+\usepackage[sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+% Formatting and navigation
+\usepackage{fancyhdr}
+\usepackage{bookmark}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={blue!80!black},
+    bookmarksnumbered=true,
+}
+\usepackage{cleveref}
+
+% Custom commands and environments
+\input{Commands}
+
+% ============================================================
+% DOCUMENT SETUP
+% ============================================================
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{\leftmark}}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+% Theorem environments
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    pdftitle={Lecture Notes},
+    pdfauthor={Your Name}
+}
+
+% ============================================================
+% DOCUMENT BEGINS
+% ============================================================
+
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \vspace*{5cm}
+    
+    {\huge \textbf{ Notes on Gravitation and Relativity}}\\
+    \vspace{0.5cm}
+    {\large \textit{}}\\
+    
+    \vspace{3cm}
+    
+    {\large Nesar Ali Titumir}\\
+    \vspace{0.3cm}
+    {\normalsize Florida State University}\\
+    
+    \vspace{3cm}
+    
+    {\normalsize \today}
+    
+    \vfill
+    
+    \small{}
+    
+\end{titlepage}
+
+% Front matter
+\frontmatter
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% ============================================================
+% INTRODUCTION
+% ============================================================
+\include{Chapters/intro}
+
+% ============================================================
+% MAIN CONTENT (Chapters)
+% ============================================================
+\mainmatter
+
+\include{Chapters/intro}
+\include{Chapters/mathprelim}
+\include{Chapters/manifolds}
+
+% Add more chapters here:
+ \include{Chapters/DeriOnMfd}
+\include{Chapters/SubMfd}
+
+% ============================================================
+% BACK MATTER (Optional)
+% ============================================================
+% \appendix
+% \include{chapters/appendix_a}
+
+% Bibliography (if needed)
+% \bibliographystyle{plain}
+% \bibliography{references}
+
+\end{document}
