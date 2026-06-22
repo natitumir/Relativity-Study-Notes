@@ -1,0 +1,156 @@
+\chapter{Gravitational Waves}
+\label{ch:gw}
+I will be following several GR textbooks, often to the letter(not quite). 
+
+There are some parts of GW wave theory that I am still a bit hazy on, and I will need more clarification on them. Keeping this aspect aside, let me dive in.
+
+
+\section{The Harmonic Gauge}
+
+In GR, gauge is simply a choice of a class of coordinate system that follows a specific condition. The condition is called the ``gauge condition" or ``gauge choice". The harmonic gauge is defined as follows,
+
+\begin{align*}
+    \Gamma^m \equiv g^{ab} \Gamma^m_{ab} &=0 \\
+\end{align*}
+
+
+Two questions immediately follow this - is it always possible to impose this gauge, and why is the name "harmonic"? I will address the first one below. As for the second one, I am not sure.
+
+To answer the first question in affirmative, I need to show that given \textcolor{blue}{any} coordinate system, it is always possible to go to a new coordinate where the gauge condition is satisfied. This is what is meant when it is claimed that it is always possible to impose this or that gauge condition.
+
+
+We know how $\Gamma^a_{bc}$ transforms under a coordinate transformation.
+
+\begin{align*}
+    &\Gamma'^a_{bc} = \pp{x'^a}{x^m} \pp{x^n}{x'^b} \pp{x^p}{x'^c} \Gamma^{m}_{np}+ \pp{x'^a}{x^m}\ppm{x^m}{x'^b}{x'^c}\\
+     \implies& g'^{bc}\Gamma'^a_{bc} = g'^{bc}\pp{x'^a}{x^m} \pp{x^n}{x'^b} \pp{x^p}{x'^c} \Gamma^{m}_{np}+ g'^{bc}\pp{x'^a}{x^m}\ppm{x^m}{x'^b}{x'^c}\\
+    &\text{[contracting both sides by $g'^{bc}$]}\\
+    \implies & \Gamma'^a = \pp{x'^a}{x^m}g^{np} \Gamma^m_{np}+g'^{bc}\pp{x'^a}{x^m}\ppm{x^m}{x'^b}{x'^c}\\
+    \implies & \Gamma'^a = \pp{x'^a}{x^m} \Gamma^m+g'^{bc}\pp{x'^a}{x^m}\ppm{x^m}{x'^b}{x'^c}\\
+    \implies & \Gamma'^a = \pp{x'^a}{x^m} \Gamma^m+g'^{bc} \lera{\frac{\partial}{\partial x'^b}\lera{\pp{x'^a}{x^m}\pp{x^m}{x'^c}}-\ppm{x'^a}{x'^b}{x^m}\pp{x^m}{x'^c}}\\
+    \implies & \Gamma'^a = \pp{x'^a}{x^m} \Gamma^m+g'^{bc} \lera{\frac{\partial}{\partial x'^b}\lera{\delta^a_c}-\ppm{x'^a}{x'^b}{x^m}\pp{x^m}{x'^c}}\\
+    \implies & \Gamma'^a = \pp{x'^a}{x^m} \Gamma^m-g'^{bc}\ppm{x'^a}{x'^b}{x^m}\pp{x^m}{x'^c}\\
+    \implies& \Gamma'^a = \pp{x'^a}{x^m}\Gamma^m - g'^{bc} \pp{x^n}{x'^b} \ppm{x'^a}{x^n}{x^m} \pp{x^m}{x'^c}\\
+     \implies& \Gamma'^a = \pp{x'^a}{x^m}\Gamma^m - g^{mn} \ppm{x'^a}{x^m}{x^n}
+\end{align*}
+
+So, the new coordinate system will satisfy the gauge condition (i.e. $\Gamma'^a=0 $) if we can find four functions $x'^a(x^m)$ that solve the four differential equations,
+
+\begin{align*}
+    \pp{x'^a}{x^m}\Gamma^m =& g^{mn} \ppm{x'^a}{x^m}{x^n}
+\end{align*}
+
+It is claimed without proof that solutions to these PDEs exist. 
+
+Now, Paolo Pani textbook claims that the name ``harmonic" comes from the fact that under this gauge, $\nabla_a\nabla^a \Phi=0$ becomes $\partial_a \partial^b \Phi=0$. Why is that called harmonic I do not know.[\textcolor{blue}{Ask}], but in the meantime let me show that it is a valid claim.
+
+\begin{align*}
+   &     \nabla_a \nabla^a \Phi =0 \\
+    \implies & g^{ab} \nabla_a \nabla_b \Phi =0 \\
+    \implies & g^{ab} \lera{\partial_a \nabla_b \Phi- \Gamma_{ba}^{m} \nabla_m \Phi}=0\\
+    \implies& g^{ab} \partial_a \nabla_b \Phi - \Gamma^m \nabla_m \Phi = 0\\
+    \implies & g^{ab} \partial_a \nabla_b \Phi -0 =0 \\
+    \implies & g^{ab} \partial_a \partial_b \Phi =0 \;\;\;\lera{\text{For a scalar, $\nabla_b \Phi = \partial_b \Phi$}}\\
+    \implies & \partial_a \partial^a \Phi =0 \\
+\end{align*}
+
+
+\section{Perturbative Approach}
+
+Let $\overset{0}{g}_{ab}$ is  a known solution to the EFE. Let $\overset{0}{T}_{ab}$ be the stress-energy tensor sourcing this solution. Now, perturb $\overset{0}{T}_{ab}$ by $\delta T_{ab}$ , i.e. $T_{ab} = \overset{0}{T}_{ab}+ \delta T_{ab}$. This perturbation changes the metric from $\overset{0}{g}_{ab}$ to $g_{ab}= \overset{0}{g}_{ab}+ h_{ab}$ where $\abs{h_{ab}}<<\abs{\overset{0}{g}_{ab}}$.
+
+Now, I define the upper index $\tt{h}{}{ab}$ as $\tt{h}{ab}{}= \tt{\overset{0}{g}   }{ma}{}\tt{\overset{0}{g}}{nb}{}\tt{h}{}{mn}$. That is, $\tt{h}{}{ab}$ is such that its indices (\textcolor{blue}{I do not know if calling h a tensor is justified. People seem to call it a tensor wrt the background metric. But if I am following the rule of tensor transformation, it is definitely not clear that h follows that rule, even when I am going from one coordinate system to another that follows the same metric structure of background+small perturbation. I will need to ask about this.}) can be made up and down with the background metric. With this definition, the upper index $\tt{g}{ab}{}$ is, up to $O(h)$, $\tt{g}{ab}{}= \tt{\overset{0}{g }}{ab}{}-\tt{h}{ab}{}+ O(\tt{h}{2}{})$
+A quick proof of this is to see if $\tt{g}{ab}{}\tt{g}{}{bc}$ is equal to $\delta^a_c$ up to order h. 
+
+\begin{align*}
+    \tt{g}{ab}{}\tt{g}{}{bc} &= \lera{\tt{\overset{0}{g}}{ab}{}-\tt{h}{ab}{}}\lera{\tt{\ol{0}{g}}{}{bc}-\tt{h}{}{bc}}\\
+    &= \delta^a_c + \tt{h}{a}{c}-\tt{h}{a}{c}+ O(h^2)\\
+    &= \delta^a_c+O(h^2)\\
+\end{align*}
+
+To be clear, EFE are invariant under arbitrary coordinate transformations. However, in this perturbative framework, only those transformations are allowed that allows us to write the metric as $g_{ab}= \overset{0}{g}_{ab}+ h_{ab}$ where $\abs{h_{ab}}<<\abs{\overset{0}{g}_{ab}}$. Now, I would like to find the equation that governs $h_{ab}$. The tentative plan is this, I will expand the left and right hand sides of EFE up to order h, and ignore the higher order terms. Then the background metric(i.e. Ricci tensor, $\tt{\overset{0}{R}}{}{ab}$) in left hand side will correspond to the background stress energy tensor, $\tt{\overset{0}{T}}{}{ab}$ and since we have assumed that the backgrond metric is the solution of the background EFE, I will simply remove those parts from LHS and RHS. The rest will be an equation for $h_{ab}$.
+
+Now there are three necessary ingredients that I want to build and expand up to $O(h)$ as these are building blocks of EFE.
+\begin{itemize}
+    \item $\tt{\Gamma}{a}{bc} \text{ up to } O(h)$
+    \item $\tt{R}{}{ab}\text{ up to } O(h)$
+    \item $T\text{ up to } O(h)$
+\end{itemize}
+
+\subsubsection{$\tt{\Gamma}{a}{bc} \text{ up to } O(h)$}
+\begin{align*}
+    \ttw{\Gamma}{a}{bc}(\tt{g}{}{mn}) &= \frac{1}{2} \tt{g}{am}{} \lera{-\partial_m\tt{g}{}{bc}+ \partial_b\tt{g}{}{cm}+\partial_c\tt{g}{}{mb}}\\
+    &= \frac{1}{2} \lera{\tt{\overset{0}{g}{}}{am}{}-\tt{h}{am}{}}\lera{-\partial_m\tt{\overset{0}{g}}{}{bc}+ \partial_b\tt{\overset{0}{g}}{}{cm}+\partial_c\tt{\overset{0}{g}}{}{mb}-\partial_m\tt{h}{}{bc}+ \partial_b\tt{h}{}{cm}+\partial_c\tt{h}{}{mb}}\\
+    &= \ttw{\overset{0}{\Gamma}{}}{a}{bc}+\frac{1}{2} \tt{\overset{0}{g}{}}{am}{}\lera{-\partial_m\tt{h}{}{bc}+ \partial_b\tt{h}{}{cm}+\partial_c\tt{h}{}{mb}}-\frac{1}{2}\tt{h}{am}{} \lera{-\partial_m\tt{\overset{0}{g}}{}{bc}+ \partial_b\tt{\overset{0}{g}}{}{cm}+\partial_c\tt{\overset{0}{g}{}}{}{mb}}+O(h^2)\\
+    &= \ttw{\overset{0}{\Gamma}{}}{a}{bc} + \delta\tt{\Gamma}{a}{bc}+ O(h^2)\\
+\end{align*}
+
+where $\delta\tt{\Gamma}{a}{bc}$ is defined by ,
+\begin{align*}
+    \delta\tt{\Gamma}{a}{bc} &=\frac{1}{2} \tt{\overset{0}{g}{}}{am}{}\lera{-\partial_m\tt{h}{}{bc}+ \partial_b\tt{h}{}{cm}+\partial_c\tt{h}{}{mb}}-\frac{1}{2}\tt{h}{am}{} \lera{-\partial_m\tt{\overset{0}{g}}{}{bc}+ \partial_b\tt{\overset{0}{g}}{}{cm}+\partial_c\tt{\overset{0}{g}}{}{mb}}\\
+\end{align*}
+
+$\delta\tt{\Gamma}{a}{bc}$ can be thought of as the variation of the Christoffel symbol $\ttw{\Gamma}{a}{bc}$ when the metric $\tt{\overset{0}{g}}{}{mn}$ is varied by $\delta\tt{g}{}{mn}= \tt{h}{}{mn}$.In that sense, $\delta\tt{\Gamma}{a}{bc}$ is a tensor even though $\ttw{\Gamma}{a}{bc}$ is not. \textcolor{blue}{Rigorously understand this statement.}
+
+
+
+\subsubsection{$\tt{R}{}{ab}\text{ up to } O(h)$}
+
+
+In the convention that I am following, Riemann tensor is given by,
+
+\begin{align*}
+ \tt{R}{m}{npq} &= \partial_{p} \cris{m}{nq} - \partial_{q} \cris{m}{np} + \cris{m}{rp} \cris{r}{nq}  - \cris{m}{rq} \cris{r}{np} \\
+\end{align*}
+
+
+Now, what is the Ricci tensor, $\tt{R}{}{ab}$ look like?
+
+\begin{align*}
+    \tt{R}{m}{apb} =& \riemann{m}{a}{p}{b}{r}  \\
+    \tt{R}{}{ab}=& \tt{R}{m}{amb}=\ricci{a}{b}{m}{r} \\
+\end{align*}
+
+
+Now, let us expand $\tt{R}{}{ab}$ up to order h.
+
+\begin{align*}  
+     \tt{R}{}{ab}=& \ricci{a}{b}{m}{r}\\
+    \tt{R}{}{ab}=& \partial_{m}\lera{\ttw{\overset{0}{\Gamma}{}}{m}{ab} + \delta\tt{\Gamma}{m}{ab}+ O(h^2)} - \partial_{b}\lera{\ttw{\overset{0}{\Gamma}{}}{m}{am} + \delta\tt{\Gamma}{m}{am}+ O(h^2)}\\
+    +&\lera{\ttw{\overset{0}{\Gamma}{}}{m}{rm} + \delta\tt{\Gamma}{m}{rm}+ O(h^2)}\lera{\ttw{\overset{0}{\Gamma}{}}{r}{ab} + \delta\tt{\Gamma}{r}{ab}+ O(h^2)}\\
+    -&\lera{\ttw{\overset{0}{\Gamma}{}}{m}{rb} + \delta\tt{\Gamma}{m}{rb}+ O(h^2)}\lera{\ttw{\overset{0}{\Gamma}{}}{r}{am} + \delta\tt{\Gamma}{r}{am}+ O(h^2)}\\
+    =&\left(\partial_m\ttw{\overset{0}{\Gamma}{}}{m}{ab} - \partial_b\ttw{\overset{0}{\Gamma}{}}{m}{am}+ \ttw{\overset{0}{\Gamma}{}}{m}{rm}\ttw{\overset{0}{\Gamma}{}}{r}{ab} -\ttw{\overset{0}{\Gamma}{}}{m}{rb}\ttw{\overset{0}{\Gamma}{}}{r}{am}\right) \\
+    +& \lera{\partial_m \tt{\delta\Gamma}{m}{ab}- \partial_b \tt{\delta\Gamma}{m}{am}+\ttw{\overset{0}{\Gamma}{}}{m}{rm}\tt{\delta\Gamma}{r}{ab}+\tt{\delta\Gamma}{m}{rm}\ttw{\overset{0}{\Gamma}{}}{r}{ab}-\ttw{\overset{0}{\Gamma}{}}{m}{rb}\tt{\delta\Gamma}{r}{am}-\tt{\delta\Gamma}{m}{rb}\ttw{\overset{0}{\Gamma}{}}{r}{am}} \\
+    +& O(h^2)
+\end{align*}
+
+
+In the last equality, the first term in parentheses is just $\tt{\overset{0}{R}}{}{ab}$. The rest is,
+
+\begin{align*}
+    \text{second parentheses} &=\partial_m \tt{\delta\Gamma}{m}{ab}- \partial_b \tt{\delta\Gamma}{m}{am}+\ttw{\overset{0}{\Gamma}{}}{m}{rm}\tt{\delta\Gamma}{r}{ab}+\tt{\delta\Gamma}{m}{rm}\ttw{\overset{0}{\Gamma}{}}{r}{ab}-\ttw{\overset{0}{\Gamma}{}}{m}{rb}\tt{\delta\Gamma}{r}{am}-\tt{\delta\Gamma}{m}{rb}\ttw{\overset{0}{\Gamma}{}}{r}{am} \\
+    &= \lera{\partial_m \tt{\delta\Gamma}{m}{ab} +\ttw{\overset{0}{\Gamma}{}}{m}{rm}\tt{\delta\Gamma}{r}{ab} -\tt{\delta\Gamma}{m}{rb}\ttw{\overset{0}{\Gamma}{}}{r}{am} } -\lera{\partial_b \tt{\delta\Gamma}{m}{am}+\ttw{\overset{0}{\Gamma}{}}{m}{rb}\tt{\delta\Gamma}{r}{am}-\tt{\delta\Gamma}{m}{rm}\ttw{\overset{0}{\Gamma}{}}{r}{ab}} \\
+    & \text{The first and second parentheses look like background covariant derivatives  } \\
+    &\text{of $\tt{\delta\Gamma}{m}{ab}$ and $\tt{\delta\Gamma}{m}{am}$, but we are missing one term in each parenthesis. }\\
+    & \text{so we add and substract that missing term.}\\
+    &= \lera{\partial_m \tt{\delta\Gamma}{m}{ab} +\ttw{\overset{0}{\Gamma}{}}{m}{rm}\tt{\delta\Gamma}{r}{ab} -\ttw{\overset{0}{\Gamma}{}}{r}{am}\tt{\delta\Gamma}{m}{rb} -\ttw{\overset{0}{\Gamma}{}}{r}{bm}\tt{\delta\Gamma}{m}{ar}}\\ 
+    &-\lera{\partial_b \tt{\delta\Gamma}{m}{am}+\ttw{\overset{0}{\Gamma}{}}{m}{rb}\tt{\delta\Gamma}{r}{am}-\ttw{\overset{0}{\Gamma}{}}{r}{ab}\tt{\delta\Gamma}{m}{rm}-\ttw{\overset{0}{\Gamma}{}}{r}{mb}\tt{\delta\Gamma}{m}{ar}} \\
+    &= \tt{\overset{0}{\nabla}}{}{m}\tt{\delta\Gamma}{m}{ab} - \tt{\overset{0}{\nabla}}{}{b}\tt{\delta\Gamma}{m}{am} \\
+\end{align*}
+
+
+
+So up to O(h) $\tt{R}{}{ab}$ is given by $\tt{R}{}{ab}= \tt{\overset{0}{R}}{}{ab}+\tt{\overset{0}{\nabla}}{}{m}\tt{\delta\Gamma}{m}{ab} - \tt{\overset{0}{\nabla}}{}{b}\tt{\delta\Gamma}{m}{am}$
+
+
+
+\subsubsection{$T\text{ up to } O(h)$}
+
+
+In this context of perturbation theory, $\tt{T}{}{ab}= \tt{\overset{0}{T}}{}{ab}+\delta\tt{T}{}{ab}$. So,
+
+\begin{align*}
+    T &= \tt{g}{ab}{}\tt{T}{}{ab}\\
+    &=\lera{\tt{\overset{0}{g}{}}{ab}{}-\tt{h}{ab}{}}\lera{\tt{\overset{0}{T}}{}{ab}+\delta\tt{T}{}{ab}}\\
+    &= 
+\end{align*}
