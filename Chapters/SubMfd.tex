@@ -1,7 +1,4 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  CHAPTER 1: FOUNDATIONS
-%  Template for first chapter
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \chapter{Submanifolds and Hypersurfaces}
 \label{ch:hypersurface}
@@ -50,6 +47,8 @@ So what, then, is an M-vector at p that is ``tangent'' to S? (I am using quotes 
 
 We denote the space of all M-vectors tangent to S at p as $\perp_p$ and the space of all M-covectors normal to S at p as $N^*_p$. As we took $T_pS$ and then pushed it forward with an imbedding (which basically one to one maps $T_pS$ to $T_pM$, the dimension of $\perp_p$ is k. We can also show that the dimension of $N^*_p$ is $n-k$.
 
+Another way to describe tangent vector comes from what it means to push forward a vector from one manifold to another. For a vector $ \tilde{X}$ in S, there is obviously a curve $ \gamma$ to which the vector $ \tilde{X}$ is tangent to. Since push forward of a vector tangent to a curve is tangent to the image of the curve, $ id_* \tilde{X}$ is tangent to $ id( \gamma)$. In fact, we are considering S to be a subset of M, and $ id( \gamma)$ is actually just $ \gamma$. This means, any M-vector at p that is tangent to a curve $ \gamma$ which lies entirely in S, is a memeber of $ \perp _p$.
+Wait, how do you show the converse.....?????
 
 
 \begin{proposition}
@@ -109,7 +108,7 @@ Now, more general M-tensors at p can also be tangent and normal, in different in
 So far we are only considering being tangent on an upper index, and being normal on a lower index. But it is also possible to be normal on an upper index and to be tangent on a lower index if the manifold M is a metric manifold (even at this point I do not need the submanifold to have a metric).
 
 \begin{definition}
-    $\tensor{T}{ab}{\quad cde}$ is normal in the first upper index a if $ T_{a}^{\;\;b}_{cde} = \tt{g}{}{am}\tt{T}{mb}{cde}$ is normal in the index a. Similarly T is tangent in the second lower index d if $ T^{ab}_{\;\;\;c}^{\;d}_{\;\;\;e}=g^{dm}\tensor{T}{ab}{\quad cme}$ is tangent in the index d. And so on for tensors of other index structure. 
+    $\tensor{T}{ab}{\quad cde}$ is normal in the first upper index a if $ T_{a\;\;\;cde}^{\;\;b} = \tt{g}{}{am}\tt{T}{mb}{cde}$ is normal in the index a. Similarly T is tangent in the second lower index d if $ T^{ab\;\;d}_{\;\;\;\;c\;\;\;e}=g^{dm}\tensor{T}{ab}{\quad cme}$ is tangent in the index d. And so on for tensors of other index structure. 
 \end{definition}
 
 Basically, this definition says, we need to raise or lower an index. Then if after raising a lower index the tensor is tangent, then it is tangent in that index in it's lower form too. And if after lowering an index, the tensor is normal, then that tensor is normal in that index in the raised form too.
@@ -143,6 +142,396 @@ Now we might be thinking of a nice possibility. Maybe, $T_pM = \perp_p + N_p $
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Sticking to Only M-Tensors}
+
+At any point p, there is a natural isomorphism between S-tensors of any index structure and M-tensors of the same index structure that are tangent to S. This is the very basis of how we talk about a hypersurface. The idea is that we will commit to M-tenosrs tangent to S and not talk about S-tensors.
+
+Let me first describe the isomorphism. Here I will satisfy myself by only defining the map, and I will skip the proof of the map being an isomorphism. 
+
+The map $ \phi_{p}$ takes an S-tensor $ \tt{ \tilde{X}}{ab}{cd}$ to $ \phi_{p} \lera{ \tt{ \tilde{X}}{ab}{cd}}$, which is an M-tensor. We define the isomorphism in stages, first for scalars, then for vectors, covectors and finally for tensors of arbitray index structure. 
+
+First, for a scalar $ \alpha$ at p, $ \phi_{p} \lera{ \alpha}= \alpha$. There is no need to use tilde as scalars are just numbers. 
+
+Second, for an S-vector $ \tt{ \tilde{X}}{a}{}$ at p, $ \phi_{p} \lera{ \tt{ \tilde{X}}{a}{}} = \lera{ id_p}_* \tt{ \tilde{X}}{a}{}$. By the very definition of a vector being tangent to S at p, $ \phi_p \lera{ \tt{ \tilde{X}}{a}{}}$ is tangent to S. 
+
+Third, for a S-covector $ \tt{ \tilde{ \eta}}{}{a} $ at p, $ \phi_{p} \lera{ \tt{ \tilde{ \eta}}{}{a}}$ is defined by its action on any M-vector $ X^a$. 
+ 
+\[
+\phi_{p} \lera{ \tt{ \tilde{ \eta}}{}{a}} \tt{X}{a}{}=
+\begin{cases}
+ \tt{ \tilde{ \eta}}{}{a} \left(\phi_{p}^{-1} X^a \right); &  X \in \perp_p \\
+0; & X \in N_p \\
+\end{cases}
+\]
+
+
+We remark that this is well defined, as $ \phi_{p}^{-1} \tt{X}{a}{}$ is well defined.  Also, notice that the second clause of the definition of $ \phi_p \lera{ \tt{\tilde{ \eta}}{}{a}}$ ensures that it is tangent to S.
+
+
+Lastly, lets take an arbitray index structure S-tensor $ \tt{ \tilde{X}}{ab}{c}$, then,
+
+\[
+\phi_{p} \lera{ \tt{ \tilde{X}}{ab}{c}} \tt{A}{}{a} \tt{ B}{}{b} \tt{ C}{c}{} = 
+\begin{cases}
+    \tt{ \tilde{X}}{ab}{c} \lera{ \phi_{p}^{-1}A_a} \lera{ \phi_{p}^{-1} B_b} \lera{ \phi_{p}^{-1}C^c } ; & A_a, B_b ,C^c \text{ are tangent to S}\\
+    0 ; & \text{if } A_a, B_b ,\text{or }C^c  \text{ is normal to} \\ & \text{S}\\
+\end{cases}
+\]
+
+Again, $ \phi_p \lera{ \tt{ \tilde{X}}{ab}{c}}$ is tangent to S by the second clause above. 
+
+One can also show that $ \phi_p$ commutes with all tensor operations, i.e. addition, outer multiplication, index substitution, contraction.
+
+For example,
+
+\begin{align*}
+    \phi_p \lera{ \tt{ \tilde{X}}{a }{} \tt{ \tilde{Y}}{b}{}} = \phi_p \lera{ \tt{ \tilde{X}}{a}{}} \phi_{p} \lera{\tt{ \tilde{Y}}{b}{}} 
+\end{align*}
+
+
+
+In short, at any point p in S, the tensor algebra of S-tensors is isomorphic to the tensor algebra of M-tensors that are tangent to S. With every S-tensor, I get an evil twin M-tensor of the same index structure.
+
+Now, this can be extended to the whole of S, and we have a map $ \phi$ that takes any S-tensor field to an M-tensor field that is tangent to S and have the same index structure, and they also follow the same tensor algebra on both sides of the ``river''.
+
+\subsection*{S-smoothness and M-smoothness}
+
+First of all, let us recall  a very handy notion of the smoothness of a tensor field. Say, we have a manifold M, and an atlas $ \mathcal{A}$. Now, a tensor field $ \tt{T}{a}{b}$ is smooth iff the components are smooth functions with respect to any coordinatization of the manifold with charts from the atlas $ \mathcal{A}$. This means the idea of smoothess is tied to the atlas of a manifold. 
+
+Now think of the manifold S. Let me define by O an open set of M that covers S, i.e. S is a subset of O. This is going to be our working definition of O for quite some time in this discussion, unless otherwise specified. An M-tensor field T tangent to S can be smooth in two senses. If an extension of T on O, named $ \overset{+}{T}$, is smooth wrt $ \mathcal{A}_M$, then T is M-smooth. If, on the other hand, the S-tensor field $ \phi^{-1} T$ is smooth wrt $ \mathcal{A}_S$, then T is S-smooth. Now, there is a theorem that says for any M-tensor field T tangent to S, it is M-smooth iff it is S-smooth. So saying that T (when it is tangent to S) is smooth means it is smooth in both ways. On the other hand if  T is not tangent to S, then it can only be M-smooth.
+
+
+
+
+\subsection*{ $ \tt{h}{}{ab}$}
+
+This is the star of the show. We call it a projector for reasons to become clear soon. Let us define it first. Say there is a metric $ \tt{g}{}{ab}$ on M. We define the ``induced metric'' or ``first fundamental form'' on S by taking the pull back of $ \tt{g}{}{ab}$ wrt to the identity map. The induced metric, an S-field, $ \tt{ \tilde{h}}{}{ab} = id^* \tt{g}{}{ab}$. Then, we define the smooth symmetric M-tensor $ \tt{h}{}{ab}$ which is tangent to S as the $ \phi$-image of this induced metric $ \tt{\tilde{h}}{}{ab}$, so that $ \tt{ h}{}{ab }= \phi \lera{ \tt{ \tilde{h}}{}{ab}}= \phi \lera{ id^* \tt{g}{}{ab}}$. 
+
+This is as counterintuitive and hard to remember as possible. So we actually use an equivalent definition of $ \tt{h}{}{ab}$. Here, we define $ \tt{h}{}{ab}$ by the way it acts on M-vectors. 
+
+\begin{align*}
+    \tt{h}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} = 
+    \begin{cases}
+        \tt{g}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} ; & \text{if } X,Y \text{ are tangent to S}\\
+        0; & \text{if any of } X,Y \text{ are normal to S} 
+    \end{cases} \numberthis \label{hab_defiend} \\
+\end{align*}
+
+
+Let me show that the equivalence works. Lets say both X and Y are tangent to S. Then,
+
+\begin{align*}
+    \tt{h}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} &= \phi \lera{id^* \tt{g}{}{ab}} \tt{X}{a}{} \tt{Y}{b}{} \\
+    &= \lera{ id^* \tt{g}{}{ab}} \lera{ \phi^{-1} \tt{X}{a}{}} \lera{ \phi^{-1} \tt{Y}{b}{}} \\
+    &= \tt{g}{}{ab} \; id_* \lera{ \phi^{-1} \tt{X }{a}{}} \; id_* \lera{ \phi ^{-1} \tt{Y}{b}{}} \\
+    &= \tt{g}{}{ab} \; \phi \lera{ \phi^{-1} \tt{X}{a}{}} \phi \lera{ \phi^{-1} \tt{Y}{b}{}} \\
+    &= \tt{g}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} \\
+\end{align*}
+
+
+
+
+If any of X or Y is not tangent, then by virtue of $ h_{ab}$ being tangent to S, $ h_{ab} X^a Y^b$ is 0.
+
+We define a perpendicular projection tensor $ k_{ab}$ too which is a smooth symmetric M-tensor field.
+
+\begin{align*}
+    k_{ab} = g_{ab} - h_{ab} \numberthis \label{kab_defined}\\
+\end{align*}
+
+
+Notice that $ k_{ab}$ is normal to S. If X is a M-vector tangent to S, then, $ k_{ab} X^a = g_{ab} X^a - h_{ab} X^a = g_{ab} X^a - g_{ab} X^a =0 $. So $ k_{ab}$ is normal to S in the first index. But being a symmetric tensor, it must be also normal in the second index too, so it is normal as a whole. 
+
+
+
+The following propositions show that it is okay to call $ h_{ab}$ a tangential projector and $ k_{ab}$ a perpendicular or normal projector.  notice that $ k_{ab}$ is normal to S. 
+
+
+
+
+
+\begin{proposition}
+     $ X^a$ is tangent to S $ \iff$ $ \tt{h}{a}{b} X^b = X^a \iff \tt{k}{a}{b} X^b =0 $
+\end{proposition}
+
+
+
+\begin{proof}
+    We will show the first equivalence and then the second equivalence.
+    
+    First equivalence: 
+    
+    Let X be tangent to S. 
+
+    I will show that the action of $X^a$ and $ \tt{h}{a}{b} X^b$ is the same on any M-covector $ \eta_a$. If $ \eta_a $ is normal to S, then both sides give zero. If $ \eta_a$ is tangent to S, then $ \tt{h}{a}{b} X^b \eta_a = h_{ab}  \eta^a X^b = g_{ab}  \eta^a X^b= X^a \eta_a$.
+
+
+    Conversely, let $ \tt{h}{a}{b} X^b = X^a$.
+    I need to show that $ X^a$ is tangent to S. Take $ \eta_a$ normal to S. Then $ \eta_a X^a = \eta_a \tt{h}{a}{b} X^b = 0 $. The last equality follows from the fact that $ h_{ab}$ is tangent in both indices.
+
+    This completes the proof for the first equivalence. 
+    
+    Second equivalence: 
+
+    Let $ \tt{h}{a}{b} X^b = X^a$.
+
+   Then, $ \tt{k}{a}{b} X^b = \lera{ \tt{g}{a}{b}- \tt{h}{a}{b}} X^b = X^a- X^a =0$
+
+    Conversely, let, $ \tt{k}{a}{b} X^b =0 $.
+
+    Then, $ \tt{h}{a}{b } X^b = \lera{ \tt{g}{a}{b} - \tt{k}{a}{b}} X^b = X^a - 0 = X^a $
+
+    This completes the proof of the second equivalence. 
+    
+    
+    
+\end{proof}
+
+
+
+\begin{proposition}
+   $ X^a$ is normal to S $ \iff$ $ \tt{k}{a}{b} X^b = X^a \iff \tt{h}{a}{b} X^b =0 $ 
+\end{proposition}
+
+
+\begin{proof}
+    Similar as before. 
+\end{proof}
+
+
+While I stated proposition 4.9 and 4.10 for a (1,0) tensor field, i.e. a vector field $ X^a$, these propositions actually hold for tensor fields of arbitrary index structure. For example, if $ \tt{T}{ab}{c}$ is tangent to S in the second upper index, then $ \tt{h}{b}{m} \tt{T}{am}{c}= \tt{T}{ab}{c}$ and $ \tt{k}{b}{m} \tt{T}{am}{c}=0$.
+
+\begin{proposition}
+    $ \tt{h}{a}{b} \tt{h}{b}{c} = \tt{h}{a}{c}$
+\end{proposition}
+
+\textcolor{blue}{Let me pause here for a moment, and fill up the rest of the proofs up to the Gauss Codazzi equations}
+
+\subsection*{Extrinsic Curvature}
+
+We know that, 
+
+\begin{align*}
+    \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \cov{ \tt{h}{}{np}}{m} =0 \\
+    \tt{h}{m}{a} \tt{k}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} =0 \\
+\end{align*}
+
+
+However, the hhk projection, $\tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} $ is not zero and we define a new quantity, called the extrinsic curvature of S, as follows,
+
+\begin{align*}
+    \tt{K}{}{abc} = \tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} \\
+\end{align*}
+
+
+$ \tt{K}{}{abc}$ has particular geometric significance, and we will show some of those significance in this section. 
+
+
+
+
+\subsubsection*{Gauss Codazzi Equations}
+
+Before proving those equations, let me remind one useful way of characterizing the Riemann tensor. If $ v^a$ is a vector field, then,
+
+\begin{align*}
+    [ \nabla_c \;, \nabla_d  ] v^a &= \tt{R}{a}{mcd} v^m  \\
+    2 \nabla_{[c} \nabla_{d] } v^a &= \tt{R}{a}{mcd} v^m \\
+    \nabla_{[c} \nabla_{d] } v^a &=  \frac{1}{2} \tt{R}{a}{mcd} v^m \\
+\end{align*}
+
+
+This can also be generalized, in the following way. Say, $ \tt{T}{a}{b}$ is a (1,1) field. Then the antisymmetrized double covariant derivative on it can be expanded in temrs of the Riemann tensor as follows, 
+
+\begin{align*}
+    2 \nabla_{[c} \nabla_{d]} \tt{T}{a}{b} &= \tt{R}{a}{mcd} \tt{T}{m}{b}- \tt{R }{m}{bcd} \tt{T}{a}{m} \\
+\end{align*}
+
+One final fact about the Riemann tensors that needs a reminder is, $ \tt{R}{}{abcd}= \tt{R}{}{cdab}$.
+
+
+
+We will use a script R, $ \mathcal{R}$, to denote the Riemann tensor defined wrt to D. This is going to be a tangent tensor field. So, we define the Riemann tensor to be, $ \tt{ \mathcal{R}}{a}{mcd} v^m = 2 D_{[c} D_{d]} v^a $ where $ v^a $ is an M-field tangent to S.
+
+\textcolor{blue}{To Do: Write down some more words about the proper definition of $ \mathcal{R} $}
+
+
+Now, 
+\begin{align*}
+    D_{[c} D_{d]} v^a &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \cov{D_n v^p}{m} \\
+    &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \nabla_m \lera{ \tt{h}{q}{n} \tt{h}{p}{r} \nabla_q v^r} \\
+    &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \lera{ \nabla_m \tt{h}{q}{n}} \tt{h}{p}{r} \nabla_q v^r + \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \tt{h}{q}{n} \lera{ \nabla_m \tt{h}{p}{r}} \nabla_q v^r \\
+    & + \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \tt{h}{q}{n} \tt{h}{p}{r} \nabla_m \nabla_q v^r \\
+    &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{r} \lera{ \nabla_m \tt{h}{q}{n} } \nabla_q v^r + \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{p} \lera{ \nabla_m \tt{h}{p}{r}} \nabla_q v^r \\
+    &+ \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{r} \nabla_m \nabla_q v^r \\\
+    & \lera{\text{ Mostly using  $ \tt{h}{a}{b} \tt{h}{b}{c}= \tt{h}{a}{c}$}} \numberthis \label{weird1}\\
+\end{align*}
+
+
+
+Now, let's look at them term by term. 
+\newline First Term:
+
+\begin{align*}
+  & \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{r} \lera{ \nabla_m \tt{h}{q}{n} } \nabla_q v^r \\
+  &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{r} \lera{ \nabla_m \tt{h}{}{nq} } \nabla^q v^r \\
+  &= \tt{h}{a}{r} \tt{h}{m}{[c} \tt{h}{n}{d]}  \lera{ \nabla_m \tt{h}{}{nq} } \nabla^q v^r \\
+  &= - \tt{h}{a}{r} \tt{K}{}{[cd]q} \nabla^q v^r \\
+  & \lera{ \text{Using the relation $ \tt{K}{}{abc}= - \tt{h}{m}{a } \tt{h}{n}{b} \nabla_m h_{nc}$}}\\
+  &= 0 \\
+  & \lera{ \text{ Since the antisymmetrization of the first two indices of $ \tt{K}{}{abc}$ gives zero.}}
+\end{align*}
+
+
+\newline Second Term:
+
+\begin{align*}
+    & \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{p} \lera{ \nabla_m \tt{h}{p}{r}} \nabla_q v^r \\
+    &= \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{ap}{} \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
+    &= \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{pa}{} \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
+    &= \tt{g}{sa}{}\tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{p}{s} \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
+    &= \tt{g}{sa}{}\tt{h}{m}{[c} \tt{h}{p}{|s|} \tt{h}{q}{d]}  \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
+    &= -\tt{g}{sa}{} \tt{K}{}{[c|sr|} \tt{h}{q}{d]} \nabla_q v^r \\
+    &= -\tt{g}{sa}{} \tt{K}{}{[c|sr|} \tt{h}{q}{d]} \nabla_q \lera{ \tt{h}{r}{t} v^t} \\
+    & \lera{ \text{The trick is to realize that v is tangent to S.}} \\
+    &= - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \nabla_q \lera{ \tt{h}{r}{t} v^t} \\
+    &= - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} v^t - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \tt{h}{r}{t} \nabla_q v^t \\
+    &= - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} v^t -0 \\
+    & \lera{
+    \begin{aligned}[]
+        &\text{The second term goes to zero as the extrinsic curvature $ \tt{K}{}{abc}$ is} \\
+        &\text{normal in the third index.}
+    \end{aligned}
+    }\\
+    &=- K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} \lera{ \tt{h}{t}{u} v^u} \\
+    &= - K^{\;\;ar}_{[c} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{}{tr}} \lera{ \tt{h}{t}{u} v^u} \\
+    &= -K^{\;\; ar}_{[c} \tt{h}{q}{d]} \tt{h}{t}{u} \lera{ \nabla_q h_{tr}} v^u \\
+    &= K^{\; \; ar}_{[c} K_{d]ur} v^u \\
+\end{align*}
+
+
+\newline Third Term:
+
+\begin{align*}
+    & \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{r} \nabla_m \nabla_q v^r \\
+    &= \tt{h}{m}{c} \tt{h}{q}{d} \tt{h}{a}{r} \nabla_{[m} \nabla_{q]} v^r \\
+    &= \tt{h}{m}{c} \tt{h}{q}{d} \tt{h}{a}{r} \left(\frac{1}{2} \right) \tt{R}{r}{nmq} v^n \\
+    &= \frac{1}{2} \tt{R}{r}{nmq} \tt{h}{m}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^n \\
+\end{align*}
+
+Collecting the terms, I get from \cref{ weird1 },
+
+\begin{align*}
+    D_{[c} D_{d]}v^a &= \frac{1}{2} \tt{R}{r}{nmq} \tt{h}{m}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^n +K^{\; \; ar}_{[c} K_{d]ur} v^u \\
+    &= \frac{1}{2} \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^m +K^{\; \; ar}_{[c} K_{d]mr} v^m \\
+\end{align*}
+
+Now, from our earlier characterization of $ \tt{ \mathcal{R}}{}{} $, we have,
+
+\begin{align*}
+    &\tt{ \mathcal{R}}{a}{mcd} v^m = 2 D_{[c} D_{d]}v^a \\
+    \implies&  \tt{ \mathcal{R}}{a}{mcd} v^m =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^m +2K^{\; \; ar}_{[c} K_{d]mr} v^m \\
+\end{align*}
+
+
+Now, taking any vector $ \eta$, not necessarily tangent, and then taking the tangential projection of that vector, $ v^m= \tt{h}{m}{s} \eta^s$,
+
+\begin{align*}
+    &\tt{ \mathcal{R}}{a}{mcd} \tt{h}{m}{s} \eta^s =\tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s} \eta^s +2K^{\; \; ar}_{[c} K_{d]mr} \tt{h}{m}{s} \eta^s\\
+    & \tt{ \mathcal{R}}{a}{mcd} \tt{h}{m}{s} \eta^s = \left( \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s}  +2K^{\; \; ar}_{[c} K_{d]mr} \tt{h}{m}{s}\right) \eta^s\\
+    &\tt{ \mathcal{R}}{a}{mcd} \tt{h}{m}{s}  =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s}  +2K^{\; \; ar}_{[c} K_{d]mr} \tt{h}{m}{s}\\
+    & \tt{ \mathcal{R}}{a}{scd}  =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s}  +2K^{\; \; ar}_{[c} K_{d]sr} \\
+    & \lera{ \text{We assumed that $ \tt{ \mathcal{R}}{}{}$ is a tangent field, also K is tangent in the second index. }} \\
+    & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{b}  +2K^{\; \; ar}_{[c} K_{d]br} \\
+    & \lera{ \text{$ s \rightarrow b $}} \\
+    & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{rnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{m} \tt{h}{r}{b}  +2K^{\; \; am}_{[c} K_{d]bm} \\
+    & \lera{ \text{$ r \leftrightarrow m $}} \\
+    & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{p}{c } \tt{h}{q}{d} \tt{h}{a}{m} \tt{h}{n}{b}  +2K^{\; \; am}_{[c} K_{d]bm} \\
+    & \lera{ \text{$ r \rightarrow n , n \rightarrow p$}} \\  
+    &  \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d}    +2K^{\; \; am}_{[c} K_{d]bm} \\
+\end{align*}
+
+
+And let me put this in a box, as I have to memorize this as the \textcolor{blue}{Make the box. Then start deriving the second Gauss Codazzi relation.}
+
+The second Gauss Codazzi equation is $ \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} = \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{h}{c}{r} \tt{R}{}{mabc}$
+
+
+To prove it, let's start with the LHS,
+
+\begin{align*}
+    LHS &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} \\
+    &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \lera{ - \tt{h}{s}{a} \tt{h}{t}{b} \nabla_s h_{tc}}\\
+    &= -\tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{s}{a}} \tt{h}{t}{b} \nabla_s \tt{h}{}{tc} - \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
+    &- \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \tt{h}{t}{b} \nabla_m \nabla_s \tt{h}{}{tc} \\
+    & \equiv -A-B-C \text{  (Naming the three terms.)}\\
+\end{align*}
+
+
+Term A:
+
+\begin{align*}
+    A &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{s}{a}} \tt{h}{t}{b} \nabla_s \tt{h}{}{tc}\\
+    &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{}{as}} \tt{h}{t}{b} \nabla^s \tt{h}{}{tc} \\
+    &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{t}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{}{as}} \lera{ \nabla^s \tt{h}{}{tc}} \\
+    &= - \tt{K}{}{[np]s} \tt{h}{t}{q} \tt{k}{c}{r} \nabla^s \tt{h}{}{tc} \\
+    &= 0 \\
+\end{align*}
+
+
+Term B:
+
+
+\begin{align*}
+    B &=  \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
+    &= \tt{h}{m}{[n} \tt{h}{s}{p]} \tt{h}{b}{q} \tt{k}{c}{r}  \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
+    &= \tt{h}{m}{[n} \tt{h}{s}{p]} \tt{h}{b}{q} \tt{k}{c}{r}  \lera{ \nabla_m\tt{h}{}{bt}} \nabla_s \tt{h}{t}{c} \\
+    &= -K_{[n|qt|} \tt{h}{s}{p]} \tt{k}{c}{r} \nabla_s \tt{h}{t}{c} \\
+    &= - \tt{k}{u}{t} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{t}{c} \\
+    & \lera{ \text{K is normal in the third index, so introducing k makes sense.}}\\
+    &= - \tt{k}{tu}{} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{}{tc} \\ 
+    &= - \tt{k}{t}{u} K^{\;\;\;u}_{[n\;\;\;|q|} \tt{h}{s}{p]} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
+    &= - K^{\;\;\;u}_{[n\;\;\;|q|} \tt{h}{s}{p]} \tt{k}{t}{u} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
+    &= 0 \\
+\end{align*}
+
+
+
+
+
+Term C:
+
+\begin{align*}
+   C&=  \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \tt{h}{t}{b} \nabla_m \nabla_s \tt{h}{}{tc} \\
+   &= \tt{h}{m}{[n} \tt{h}{s}{p]} \lera{ \nabla_m \nabla_s \tt{h}{}{tc}} \tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \\
+   &= \tt{h}{m}{n} \tt{h}{s}{p} \lera{ \nabla_{[m} \nabla_{s]} \tt{h}{}{tc}} \tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \\
+   &= \tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r}\lera{ \nabla_{[m} \nabla_{s]} \tt{h}{}{tc}} \\
+   &= \frac{1}{2}  \tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \lera{- \tt{R}{u}{tms} \tt{h}{}{uc}- \tt{R}{u}{cms} \tt{h}{}{tu}} \\
+   &= -\frac{1}{2} \lera{\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \lera{\tt{k}{c}{r} \tt{h}{u}{c}} \tt{R}{}{utms} +\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \tt{h}{u}{t} \tt{R}{}{ucms}} \\
+   &= -\frac{1}{2} \lera{ 0 + \tt{h}{m}{n} \tt{h}{s}{p} \tt{h}{u}{q} \tt{k}{c}{r} \tt{R}{}{ucms} } \\
+   &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{s}{p} \tt{h}{u}{q} \tt{k}{c}{r} \tt{R}{}{msuc} \\
+   &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} \\
+\end{align*}
+
+In short, 
+\begin{align*}
+    \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} &= \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} \\
+\end{align*}
+
+
+\textcolor{blue}{Make another box for this equation.}
+
 \begin{comment}
 
 \begin{definition}[Your Definition Name]
@@ -150,6 +539,25 @@ Now we might be thinking of a nice possibility. Maybe, $T_pM = \perp_p + N_p $
     
     For example: A function $f: \R \to \R$ is continuous at $x_0$ if for every $\eps > 0$, there exists $\delta > 0$ such that $|x - x_0| < \delta$ implies $|f(x) - f(x_0)| < \eps$.
 \end{definition}
+
+
+
+
+Piecewise definiion
+
+\[
+f(x)=
+\begin{cases}
+x^2, & x \ge 0 \\
+-x, & x < 0
+\end{cases}
+\]
+
+
+
+
+
+
 
 \begin{example}
     Provide a concrete example that illustrates the definition.
