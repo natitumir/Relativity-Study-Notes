@@ -166,3 +166,211 @@ For deeper understanding of the topics covered in this chapter, consult:
 %\newpage  % Uncomment to force new page for next chapter
 
 \end{comment}
+
+
+
+
+
+
+
+
+
+
+\section{Algebra of Forms}
+
+
+At a point p in a d-dimensional manifold M, a special class of tensors are very important and deserves a seperate section of discussion. They are the totally antisymmetric (0,n)-tensors. Formally, an n-form (where $ n \leq d$) is a (0,n)-tensor T such that, for any set of n linearly independent vectors $ \{\overset{1}{X},...., \overset{n}{X}\}$ at p, the action of T on them is as follows:
+
+\begin{align*}
+    T \lera{\overset{1}{X}, \overset{2}{X},..., \overset{n}{X}} &= \frac{1}{n!} \sum_{ \pi \in S_{n}}^{} sgn( \pi) T \lera{ \overset{ \pi (1)}{X},...,\overset{ \pi (n)   }{  X}}
+\end{align*}
+
+This just means, $ \tt{T}{}{abc} = \tt{T}{}{\left[abc\right]}$, etc. 
+
+
+It is obvious that there can not be any n-form where $ n > d$. In that case, at least two of the indices must be the same. For example if $ d=3 $, then a 4-form must have indices like $ \tt{T}{}{1233}$. Now, being totally antisymmetric, $ \tt{T}{}{1233}$ must be equal to $ -\tt{T}{}{1233}$ and that is possible only if it is 0. 
+
+For a component of an n-form to be non-zero, all the indices must be different. So, for example, for a 2-form A in $ d= 3$, $ \tt{A}{}{11}= \tt{A}{}{22} = \tt{A}{}{33}= 0$, however, $ \tt{A}{}{12}, \tt{A}{}{13}, \tt{A}{}{23}$ can be non-zero. 
+
+We define a scalar as a 0-form. The space of all n-forms at the point p is denoted by $ \Omega^n_p \lera{M}$. The space of all n-form fields is denoted by $ \Omega^n(M)$. An n-form fields is also called a ``differential n-form''. 
+
+\subsubsection{Wedge Product}
+Given a p-form A and a q-form B at the point p, we can make a $ (p+q)-$form
+through an operation called wedge product. It is denoted by a $ \wedge$ symbol and defined as follows, 
+
+\begin{align*}
+    &\lera{A \wedge B}\lera{ \overset{1}{X},...,\overset{p+q}{X}}= \frac{1}{p!q!} \sum_{ \pi \in S_{p+q}}^{} sgn( \pi) \lera{ A \otimes B} \lera{ \overset{ \pi (1)}{X},...,\overset{ \pi (p+q)   }{  X}} \\
+    \implies & \lera{A \wedge B} = \frac{ \lera{p+q}!}{p! q!} \hat{A} \lera{A \otimes B} \\
+    \implies & \lera{A \wedge B}_{a...bc...d} = \frac{ \lera{p+q}!}{p! q!   } \tt{A}{}{[a...b} \tt{B}{}{c...d]} \\
+\end{align*}
+
+
+Here, in the second equality, I used the total-antisymmetrization operator $ \hat{A}$ whose action on any (0,n)-tensor T is defined as follows, 
+
+\begin{align*}
+    \hat{A} \lera{T} \lera{ \overset{1}{X} ,..., \overset{n}{X} } &= \frac{1}{n!} \sum_{ \pi \in S_n}^{ } T \lera{ \overset{ \pi \lera{1}}{X},..., \overset{ \pi \lera{ n}}{X}}
+\end{align*}
+
+Suppose that at point p, we have a basis of $ T_p^* M$, $ \left\{E^1,...,E^d\right\}$. The wedge product between any n of the basis elements is given by, 
+
+\begin{align*}
+    \tt{E}{a_1}{} \wedge ...\wedge E^{a_n} = n! \; E^{[a_1} \otimes...\otimes E^{a_n]} \numberthis \label{basiswedge} \\
+\end{align*}
+
+To prove this, let's note one important fact about antisymmetrization which we showed earlier, $ A_{[[abc]de]}= A_{[abcde]}$. Now, take only $ E^{a_1} \wedge E^{a_2}$. According to the definition, $ E^{a_1}\wedge E^{a_2}= 2! E^{[a_1} \otimes E^{a_2]}$. So,
+
+\begin{align*}
+   &E^{a_1}\wedge E^{a_2} \wedge E^{a_3}= 2! E^{[a_1} \otimes E^{a_2]} \wedge \tt{E}{a_3}{} \\
+   &E^{a_1}\wedge E^{a_2} \wedge E^{a_3}= 2! \frac{3!}{2!1!} E^{[[a_1} \otimes E^{a_2]} \otimes \tt{E}{a_3]}{}= 2! \frac{3!}{2!} E^{[a_1} \otimes E^{a_2} \otimes \tt{E}{a_3]}{} \\
+   &E^{a_1}\wedge E^{a_2} \wedge E^{a_3} \wedge E^{a_4}= 2! \frac{3!}{2!} \frac{4!}{3!}E^{[a_1} \otimes E^{a_2} \otimes \tt{E}{a_3}{} \otimes \tt{E}{a_4]}{} \\
+\end{align*}
+
+Iteraring this process, we have \cref{basiswedge}. This, in turn, gives us a new way to express any $ \omega \in \Omega^n_p(M)$ wrt the basis $ \{E^i\}$. 
+
+
+ 
+\begin{align*}
+    \omega &= \omega_{a_1...a_n} E^{a_1} \otimes ... \otimes E^{a_n} \\
+ &= \omega_{a_1...a_n} E^{[a_1} \otimes ... \otimes E^{a_n]} \\
+ & \text{The indices of $ \omega$ are all totally antisymmetric.} \\
+ &= \frac{1}{n!} \omega_{a_1...a_n} \; n! \; E^{[a_1} \otimes ... \otimes E^{a_n]} \\
+  & \text{So, using \cref{basiswedge}} \\
+   \omega &= \frac{1}{n!}  \omega_{a_1...a_n}  E^{a_1} \wedge ... \wedge E^{a_n} \\
+\end{align*}
+
+People also write it a bit differently sometimes, summing over only increasing indices or decreasing indices. \textcolor{blue}{finish this thought.}
+
+
+For 1-forms $ \omega, \sigma$ we can simply remember this, 
+
+\begin{align*}
+    \omega \wedge \sigma &= \frac{2!}{1!1!} \hat{A} \lera{ \omega \otimes \sigma } \\
+     \omega \wedge \sigma &= 2 \lera{ \frac{1}{2! } \lera{ \omega \otimes \sigma - \sigma \otimes \omega} } \\
+      \omega \wedge \sigma &=  \omega \otimes \sigma - \sigma \otimes \omega \\
+\end{align*}
+
+This also means $ \omega \wedge \sigma = - \sigma \wedge \omega $. The rule is, anytime we swap two one forms, there is a minus sign. Remembering this rule will lead us to a graded commutation rule for the wedge product of a p-form with a q-form. It is called graded, because the anti-commutation rule depends on the degree of the forms involved. Here is the rule (assuming that $ \omega, \sigma$ are p and q forms, respectively). 
+
+\begin{align*}
+     \sigma \wedge \omega &= \lera{ -1}^{pq} \omega \wedge \sigma \numberthis \label{gradedcommutation} \\
+\end{align*}
+
+To see this, let's write the forms in a basis. So, $ \omega = \frac{1}{p!} \omega_{a...b}  \tt{E}{a}{} \wedge ... \wedge \tt{E}{b}{}$ and $ \sigma = \frac{1}{q!} \sigma_{c...d}  \tt{E}{c}{} \wedge ... \wedge \tt{E}{d}{} $. Now, $ \sigma \wedge \omega = \frac{1}{p! q! } \tt{ \sigma}{}{a...b} \tt{ \omega}{}{c...d} \tt{E}{a}{} \wedge...\wedge \tt{E}{b}{} \wedge \tt{E}{c}{} \wedge ... \wedge \tt{E}{d}{}$. To go to $ \omega \wedge \sigma$, the trick is to take the basis vectors from the second set $ E^{c},...,E^{d}$ one by one and take them p steps leftward. Each time I do this, I get a $ \lera{-1}^p$, and I have to do this for q members of the second set, so all in all, I have $ \lera{-1}^{pq}$. And in the end, the basis vectors will look like, $  \lera{ -1}^{pq}\tt{E}{c}{} \wedge...\wedge \tt{E}{d}{} \wedge \tt{E}{a}{} \wedge ... \wedge \tt{E}{b}{}$. So, 
+
+\begin{align*}
+    \sigma \wedge \omega &=  \frac{1}{p! q! } \tt{ \sigma}{}{a...b} \tt{ \omega}{}{c...d} \tt{E}{a}{} \wedge...\wedge \tt{E}{b}{} \wedge \tt{E}{c}{} \wedge ... \wedge \tt{E}{d}{}\\
+    &= \lera{-1}^{pq}\frac{1}{p! q! } \tt{ \sigma}{}{a...b} \tt{ \omega}{}{c...d} \tt{E}{c}{} \wedge...\wedge \tt{E}{d}{} \wedge \tt{E}{a}{} \wedge ... \wedge \tt{E}{b}{}\\
+    &= \lera{-1}^{pq}\frac{1}{p! q! }  \tt{ \omega}{}{c...d}\tt{ \sigma}{}{a...b} \tt{E}{c}{} \wedge...\wedge \tt{E}{d}{} \wedge \tt{E}{a}{} \wedge ... \wedge \tt{E}{b}{}\\
+    &= \lera{ -1}^{pq} \omega \wedge \sigma \\
+\end{align*}
+
+\subsubsection{Exterior Derivative}
+
+\subsubsection{Non-coordinate Basis and Tetrad Formalism}
+
+For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. 
+
+
+Here is a consistent story, 
+\begin{align*}
+    g \lera{ \tt{E}{}{ \mu}, \tt{E}{}{ \nu}} &= \tt{ \eta}{}{ \mu \nu } \numberthis \label{ tetrad}
+\end{align*}
+
+Since $ \tt{E}{ \mu}{}$ is a covecotor, it can be expanded in terms of the coordinate basis, 
+\begin{align*}
+    \tt{E}{ \mu}{} &= \tt{E}{ \mu} {a} dx^ {a} \\
+\end{align*}
+
+Now, E can be thought of as a matrix. Our convention is as usual, upper index is for row, lower index is for column. And, for any matrix A, $ \tt{ \lera{A^{-1}}}{i}{j}$ is denoted by $A_j^{\;\;i}$. Based on this, $ dx^a$ can be expanded as, 
+
+\begin{align*}
+    dx^{a} &= E_{ \mu}^{\;\;a} \tt{E}{ \mu}{}
+\end{align*}
+
+Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \mu}{}$, that is, $ \tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}}= \delta^{ \mu}_{ \nu}$. The basis vectors $ \tt{E}{}{ \mu}$ can also be expanded in terms of the coordiante basis vectors $ \partial_a$, as, $\tt{E}{}{ \mu}= F_{ \mu}^{ \;\; a} \partial_a $. The nice thing is that F is nothing but E! Let me show that.
+
+\begin{align*}
+    &\tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}} = \tt{ \delta}{ \mu}{ \nu} \\
+    & \tt{E}{ \mu }{a} dx^a \lera{ F_{ \nu}^{\;\;b} \partial_b} = \tt{ \delta}{ \mu}{ \nu} \\
+    & \tt{E}{ \mu}{a } F_{ \nu}^{\;\;b} dx^a \lera{ \partial_b} = \tt{ \delta}{ \mu}{ \nu} \\
+    & \tt{E}{ \mu}{a } F_{ \nu}^{\;\;b} \tt{ \delta}{a}{b} = \tt{ \delta}{ \mu}{ \nu} \\
+    &  \tt{E}{ \mu}{a } F_{ \nu}^{\;\;a}  = \tt{ \delta}{ \mu}{ \nu} \\
+    & \tt{E}{ \mu}{ a} \tt{ \lera{F^{-1}}}{a}{ \nu}= \tt{ \delta}{ \mu}{ \nu} \\
+\end{align*}
+
+This simply means, $ F^{-1} = E^{-1}$ or, $ F=E$. And,
+\begin{align*}
+    \tt{E}{}{ \mu}=& E_{ \mu}^{ \;\; a} \partial_a
+\end{align*}
+
+
+It is now easy to see how $ \partial_a $ is expressed as a linear combination of $ E_ \mu$. 
+
+\begin{align*}
+    &\tt{E}{ }{ \mu} = E_\mu{}^a \partial_a \\
+    & \tt{E}{}{ \mu} \tt{E}{ \mu}{b} = \tt{E}{ \mu}{b} E_ \mu {}^a \partial_a \\
+    & \tt{E}{ \mu}{b} \tt{E}{}{ \mu} = \tt{ \delta}{a}{b} \partial_a \\
+    & \partial_b = \tt{E}{ \mu}{b} \tt{E}{}{ \mu} \\
+    & \partial_a = \tt{E}{ \mu}{a} \tt{E}{}{ \mu} \\
+\end{align*}
+
+
+To summarize, we have the following rules, 
+
+\begin{tcolorbox}[
+    colback=red!10,
+    colframe=black!70,
+    boxrule=0.5pt,
+    arc=2mm
+]
+\begin{itemize}
+    \item $ \tt{E }{ \mu}{a}$ is the a-th component of the covector $ \tt{E}{ \mu}{}$ in the coordiante basis $ \{ dx^a \}$ of covectors or the $ \mu$-th component of the vector $ \partial_a$ in the frame basis $ \{ \tt{E}{}{ \mu}\}$ of vectors. 
+    
+    \begin{align*}
+        \tt{E}{ \mu}{} &= \tt{E}{ \mu}{a } dx^a \\
+        \partial_a &=  \tt{E}{ \mu}{a} \tt{E}{ }{ \mu} \\
+    \end{align*}
+
+    \item $ E_ \mu {}^a$ is the a-th component of the vector $ \tt{E}{}{ \mu}$ in the coordiante basis $ \{ \partial_a \}$ of vectors or the $ \mu$-th component of the covector $ dx^a $ in the frame basis $ \{ \tt{E}{ \mu}{}\}$ of covectors. 
+    
+    \begin{align*}
+        \tt{E}{}{ \mu} &= E_ \mu {}^a \partial_a  \\
+         dx^a &=  E_ \mu {}^a \tt{E}{ \mu}{} \\
+    \end{align*}
+
+    \item We always put the Greek index closer to the letter E and the Latin index further from the letter E. 
+\end{itemize}
+
+
+\end{tcolorbox}
+
+
+It is nice to see how handy the tensor index gymnastics can be. It is almost like a magic. 
+
+
+
+\subsubsection{Connection 1-forms}
+
+Since $ \tt{E}{}{ \mu}$ is a field (at least in a chart U), I can take the covariant derivative of it wrt the basis vector fields of that chart. The result will have to be another vector field and can be expanded in terms of $ \{ \tt{E}{}{ \mu}\}$.
+
+\begin{align*}
+    &\cov{ \tt{E}{}{ \mu}}{ \partial_a} = \omega_ \mu {}^ \nu {}_a \tt{E}{}{ \nu} \\
+\end{align*}
+
+We can show that although $ \omega_\mu{}^\nu{}_a$ is a 1-form in the index a, it is not a tensor in the indices $ \mu$ and $ \nu$. First, notice that the definition of $ \omega_\mu{}^\nu{}_a$ can be given as, $ \omega_\mu{}^\nu{}_a=\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_a}}$. Now, say I change the chart, but not the frame $ \{ \tt{E}{}{ \mu}\}$. So,
+
+\begin{align*}
+    \omega_ \mu{}^ \nu{}_{a'} =& \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial'_a}}\\
+    =&\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \lera{ \pp{ x^m}{x'^a} \partial_m}}}\\
+    =&\tt{E}{ \nu}{} \lera{ \pp{ x^m}{x'^a}\cov{ \tt{E}{}{ \mu}}{  \partial_m}}\\ 
+    =& \pp{ x^m}{x'^a}  \tt{E}{ \nu}{}\lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_m}}\\
+    =& \pp{ x^m}{x'^a} \omega_\mu{}^\nu{}_m
+\end{align*}
+
+This proves that $ \omega_\mu{}^\nu{}_a$ is a 1-form in the index a. To show that it is NOT a tensor in the Greek indices, I now change only the frame and not the chart, then,
+
+\begin{align*}
+    \omega_{\mu'}{}^{ \nu'}{}_a &= \tt{E'}{ \nu}{} \lera{ \cov{ \tt{E'}{}{ \mu}}{ \partial_a}} \\
+    &= \tt{ \Lambda}{ \nu}{ \alpha} \tt{E}{ \alpha}{} \lera{ \cov{ \lera{ \Lambda_ \mu{}^ \beta E_ \beta}}{ \partial_a}} \\
+    &= \tt{ \Lambda}{ \nu}{ \alpha} \tt{E}{ \alpha}{} \lera{ \Lambda_ \mu{^ \beta }}
+\end{align*}
