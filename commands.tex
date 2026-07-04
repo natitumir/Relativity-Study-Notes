@@ -6,6 +6,10 @@
 %tensor
 \renewcommand{\tt}[3]{#1^{#2}_{\phantom{#2}#3}}
 
+% command for a tensor with down up index, and down up down index structure
+\newcommand{\du}[3]{#1_{#2}{}^{#3}}
+\newcommand{\dud}[4]{#1_{#2}{}^{#3}{}_{#4}}
+
 %NOT tensor, but just submol. That is, the upper indices and lower indices are directly on top of each other
 \newcommand{\ttw}[3]{#1^{#2}_{#3}}
 
