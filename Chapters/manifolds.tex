@@ -287,15 +287,15 @@ Now, E can be thought of as a matrix. Our convention is as usual, upper index is
     dx^{a} &= E_{ \mu}^{\;\;a} \tt{E}{ \mu}{}
 \end{align*}
 
-Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \mu}{}$, that is, $ \tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}}= \delta^{ \mu}_{ \nu}$. The basis vectors $ \tt{E}{}{ \mu}$ can also be expanded in terms of the coordiante basis vectors $ \partial_a$, as, $\tt{E}{}{ \mu}= F_{ \mu}^{ \;\; a} \partial_a $. The nice thing is that F is nothing but E! Let me show that.
+Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \mu}{}$, that is, $ \tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}}= \kron{ \mu}{ \nu}$. The basis vectors $ \tt{E}{}{ \mu}$ can also be expanded in terms of the coordiante basis vectors $ \partial_a$, as, $\tt{E}{}{ \mu}= F_{ \mu}^{ \;\; a} \partial_a $. The nice thing is that F is nothing but E! Let me show that.
 
 \begin{align*}
-    &\tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}} = \tt{ \delta}{ \mu}{ \nu} \\
-    & \tt{E}{ \mu }{a} dx^a \lera{ F_{ \nu}^{\;\;b} \partial_b} = \tt{ \delta}{ \mu}{ \nu} \\
-    & \tt{E}{ \mu}{a } F_{ \nu}^{\;\;b} dx^a \lera{ \partial_b} = \tt{ \delta}{ \mu}{ \nu} \\
-    & \tt{E}{ \mu}{a } F_{ \nu}^{\;\;b} \tt{ \delta}{a}{b} = \tt{ \delta}{ \mu}{ \nu} \\
-    &  \tt{E}{ \mu}{a } F_{ \nu}^{\;\;a}  = \tt{ \delta}{ \mu}{ \nu} \\
-    & \tt{E}{ \mu}{ a} \tt{ \lera{F^{-1}}}{a}{ \nu}= \tt{ \delta}{ \mu}{ \nu} \\
+    &\tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}} = \kron{ \mu}{ \nu} \\
+    & \tt{E}{ \mu }{a} dx^a \lera{ F_{ \nu}^{\;\;b} \partial_b} = \kron{ \mu}{ \nu} \\
+    & \tt{E}{ \mu}{a } F_{ \nu}^{\;\;b} dx^a \lera{ \partial_b} = \kron{ \mu}{ \nu} \\
+    & \tt{E}{ \mu}{a } F_{ \nu}^{\;\;b} \kron{a}{b} = \kron{ \mu}{ \nu} \\
+    &  \tt{E}{ \mu}{a } F_{ \nu}^{\;\;a}  = \kron{ \mu}{ \nu} \\
+    & \tt{E}{ \mu}{ a} \tt{ \lera{F^{-1}}}{a}{ \nu}= \kron{ \mu}{ \nu} \\
 \end{align*}
 
 This simply means, $ F^{-1} = E^{-1}$ or, $ F=E$. And,
@@ -309,7 +309,7 @@ It is now easy to see how $ \partial_a $ is expressed as a linear combination of
 \begin{align*}
     &\tt{E}{ }{ \mu} = E_\mu{}^a \partial_a \\
     & \tt{E}{}{ \mu} \tt{E}{ \mu}{b} = \tt{E}{ \mu}{b} E_ \mu {}^a \partial_a \\
-    & \tt{E}{ \mu}{b} \tt{E}{}{ \mu} = \tt{ \delta}{a}{b} \partial_a \\
+    & \tt{E}{ \mu}{b} \tt{E}{}{ \mu} = \kron{a}{b} \partial_a \\
     & \partial_b = \tt{E}{ \mu}{b} \tt{E}{}{ \mu} \\
     & \partial_a = \tt{E}{ \mu}{a} \tt{E}{}{ \mu} \\
 \end{align*}
@@ -390,7 +390,7 @@ One immediate inquiry is the expression of $ \dud{ \omega}{ \mu}{ \nu }{a}$ in t
     &  \partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \\
     & \text{Now simply multiply by $ \du{E}{ \nu}{m}$ on both sides.}\\
     &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m}\du{E}{ \nu}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
-    &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{ \delta}{ \rho}{ \nu} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
+    &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \kron{ \rho}{ \nu} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
     & \dud{ \omega}{ \nu}{ \mu}{a} = \cris{n}{ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m} - \partial_a \tt{E}{ \mu}{m} \;\; \du{ E}{ \nu}{m} \numberthis \label{ omegaintermsofcris}\\
 \end{align*}
 
@@ -399,7 +399,7 @@ Similarly, multiplying both sides of \cref{ omegaintermsofcris} with $ \du{E}{ \
 
 \begin{align*}
     &\dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \du{E}{ \mu}{p } \tt{E}{ \mu}{n} \du{E}{ \nu}{m} \tt{E}{ \nu}{q} - \partial_a \tt{E}{ \mu}{m} \; \du{E}{ \nu}{m} \tt{E}{ \nu}{q} \du{E}{ \mu}{p} \\
-    & \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \tt{ \delta}{p}{n} \tt{ \delta}{m}{q} - \partial_a \tt{E}{ \mu}{m} \tt{ \delta}{m}{q} \du{E}{ \mu}{p} \\
+    & \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \kron{p}{n} \kron{m}{q} - \partial_a \tt{E}{ \mu}{m} \kron{m}{q} \du{E}{ \mu}{p} \\
     & \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q}= \cris{p}{qa} - \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
     & \cris{p}{qa} = \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} + \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
     & \text{Just replace p with m, q with n, and swap $ \mu$ and $ \nu$} \\
@@ -456,7 +456,7 @@ Now, \begin{align*}
     &= \tt{E}{ \mu}{} \left(\cov{ \partial_b}{a} \right) - \lera{ a \leftrightarrow b}\\
     &= \tt{E}{ \mu}{} \lera{ \cris{ m}{ba} \partial_m} -\lera{ a \leftrightarrow b} \\
     &= \tt{E}{ \mu}{ } \lera{ \cris{m}{ba} \tt{E}{ \nu}{m} \tt{E}{}{ \nu}} - \lera{ a \leftrightarrow b}\\
-    &=\cris{m}{ba} \tt{E}{ \nu}{m} \tt{ \delta}{ \mu}{ \nu} - \lera{ a \leftrightarrow b}\\
+    &=\cris{m}{ba} \tt{E}{ \nu}{m} \kron{ \mu}{ \nu} - \lera{ a \leftrightarrow b}\\
     &=\cris{m}{ba} \tt{E}{ \mu}{m} - \lera{ a \leftrightarrow b}\\
     &= \tt{E}{ \mu}{m } \lera{ \dud{ \omega}{ \alpha}{ \beta}{a} \du{E}{ \beta}{ m} \tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \; \du{E}{ \beta}{m}} - \lera{ a \leftrightarrow b}\\ 
     &= \dud{ \omega}{ \alpha}{ \beta}{a} \tt{E}{ \mu}{m} \du{E}{ \beta}{m } \tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \;\tt{E}{ \mu}{m} \du{E}{ \beta}{m} - \lera{ a \leftrightarrow b}\\
