@@ -176,39 +176,62 @@ For deeper understanding of the topics covered in this chapter, consult:
 
 
 
+
+
+
+
+
+
+
 \section{Algebra of Forms}
 
 
-At a point p in a d-dimensional manifold M, a special class of tensors are very important and deserves a seperate section of discussion. They are the totally antisymmetric (0,n)-tensors. Formally, an n-form (where $ n \leq d$) is a (0,n)-tensor T such that, for any set of n linearly independent vectors $ \{\overset{1}{X},...., \overset{n}{X}\}$ at p, the action of T on them is as follows:
+
+
+
+
+
+
+At a point p in a d-dimensional manifold M, a special class of tensors are very important and deserves a seperate section of discussion. They are the totally antisymmetric (0,n)-tensors. To define them properly, let me first define an operator called the ``Antisymmetrization Operator''. For an (0,n)-tensor T at a point p in the manifold, and for a set of n linearly independent vectors $ \{ \overset{1}{X}, \overset{2}{X},...,\overset{n}{X}\}$ the action of the antisymmetrization operator $ \hat{A}$ on the tensor T is defined as,
 
 \begin{align*}
-    T \lera{\overset{1}{X}, \overset{2}{X},..., \overset{n}{X}} &= \frac{1}{n!} \sum_{ \pi \in S_{n}}^{} sgn( \pi) T \lera{ \overset{ \pi (1)}{X},...,\overset{ \pi (n)   }{  X}}
+    \hat{A}(T)\lera{\overset{1}{X}, \overset{2}{X},...,\overset{n}{X}} &= \frac{1}{n!} \sum_{ \pi} \delta_\pi \; T \lera{\overset{ \pi(1)}{X}, \overset{\pi(2)}{X},...,\overset{\pi(n)}{X}} \\
 \end{align*}
 
-This just means, $ \tt{T}{}{abc} = \tt{T}{}{\left[abc\right]}$, etc. 
+where $ \pi$ denotes the different permutations of $ \{ 1,2,...,n \}$ and $ \tt{ \delta}{}{ \pi}$ is the sign of the permutation. 
 
 
-It is obvious that there can not be any n-form where $ n > d$. In that case, at least two of the indices must be the same. For example if $ d=3 $, then a 4-form must have indices like $ \tt{T}{}{1233}$. Now, being totally antisymmetric, $ \tt{T}{}{1233}$ must be equal to $ -\tt{T}{}{1233}$ and that is possible only if it is 0. 
+The defintion of $ \hat{A}$ means, $ \tt{\hat{A} \lera{T}}{}{abc} = \tt{T}{}{\left[abc\right]}$, etc. 
+
+An n-form is a (0,n)-tensor which is the same as its antisymmetrized version. So, if $ \hat{A} \lera{T}= T$ then T is an n-form at p. As such the components of T in any chart is totally antisymmetric, i.e. antisymmetric under the exchange of any two pairs of indices. $ \tt{T}{}{abc}= \tt{T}{}{[abc]}$.
+
+It is obvious that there can not be an n-form where $ n > d$. In that case, at least two of the indices must be the same. For example if $ d=3 $, then a 4-form must have indices like $ \tt{T}{}{1233}$. However, being totally antisymmetric, $ \tt{T}{}{1233}$ must be equal to $ -\tt{T}{}{1233}$ and that is possible only if $ \tt{T}{}{1233}$ is 0. 
 
 For a component of an n-form to be non-zero, all the indices must be different. So, for example, for a 2-form A in $ d= 3$, $ \tt{A}{}{11}= \tt{A}{}{22} = \tt{A}{}{33}= 0$, however, $ \tt{A}{}{12}, \tt{A}{}{13}, \tt{A}{}{23}$ can be non-zero. 
 
-We define a scalar as a 0-form. The space of all n-forms at the point p is denoted by $ \Omega^n_p \lera{M}$. The space of all n-form fields is denoted by $ \Omega^n(M)$. An n-form fields is also called a ``differential n-form''. 
+We define a scalar as a 0-form. The space of all n-forms at the point p is denoted by $ \Omega^n_p \lera{M}$. The space of all n-form fields is denoted by $ \Omega^n(M)$. An n-form field is also called a ``differential n-form''. 
 
-\subsubsection{Wedge Product}
-Given a p-form A and a q-form B at the point p, we can make a $ (p+q)-$form
-through an operation called wedge product. It is denoted by a $ \wedge$ symbol and defined as follows, 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Wedge Product}
+Given a p-form A and a q-form B at the point p, we can make a $ (p+q)$-form
+through an operation called wedge product. It is denoted by the symbol $ \wedge$. Let us define this in stages. First, for a set of n 1-forms $ \{\overset{1}{ \eta},..., \overset{n}{ \eta}\}$ their wedge product is defined as, 
 \begin{align*}
-    &\lera{A \wedge B}\lera{ \overset{1}{X},...,\overset{p+q}{X}}= \frac{1}{p!q!} \sum_{ \pi \in S_{p+q}}^{} sgn( \pi) \lera{ A \otimes B} \lera{ \overset{ \pi (1)}{X},...,\overset{ \pi (p+q)   }{  X}} \\
-    \implies & \lera{A \wedge B} = \frac{ \lera{p+q}!}{p! q!} \hat{A} \lera{A \otimes B} \\
-    \implies & \lera{A \wedge B}_{a...bc...d} = \frac{ \lera{p+q}!}{p! q!   } \tt{A}{}{[a...b} \tt{B}{}{c...d]} \\
-\end{align*}
-
-
-Here, in the second equality, I used the total-antisymmetrization operator $ \hat{A}$ whose action on any (0,n)-tensor T is defined as follows, 
-
-\begin{align*}
-    \hat{A} \lera{T} \lera{ \overset{1}{X} ,..., \overset{n}{X} } &= \frac{1}{n!} \sum_{ \pi \in S_n}^{ } T \lera{ \overset{ \pi \lera{1}}{X},..., \overset{ \pi \lera{ n}}{X}}
+    \overset{1}{ \eta}  \wedge ...\wedge \overset{n}{ \eta} = n! \; \overset{[1}{ \eta} \wedge ... \wedge \overset{n]}{ \eta} \\
 \end{align*}
 
 Suppose that at point p, we have a basis of $ T_p^* M$, $ \left\{E^1,...,E^d\right\}$. The wedge product between any n of the basis elements is given by, 
@@ -217,15 +240,8 @@ Suppose that at point p, we have a basis of $ T_p^* M$, $ \left\{E^1,...,E^d\rig
     \tt{E}{a_1}{} \wedge ...\wedge E^{a_n} = n! \; E^{[a_1} \otimes...\otimes E^{a_n]} \numberthis \label{basiswedge} \\
 \end{align*}
 
-To prove this, let's note one important fact about antisymmetrization which we showed earlier, $ A_{[[abc]de]}= A_{[abcde]}$. Now, take only $ E^{a_1} \wedge E^{a_2}$. According to the definition, $ E^{a_1}\wedge E^{a_2}= 2! E^{[a_1} \otimes E^{a_2]}$. So,
 
-\begin{align*}
-   &E^{a_1}\wedge E^{a_2} \wedge E^{a_3}= 2! E^{[a_1} \otimes E^{a_2]} \wedge \tt{E}{a_3}{} \\
-   &E^{a_1}\wedge E^{a_2} \wedge E^{a_3}= 2! \frac{3!}{2!1!} E^{[[a_1} \otimes E^{a_2]} \otimes \tt{E}{a_3]}{}= 2! \frac{3!}{2!} E^{[a_1} \otimes E^{a_2} \otimes \tt{E}{a_3]}{} \\
-   &E^{a_1}\wedge E^{a_2} \wedge E^{a_3} \wedge E^{a_4}= 2! \frac{3!}{2!} \frac{4!}{3!}E^{[a_1} \otimes E^{a_2} \otimes \tt{E}{a_3}{} \otimes \tt{E}{a_4]}{} \\
-\end{align*}
-
-Iteraring this process, we have \cref{basiswedge}. This, in turn, gives us a new way to express any $ \omega \in \Omega^n_p(M)$ wrt the basis $ \{E^i\}$. 
+This, in turn, gives us a new way to express any $ \omega \in \Omega^n_p(M)$ wrt the basis $ \{E^i\}$. 
 
 
  
@@ -241,15 +257,22 @@ Iteraring this process, we have \cref{basiswedge}. This, in turn, gives us a new
 People also write it a bit differently sometimes, summing over only increasing indices or decreasing indices. \textcolor{blue}{finish this thought.}
 
 
-For 1-forms $ \omega, \sigma$ we can simply remember this, 
+So now, given a p-form A and a q-form B, what are the components of $ A \wedge B$ with respect to the basis $ \left\{E^1,...,E^d\right\}$? 
 
 \begin{align*}
-    \omega \wedge \sigma &= \frac{2!}{1!1!} \hat{A} \lera{ \omega \otimes \sigma } \\
-     \omega \wedge \sigma &= 2 \lera{ \frac{1}{2! } \lera{ \omega \otimes \sigma - \sigma \otimes \omega} } \\
-      \omega \wedge \sigma &=  \omega \otimes \sigma - \sigma \otimes \omega \\
+    A \wedge B &= \frac{1}{p!} \frac{1}{q!} \tt{A}{}{a_1 ... a_{p}} \tt{B}{}{b_1 ... b_q} \tt{E}{a_1}{} \wedge ... \wedge \tt{E}{a_p}{} \wedge \tt{E}{b_1}{} \wedge ... \tt{E}{b_q}{} \\
+    &= \frac{ \lera{p+q}!}{p! q!}  \tt{A}{}{a_1 ... a_{p}} \tt{B}{}{b_1 ... b_q} \tt{E}{[a_1}{} \otimes ... \otimes \tt{E}{b_q]}{} \\
+    &= \frac{ \lera{p+q}!}{p! q!}  \tt{A}{}{[a_1 ... a_{p}} \tt{B}{}{b_1 ... b_q]} \tt{E}{a_1}{} \otimes ... \otimes \tt{E}{b_q}{} \\
 \end{align*}
 
-This also means $ \omega \wedge \sigma = - \sigma \wedge \omega $. The rule is, anytime we swap two one forms, there is a minus sign. Remembering this rule will lead us to a graded commutation rule for the wedge product of a p-form with a q-form. It is called graded, because the anti-commutation rule depends on the degree of the forms involved. Here is the rule (assuming that $ \omega, \sigma$ are p and q forms, respectively). 
+
+So,
+
+\begin{align*}
+    \lera{A \wedge B}_{[a...bc...d]} &= \frac{ \lera{p+q}!}{p! q!} \tt{A}{}{[a...b} \tt{B}{}{c...d]} \numberthis \label{wedge_component}\\
+\end{align*}
+
+For two 1-forms $ \omega$ and $ \sigma$ we know from the definition of one wedge products that $ \omega \wedge \sigma = \omega \otimes \sigma - \sigma \otimes \omega$. This also means $ \omega \wedge \sigma = - \sigma \wedge \omega $. The rule is, anytime we swap two one forms, there is a minus sign. Remembering this rule will lead us to a graded commutation rule for the wedge product of a p-form with a q-form. It is called graded, because the anti-commutation rule depends on the degree of the forms involved. Here is the rule (assuming that $ \omega, \sigma$ are p and q forms, respectively). 
 
 \begin{align*}
      \sigma \wedge \omega &= \lera{ -1}^{pq} \omega \wedge \sigma \numberthis \label{gradedcommutation} \\
@@ -264,9 +287,84 @@ To see this, let's write the forms in a basis. So, $ \omega = \frac{1}{p!} \omeg
     &= \lera{ -1}^{pq} \omega \wedge \sigma \\
 \end{align*}
 
-\subsubsection{Exterior Derivative}
 
-\subsubsection{Non-coordinate Basis and Tetrad Formalism}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Exterior Derivative}
+
+I will define this using coordinate basis. For derivatives, we need n-form fields as we can not do a derivation to a quantity which is defined at a point p. So we will work in a chart $ \lera{U,x}$. The exterior derivative of a 0-form, i.e. a function f is defined as, $ df := \partial_a f dx^a $. Notice that the exterior derivative of a zero form gives a 1-form. This is a general feature of exterior derivatives as we will see below that the exterior derivative of a p-form is a $ \lera{p+1}$-form. Now, given how a function's exterior derivative is taken, we define the exterior derivative of a p-form $ A = \frac{1}{p!} \tt{A}{}{a_1 ...a_p} dx^{a_1} \wedge ... \wedge dx^{a_p}$ to be, 
+
+\begin{align*}
+    dA := \frac{1}{p!} d(A_{a_1...a_p}) \wedge \tt{dx}{a_1}{} \wedge ...\wedge \tt{dx}{a_p}{} \numberthis \label{exterior_derivative_defined} \\
+\end{align*}
+
+
+To see the components of dA, we expand the RHS of \cref{exterior_derivative_defined}. $ dA = \frac{1}{p!} \partial_m A_{a_1...a_p} dx^m \wedge dx^{a_1} \wedge ...dx^{a_p}$. So the $ \tt{dA}{}{ma_1...a_p}$ component of $ dA$ is given by $ \frac{1}{ \lera{p+1}!} \tt{dA}{}{ma_1...a_p}= \frac{1}{p!} \partial_m \tt{A}{}{a_1...a_p} \implies \tt{dA}{}{ma_1...a_p}= \lera{p+1} \partial_m \tt{A}{}{a_1...a_p} $ .
+
+
+We reiterate here that the RHS of \cref{exterior_derivative_defined} is a tensor by definition ( exterior derivative of a function is a 1-form and wedge product of differential 1-forms is also a differential form).It is quite fascinating that a fully covariant notion of derivative can be cooked up from using only coordiante based partial derivative. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Integration on a Manifold}
+
+\subsection{Orientation and Volume Form}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Non-coordinate Basis and Tetrad Formalism}
 
 For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. 
 
