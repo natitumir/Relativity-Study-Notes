@@ -6,171 +6,574 @@
 \chapter{Manifolds}
 \label{ch:chapter2}
 
-\begin{comment}
+\section{Topological Space}
 
-\section{Introduction}
+\begin{definition}
+    Let M be a set. We define a topology $ \mathcal{O}$ on M to be a collection of subsets of M such that
+    \begin{enumerate}[label=(\roman*)]
+        \item $ \emptyset, M \in \mathcal{O}$
+        \item $ \mathcal{O}$ is closed under arbitrary union and finite intersection. i.e.
+    \end{enumerate}
 
-This chapter introduces some fundamental mathematics that will be needed in the later chapters. The terms appearing in this chapter should be familiar to any student of physics. However, due to the intuitive way these terms are usually presented in any first course of calculus at the university freshman level, students are not always familiar with the more "mathematical" way of presenting these concepts. Since in the later study of basic differential geometry these will work as a necessary prerequisite vocalbulary, it is better to be familiar with the language a bit. 
-
-\subsection{Overview}
-
-[Write brief overview of chapter contents here]
-
-\section{Core Concepts}
-
-\subsection{Definition 1.1: Your First Definition}
-
-\begin{definition}[Your Definition Name]
-    Provide a precise mathematical or conceptual definition here. Use proper notation established in the preamble.
-    
-    For example: A function $f: \R \to \R$ is continuous at $x_0$ if for every $\eps > 0$, there exists $\delta > 0$ such that $|x - x_0| < \delta$ implies $|f(x) - f(x_0)| < \eps$.
+    \begin{align*}
+        & U, V \in \mathcal{O} \implies U \cap V \in \mathcal{O} \\
+        & U_\alpha \in \mathcal{O} \lera{ \alpha \in A} \implies \bigcup_{\alpha \in A} U_\alpha \in \mathcal{O} \\
+    \end{align*}
 \end{definition}
 
-\begin{example}
-    Provide a concrete example that illustrates the definition.
-\end{example}
+\begin{definition}
+    A set M equipped with a topology $ \mathcal{O}$, i.e. $ \lera{ M, \mathcal{O}}$ is called a topological space.
+\end{definition}
 
-\subsection{Theorem 1.1: Your First Result}
+Examples of topological spaces are as follows. For any set M, the collection $ \mathcal{O} = \{ \emptyset, M \}$ is a topology. This is called the chaotic topology. The collection $ \mathcal{O} = P(M)$ (Power set of M) is called the discrete topology. Another example is $ \lera{M, \mathcal{O}}$ with $M = \{ 1,2,3 \} $ and $ \mathcal{O} = \{ \{1\}, \{2\}, \{1,2\}, \{1,2,3\}, \emptyset \} $
 
-\begin{theorem}[Name of Theorem]
-    State the theorem clearly here. 
-    
-    Suppose conditions (i), (ii), and (iii) hold. Then conclusion follows: $A = B$.
+
+
+Consider $ \mathbb{R}^n$ where we define the ``open ball/soft ball'' of radius r around a point $ p \in \mathbb{R}^n$ as:
+
+\begin{align*}
+    & B_r(p) := \left\{ x \in \mathbb{R}^n \; \middle| \; \sum_{i=1}^{n} | x^i - p^i |^2 < r^2 \right\} \\
+\end{align*}
+
+With the help of this we can define a topology $ \mathcal{O}_{std}$ on $ \mathbb{R}^n$.
+
+\begin{definition}
+    A set $ U \in \mathcal{O}_{std}$ iff $ U \subseteq \mathbb{R}^n$ and
+
+    \begin{align*}
+        & p \in U \implies \exists r \in \mathbb{R}^+ : B_r(p) \subseteq U \\
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    $ \lera{ \mathbb{R}^n, \mathcal{O}_{std}}$ is a topological space.
+\end{proposition}
+
+\begin{proof}
+    $ \emptyset \in \mathcal{O}_{std}$ since $ p \in \emptyset \implies \exists r \in \mathbb{R}^+ : B_r(p) \subseteq \emptyset$ (vacuously)
+
+    $ \mathbb{R}^n \in \mathcal{O}_{std}$ since $ p \in \mathbb{R}^n \implies \exists r = 1 \in \mathbb{R}^+ : B_r(p) \subseteq \mathbb{R}^n$
+
+    If $ U, V \in \mathcal{O}_{std}$ then assume $ p \in U \cap V$
+
+    \begin{align*}
+        p \in U \cap V &\implies p \in U \text{ and } p \in V \\
+        &\implies \exists r_1, r_2 \in \mathbb{R}^+ : B_{r_1}(p) \subseteq U \text{ and } B_{r_2}(p) \subseteq V \\
+    \end{align*}
+
+    Now, $ r := \min \lera{ r_1, r_2}$
+
+    \begin{align*}
+        & \therefore B_r(p) \subseteq U \text{ and } B_r(p) \subseteq V \\
+        & \implies B_r(p) \subseteq U \cap V \\
+        & \therefore U, V \in \mathcal{O}_{std} \implies \lera{ U \cap V} \in \mathcal{O}_{std} \\
+    \end{align*}
+
+    Assume $ U_\alpha \in \mathcal{O}_{std}$ $ \lera{ \alpha \in A}$
+
+    Let $ p \in \bigcup_{\alpha \in A} U_\alpha$
+
+    \begin{align*}
+        & \implies p \in U_\beta \text{ for some } \beta \in A \\
+        & \implies \exists r \in \mathbb{R}^+ : B_r(p) \subseteq U_\beta \\
+        & \implies \exists r \in \mathbb{R}^+ : B_r(p) \subseteq \bigcup_{\alpha \in A} U_\alpha \\
+        & \therefore U_\alpha \in \mathcal{O}_{std} \lera{ \alpha \in A} \implies \lera{ \bigcup_{\alpha \in A} U_\alpha} \in \mathcal{O}_{std} \\
+    \end{align*}
+\end{proof}
+
+So, in short, we can say that $ \lera{ \mathbb{R}^n, \mathcal{O}_{std}}$ is a topological space.
+
+\subsection*{Basis}
+
+The basic idea is to have a collection of subsets from which we can take unions and construct any set $ U \in \mathcal{O}$.
+
+\begin{definition}
+    A collection $ \mathcal{B}$ of open sets is a basis for the topology $ \mathcal{O}$ if given any set $ U \in \mathcal{O}$ and a point $ p \in U$, there is an open set $ B \in \mathcal{B}$ such that $ p \in B \subseteq U$.
+\end{definition}
+
+An element of the basis $ \mathcal{B}$ is called a basic open set.
+
+\begin{theorem}
+    A collection of open sets $ \mathcal{B}$ is a basis of $ \mathcal{O}$ iff any open set U is a union of sets of $ \mathcal{B}$.
 \end{theorem}
 
 \begin{proof}
-    Outline the proof strategy, then provide key steps.
-    
-    Step 1: First, we observe that...
-    
-    Step 2: By applying [technique], we get...
-    
-    \begin{equation}
-        \mathcal{E} = \int_{\Omega} \rho e \, \dd{V}
-        \label{eq:energy_def}
-    \end{equation}
-    
-    Step 3: Combining these results yields the conclusion. \qed
+    $ \lera{ \implies}$ We assume that $ \mathcal{B}$ is a basis for $ \mathcal{O}$. So, if $ U \in \mathcal{O}$, then for $ p \in U$, $ \exists B_p \in \mathcal{B}$ such that $ p \in B_p \subseteq U$.
+
+    \begin{align*}
+        & \therefore U = \bigcup_{p \in U} B_p \\
+    \end{align*}
+
+    $ \lera{ \impliedby}$ Since any open set U is a union of sets of $ \mathcal{B}$, for any point $ p \in U$, we have a set $ B \in \mathcal{B}$ such that $ p \in B \subseteq U$.
 \end{proof}
 
-\begin{remark}
-    Important observations or extensions of the theorem can go here. This theorem is particularly useful when...
-\end{remark}
+$ \mathcal{B}_{rat}$ is the set of all open balls $ B_r(p)$ where $ r \in \mathbb{Q}^+$ and $ p \in \mathbb{Q}^n$, i.e. rational centers and rational radius.
 
-\section{Key Mathematical Tools}
+\begin{theorem}
+    The set $ \mathcal{B}_{rat}$ is a basis for $ \mathcal{O}_{std}$.
+\end{theorem}
 
-\subsection{Notation and Operations}
+\begin{proof}
+    Take $ U \in \mathcal{O}_{std}$
 
-Let's establish the notation we'll use throughout. We denote:
-\begin{itemize}
-    \item Vectors: $\bv{u} = (u_1, u_2, u_3)$
-    \item Matrices: $\mathbf{A} = \{a_{ij}\}$
-    \item Derivatives: $\ddt{u} = \frac{\mathrm{d}u}{\mathrm{d}t}$, $\pd{u}{x} = u_{,x}$
-\end{itemize}
+    Now, for any point $ p \in U$, there exists $ r \in \mathbb{Q}^+$ such that $ B_r(p) \subseteq U$.
 
-\subsection{Important Equations}
+    Now, take a rational point $ q \in B_{r/2}(p)$
 
-An important fundamental equation in this field is:
+    \begin{center}
+    \begin{tikzpicture}[scale=1.0]
+        \draw (0,0) circle (1.5);
+        \draw[dashed] (0,0) circle (0.75);
+        \fill (0,0) circle (1.5pt) node[above left] {$ p$};
+        \fill (0.35,-0.3) circle (1.5pt) node[above right] {$ q$};
+    \end{tikzpicture}
+    \end{center}
 
-\begin{equation}
-    \boxeq{
-        \pd{u}{t} + \nabla \cdot \bv{F}(\bv{u}) = 0
+    So,
+
+    \begin{align*}
+        & d(p,q) < \frac{r}{2} \\
+    \end{align*}
+
+    Consider the ball $ B_{r/2}(q)$
+
+    \begin{align*}
+        & p \in B_{r/2}(q) \numberthis \label{p_in_half_ball} \\
+    \end{align*}
+
+    Let, $ x \in B_{r/2}(q)$
+
+    \begin{align*}
+        & \implies d(x,q) < \frac{r}{2} \\
+    \end{align*}
+
+    Now,
+
+    \begin{align*}
+        & d(x,p) \leq d(x,q) + d(q,p) < \frac{r}{2} + \frac{r}{2} = r \\
+        & \implies d(x,p) < r \implies x \in B_r(p) \\
+        & \therefore p \in B_{r/2}(q) \subseteq B_r(p) \subseteq U \\
+    \end{align*}
+\end{proof}
+
+
+So, we can say that $ \mathcal{B}_{rat}$ is a basis for $ \mathcal{O}_{std}$.
+
+There is a curious thing to note here. The set $ \mathcal{B}_{rat}$ of all the rational balls (balls with rational center and rational radii) is a countable set. Since each ball can be indexed by $ \mathbb{Q}^n$ (a countable set) and $ \mathbb{Q}^+$ (another countable set), we have a countable infinity of rational balls.
+
+\begin{definition}
+    A topological space $ \lera{ M, \mathcal{O}}$ is called second countable iff $ \mathcal{O}$ has a countable basis.
+\end{definition}
+
+\section{Hausdorff Topological Space}
+
+\begin{definition}
+    $ \lera{ T, \mathcal{O}_T}$ is called a Hausdorff top. space :=
+
+    \begin{align*}
+        \text{iff } \forall p, q \in T \text{ and } p \neq q & \\
+        \implies \exists U_p \in \mathcal{O}_T \text{ and } \exists U_q \in \mathcal{O}_T, \; p \in U_p \; \& \; q \in U_q & \\
+        \text{and } U_p \cap U_q = \emptyset & \\
+    \end{align*}
+\end{definition}
+
+In short, for every pair of points, we have disjoint open sets that contain those points.
+
+\begin{definition}
+    Let, $ \lera{ M, \mathcal{O}_M}$ and $ \lera{ N, \mathcal{O}_N}$ be top. sp. A map $ f: M \longrightarrow N$ is called \fbox{continuous} with respect to $ \mathcal{O}_M$ and $ \mathcal{O}_N$ iff
+
+    \begin{align*}
+        & V \in \mathcal{O}_N \implies \text{preim}_f(V) \in \mathcal{O}_M \\
+    \end{align*}
+
+    i.e. preimage of open sets are open.
+\end{definition}
+
+We have defined, for $ f: M \longrightarrow N$ and $ V \subseteq N$
+
+\begin{align*}
+    & \text{preim}_f(V) = \{ m \in M \mid f(m) \in V \} \\
+\end{align*}
+
+\begin{proposition}
+    Let, $ \lera{ M, \mathcal{O}_M}$, $ \lera{ N, \mathcal{O}_N}$, $ \lera{ P, \mathcal{O}_P}$ be three top. sp.
+
+    $ f: M \longrightarrow N$, $ g: N \longrightarrow P$ are continuous maps.
+
+    The map $ h = g \circ f$ is also continuous w.r.t. $ \mathcal{O}_M$ \& $ \mathcal{O}_P$.
+\end{proposition}
+
+\begin{proof}
+    Let, $ V \in \mathcal{O}_P$
+
+    Now,
+
+    \begin{align*}
+        \text{preim}_h(V) &= \{ m \in M \mid h(m) \in V \} \\
+        &= \{ m \in M \mid \lera{ g \circ f}(m) \in V \} \\
+        &= \{ m \in M \mid f(m) \in \text{preim}_g(V) \} \\
+        &= \text{preim}_f \lera{ \text{preim}_g(V)} \\
+        &\in \mathcal{O}_M \\
+    \end{align*}
+\end{proof}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.85, every node/.style={font=\small}]
+    \draw (0,0) circle [x radius=1.5, y radius=1.9];
+    \draw (4,0) circle [x radius=1.5, y radius=1.9];
+    \draw (8,0) circle [x radius=1.5, y radius=1.9];
+    \node at (0,-2.3) {$ M$};
+    \node at (4,-2.3) {$ N$};
+    \node at (8,-2.3) {$ P$};
+
+    \draw (0.1,0.3) circle [x radius=0.55, y radius=0.75];
+    \draw (4.1,0.3) circle [x radius=0.75, y radius=0.9];
+    \draw (8.1,0.3) circle [x radius=0.75, y radius=0.9];
+
+    \fill (-0.05,0.45) circle (1pt);
+    \fill (0.25,0.15) circle (1pt);
+    \fill (3.85,0.45) circle (1pt);
+    \fill (4.35,0.15) circle (1pt);
+    \fill (7.85,0.45) circle (1pt);
+    \fill (8.35,0.15) circle (1pt);
+
+    \draw (-0.05,0.45) .. controls (2,0.9) .. (3.85,0.45);
+    \draw (0.25,0.15) .. controls (2,-0.1) .. (4.35,0.15);
+    \draw (3.85,0.45) .. controls (6,0.9) .. (7.85,0.45);
+    \draw (4.35,0.15) .. controls (6,-0.1) .. (8.35,0.15);
+
+    \node at (2,1.3) {$ f$};
+    \node at (6,1.3) {$ g$};
+
+    \draw (-1.3,2.2) -- (0.1,1.05);
+    \node[above left, align=center] at (-1.3,2.2) {$ \text{preim}_f \lera{ \text{preim}_g(V)}$\\[-0.3ex] $ \uparrow$ \\[-0.3ex] $ \mathcal{O}_M$};
+
+    \draw (4.6,-1.5) -- (4.35,-0.6);
+    \node[below, align=center] at (4.6,-1.6) {$ \text{preim}_g(V)$\\[-0.3ex] $ \uparrow$ \\[-0.3ex] $ \mathcal{O}_N$};
+
+    \node[right] at (8.9,0.3) {$ V$};
+    \draw (8.85,0.3) -- (8.5,0.3);
+\end{tikzpicture}
+\end{figure}
+
+Use the following for visualization.
+
+$ f: M \longrightarrow N$ is a homeomorphism between M and N if f and $ f^{-1}$ both are continuous w.r.t. $ \mathcal{O}_M$ and $ \mathcal{O}_N$.
+
+\section{Inheriting a topology}
+
+Let $ \lera{ T, \mathcal{O}}$ be a top. sp. and $ S \subseteq T$.
+
+\begin{align*}
+    & \mathcal{O}|_S := \{ U \cap S \mid U \in \mathcal{O} \} \\
+\end{align*}
+
+$ \lera{ S, \mathcal{O}|_S}$ is a top. sp.
+
+\begin{proof}
+    \begin{align*}
+        & \emptyset = \emptyset \cap S \text{ and } \emptyset \in \mathcal{O} \implies \emptyset \in \mathcal{O}|_S \\
+        & S = S \cap M \text{ and } M \in \mathcal{O} \implies S \in \mathcal{O}|_S \\
+    \end{align*}
+
+    Let, $ S_1$ and $ S_2 \in \mathcal{O}|_S$
+
+    \begin{align*}
+        & \implies \exists U_1, U_2 \in \mathcal{O} \text{ such that } S_1 = U_1 \cap S, \; S_2 = U_2 \cap S \\
+        & \implies U_1 \cap U_2 \in \mathcal{O} \implies \lera{ U_1 \cap U_2} \cap S \in \mathcal{O}|_S \\
+        & \implies \lera{ U_1 \cap S} \cap \lera{ U_2 \cap S} \in \mathcal{O}|_S \implies S_1 \cap S_2 \in \mathcal{O}|_S \\
+    \end{align*}
+
+    Let, $ \alpha \in I$ and $ S_\alpha \in \mathcal{O}|_S$ $ \forall \alpha \in I$
+
+    \begin{align*}
+        & \implies \forall \alpha \; \exists U_\alpha \in \mathcal{O} \text{ such that } S_\alpha = U_\alpha \cap S \\
+        & \implies \bigcup_{\alpha \in I} U_\alpha \in \mathcal{O} \implies \lera{ \bigcup_{\alpha \in I} U_\alpha} \cap S \in \mathcal{O}|_S \\
+        & \implies \bigcup_{\alpha \in I} \lera{ U_\alpha \cap S} \in \mathcal{O}|_S \implies \bigcup_{\alpha \in I} S_\alpha \in \mathcal{O}|_S \\
+    \end{align*}
+\end{proof}
+
+\section{Top. Manifold}
+
+A Hausdorff, second countable top. space $ \lera{ M, \mathcal{O}}$ is called a d-dimensional topological manifold if for every point $ p \in M$, there is an open set U such that $ p \in U$ and there is a homeomorphism $ x: U \longrightarrow x(U) \subseteq \mathbb{R}^d$
+
+where $ x(U) \in \mathcal{O}_{std}$
+
+Note:- The map x is bi-continuous w.r.t. the top. spaces $ \lera{ U, \mathcal{O}|_U}$ and $ \lera{ x(U), \mathcal{O}_{std}|_{x(U)}}$
+
+\begin{definition}
+    Chart :=
+
+    Let $ \lera{ M, \mathcal{O}}$ be a d-dim top. mfd. Then the pair $ \lera{ U, x}$ where $ U \in \mathcal{O}$ and x is a homeomorphism $ x: U \longrightarrow x(U) \subseteq \mathbb{R}^d$, is called a chart of the manifold.
+\end{definition}
+
+\begin{definition}
+    Atlas :=
+
+    An atlas of a manifold M is a collection of charts
+
+    \begin{align*}
+        & \mathcal{A} := \{ \lera{ U_\alpha, x_\alpha} \mid \alpha \in A \} \text{ such that} \\
+        & \bigcup_{\alpha \in A} U_\alpha = M \\
+    \end{align*}
+\end{definition}
+
+\section{Compatibility of charts}
+
+Two charts $ \lera{ U,x}$ and $ \lera{ V,y}$ are $ \mathcal{C}$-compatible is either $ U \cap V \neq \emptyset$ are the maps
+
+\begin{align*}
+    & x \circ y^{-1} : y \lera{ U \cap V} \longrightarrow x \lera{ U \cap V} \\
+    & y \circ x^{-1} : x \lera{ U \cap V} \longrightarrow y \lera{ U \cap V} \\
+\end{align*}
+
+is undergraduate-$ \mathcal{C}$
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+    \node (UV) at (0,0) {$ U \cap V \subseteq M$};
+    \node (xUV) at (3.6,2.0) {$ x \lera{ U \cap V} \subseteq \mathbb{R}^d$};
+    \node (yUV) at (3.6,-2.0) {$ y \lera{ U \cap V} \subseteq \mathbb{R}^d$};
+
+    \draw[->] (UV) -- (xUV) node[midway, above left] {$ x$};
+    \draw[->] (UV) -- (yUV) node[midway, below left] {$ y$};
+    \draw[->] (xUV) .. controls (6.6,1.4) and (6.6,-1.4) .. (yUV);
+    \node at (7.0,0) {$ y \circ x^{-1}$};
+\end{tikzpicture}
+\end{figure}
+
+``$ x \circ y^{-1}$ and $ y \circ x^{-1}$ are called chart-transition maps''
+
+Charts of a top. manifold is automatically $ \mathcal{C}^0$-compatible
+
+\begin{definition}
+    $ \mathcal{C}$-Atlas :=
+
+    An atlas $ \mathcal{A}$ of a top. manifold is called a $ \mathcal{C}$-Atlas if the charts of $ \mathcal{A}$ are $ \mathcal{C}$-compatible.
+\end{definition}
+
+\begin{definition}
+    $ \mathcal{C}^k$-manifold:
+
+    A $ \mathcal{C}^k$-manifold is a triple $ \lera{ M, \mathcal{O}, \mathcal{A}}$ where $ \lera{ N, \mathcal{O}}$ is a top. manifold and $ \mathcal{A}$ is a maximal $ \mathcal{C}^k$-atlas.
+\end{definition}
+
+\begin{definition}
+    Smooth-manifold:
+
+    A $ \mathcal{C}^\infty$-manifold is called a smooth manifold.
+\end{definition}
+
+From now on we are going to explicitly consider smooth manifolds.
+
+\section{Maps between manifolds}
+
+Let, $ \lera{ M, \mathcal{O}, \mathcal{A}_M}$ and $ \lera{ N, \mathcal{O}, \mathcal{A}_N}$ be manifolds.
+
+$ \phi: M \longrightarrow N$ is a map from M to N.
+
+$ \phi$ will be smooth map between M and N if the following holds:—
+
+Let, $ p \in U \subseteq M$, $ \phi(p) \in V \subseteq N$, $ \lera{ U,x}$ and $ \lera{ V,y}$ both be charts.
+
+$ \phi$ is smooth at p iff $ y \circ \phi \circ x^{-1}$ is smooth at $ x(p) \in \mathbb{R}^d$.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9, every node/.style={font=\small}]
+    \draw (0,0) circle [x radius=1.3, y radius=1.6];
+    \draw[dashed] (0,0.15) circle [x radius=0.6, y radius=0.7];
+    \fill (0,0.15) circle (1.2pt);
+    \node[right] at (0.08,0.15) {$ p$};
+    \node at (0.75,0.75) {$ U$};
+    \node at (0,-2.0) {$ M$};
+
+    \draw (5,0) circle [x radius=1.3, y radius=1.6];
+    \draw[dashed] (5,0.15) circle [x radius=0.6, y radius=0.7];
+    \fill (5,0.15) circle (1.2pt);
+    \node[right] at (5.08,0.15) {$ \phi(p)$};
+    \node at (5.8,0.75) {$ V$};
+    \node at (5,-2.0) {$ N$};
+
+    \draw[->] (1.4,0.15) -- (3.6,0.15) node[midway, above] {$ \phi$};
+
+    \draw[->] (-0.9,-1.7) -- (-2.0,-3.0) node[midway, left] {$ x$};
+    \draw[->] (5.9,-1.7) -- (7.0,-3.0) node[midway, right] {$ y$};
+
+    \begin{scope}[shift={(-3.8,-5.2)}]
+        \draw (-0.2,0) -- (2.6,0);
+        \draw (0,-0.2) -- (0,2.0);
+        \draw[dashed] (1.5,1.1) circle [x radius=0.65, y radius=0.5];
+        \fill (1.5,1.1) circle (1.2pt);
+        \node[above] at (1.5,1.25) {$ x(p)$};
+        \node at (0.6,1.7) {$ x(U)$};
+    \end{scope}
+
+    \begin{scope}[shift={(6.2,-5.2)}]
+        \draw (-0.2,0) -- (2.6,0);
+        \draw (0,-0.2) -- (0,2.0);
+        \draw[dashed] (1.5,1.1) circle [x radius=0.65, y radius=0.5];
+        \fill (1.5,1.1) circle (1.2pt);
+        \node[above] at (1.5,1.25) {$ y \lera{ \phi(p)}$};
+        \node at (0.6,1.7) {$ y(V)$};
+    \end{scope}
+
+    \draw[->] (-2.0,-4.6) .. controls (0.5,-6.6) and (4.5,-6.6) .. (7.2,-4.6);
+    \node at (2.5,-6.6) {$ y \circ \phi \circ x^{-1}$};
+\end{tikzpicture}
+\end{figure}
+
+This def\textsuperscript{n} of smoothness of $ \phi$ does not care about the specific charts that we are picking. So it's a chart independent def\textsuperscript{n}.
+
+Let, $ p \in U \cap \tilde{U}$ and $ \phi(p) \in V \cap \tilde{V}$
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0, every node/.style={font=\small}]
+    \node (xU)  at (0,2.4)  {$ x \lera{ U \cap \tilde{U}}$};
+    \node (yV)  at (6.4,2.4) {$ y \lera{ V \cap \tilde{V}}$};
+    \node (M)   at (0,0)     {$ U \cap \tilde{U} \subseteq M$};
+    \node (N)   at (6.4,0)   {$ V \cap \tilde{V} \subseteq N$};
+    \node (xtU) at (0,-2.4)  {$ \tilde{x} \lera{ U \cap \tilde{U}}$};
+    \node (ytV) at (6.4,-2.4) {$ \tilde{y} \lera{ V \cap \tilde{V}}$};
+
+    \draw[->] (M) -- (N) node[midway, above] {$ \phi$};
+    \draw[->] (M) -- (xU) node[midway, left] {$ x$};
+    \draw[->] (M) -- (xtU) node[midway, left] {$ \tilde{x}$};
+    \draw[->] (N) -- (yV) node[midway, right] {$ y$};
+    \draw[->] (N) -- (ytV) node[midway, right] {$ \tilde{y}$};
+
+    \draw[->] (xU) -- (yV) node[midway, above] {$ y \circ \phi \circ x^{-1}$};
+    \draw[->] (xtU) -- (ytV) node[midway, below] {$ \tilde{y} \circ \phi \circ \tilde{x}^{-1}$};
+
+    \draw[->] (xtU) .. controls (-3.0,-1.6) and (-3.0,1.6) .. (xU);
+    \node at (-3.3,0) {$ x \circ \tilde{x}^{-1}$};
+    \draw[->] (yV) .. controls (9.4,1.6) and (9.4,-1.6) .. (ytV);
+    \node at (9.7,0) {$ \tilde{y} \circ y^{-1}$};
+\end{tikzpicture}
+\end{figure}
+
+Now,
+
+\begin{align*}
+    & \tilde{y} \circ \phi \circ \tilde{x}^{-1} = \lera{ y \circ \tilde{y}}^{-1} \circ \lera{ y \circ \phi \circ x^{-1}} \circ \lera{ x \circ \tilde{x}^{-1}} \\
+    & \quad \text{smooth} \impliedby \quad \text{smooth} \qquad \text{smooth} \qquad \text{smooth} \\
+\end{align*}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.3, every node/.style={font=\small}]
+
+    % ---------- M ----------
+    \draw[thick] plot[smooth cycle, tension=0.75] coordinates
+        {(-2.6,2.0) (0,2.9) (2.6,2.0) (3.0,-0.3) (1.8,-2.5) (-0.6,-2.9) (-2.8,-1.8) (-3.2,0.3)};
+    \node at (3.5,-2.4) {$ M$};
+
+    \draw (-0.8,0.2) circle [x radius=1.5, y radius=1.15];
+    \draw (0.8,0.2) circle [x radius=1.5, y radius=1.15];
+    \begin{scope}
+        \clip (-0.8,0.2) circle [x radius=1.5, y radius=1.15];
+        \clip (0.8,0.2) circle [x radius=1.5, y radius=1.15];
+        \fill[gray!50] (-3,-3) rectangle (3,3);
+    \end{scope}
+    \node at (-2.0,1.5) {$ U$};
+    \node at (2.0,1.5) {$ \tilde{U}$};
+    \node at (0,0.2) {$ \times$};
+
+    % ---------- N ----------
+    \begin{scope}[shift={(13,0)}]
+        \draw[thick] plot[smooth cycle, tension=0.75] coordinates
+            {(-2.6,2.0) (0,2.9) (2.6,2.0) (3.0,-0.3) (1.8,-2.5) (-0.6,-2.9) (-2.8,-1.8) (-3.2,0.3)};
+        \node at (3.5,-2.4) {$ N$};
+        \draw (-0.8,0.2) circle [x radius=1.5, y radius=1.15];
+        \draw (0.8,0.2) circle [x radius=1.5, y radius=1.15];
+        \begin{scope}
+            \clip (-0.8,0.2) circle [x radius=1.5, y radius=1.15];
+            \clip (0.8,0.2) circle [x radius=1.5, y radius=1.15];
+            \fill[gray!50] (-3,-3) rectangle (3,3);
+        \end{scope}
+        \node at (-2.0,1.5) {$ V$};
+        \node at (2.0,1.5) {$ \tilde{V}$};
+        \node at (0,0.2) {$ \phi(\times)$};
+    \end{scope}
+
+    % ---------- the flow ----------
+    \foreach \k in {-2.0,-1.4,-0.8,-0.2,0.4,1.0,1.6} {
+        \draw[->, gray!70] (3.2,\k) .. controls (6.5,\k*0.45+0.3) and (7.5,\k*0.45+0.3) .. (9.6,\k*0.15+0.2);
     }
-    \label{eq:conservation_law}
-\end{equation}
+    \node at (6.5,2.6) {$ \phi$};
 
-This is a conservation law where:
-\begin{itemize}
-    \item $u$ is the conserved quantity (scalar or vector)
-    \item $\bv{F}(\bv{u})$ is the flux function
-    \item The equation states that changes in $u$ equal divergence of the flux
-\end{itemize}
+    % ---------- chart images, left ----------
+    \begin{scope}[shift={(-11.5,3.2)}]
+        \draw (-0.3,0) -- (4.0,0);
+        \draw (0,-0.3) -- (0,3.0);
+        \node at (3.9,2.7) {$ \mathbb{R}^n$};
+        \draw (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+        \begin{scope}
+            \clip (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+            \foreach \i in {0.7,0.9,...,2.4} \draw[gray] (0.5,\i) -- (3.6,\i);
+        \end{scope}
+        \node at (2.0,1.5) {$ \tilde{x}(\times)$};
+    \end{scope}
 
-Equation \eqref{conservation_law} is fundamental and appears repeatedly throughout the course.
+    \begin{scope}[shift={(-11.5,-5.4)}]
+        \draw (-0.3,0) -- (4.0,0);
+        \draw (0,-0.3) -- (0,3.0);
+        \node at (3.9,2.7) {$ \mathbb{R}^n$};
+        \draw (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+        \begin{scope}
+            \clip (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+            \foreach \i in {0.7,0.9,...,2.4} \draw[gray] (0.5,\i) -- (3.6,\i);
+        \end{scope}
+        \node at (2.0,1.5) {$ x(\times)$};
+    \end{scope}
 
-\section{Practical Applications}
+    \draw[->] (-1.2,0.9) .. controls (-4.0,2.6) .. (-7.8,4.4) node[midway, above] {$ \tilde{x}$};
+    \draw[->] (-1.2,-0.6) .. controls (-4.0,-2.2) .. (-7.8,-4.2) node[midway, below] {$ x$};
+    \draw[->] (-9.5,-2.3) -- (-9.5,2.3);
+    \node[left] at (-9.6,0) {$ \tilde{x} \circ x^{-1}$};
 
-\subsection{Application 1: [Your Application]}
+    % ---------- chart images, right ----------
+    \begin{scope}[shift={(17.5,3.2)}]
+        \draw (-0.3,0) -- (4.0,0);
+        \draw (0,-0.3) -- (0,3.0);
+        \node at (3.9,2.7) {$ \mathbb{R}^m$};
+        \draw (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+        \begin{scope}
+            \clip (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+            \foreach \i in {0.7,0.9,...,2.4} \draw[gray] (0.5,\i) -- (3.6,\i);
+        \end{scope}
+        \node at (2.0,1.5) {$ \tilde{y}(\phi(\times))$};
+    \end{scope}
 
-Consider a specific example where the concepts apply:
+    \begin{scope}[shift={(17.5,-5.4)}]
+        \draw (-0.3,0) -- (4.0,0);
+        \draw (0,-0.3) -- (0,3.0);
+        \node at (3.9,2.7) {$ \mathbb{R}^m$};
+        \draw (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+        \begin{scope}
+            \clip (2.0,1.5) circle [x radius=1.3, y radius=0.85];
+            \foreach \i in {0.7,0.9,...,2.4} \draw[gray] (0.5,\i) -- (3.6,\i);
+        \end{scope}
+        \node at (2.0,1.5) {$ y(\phi(\times))$};
+    \end{scope}
 
-\begin{equation}
-    \text{Application 1} \quad \rightarrow \quad \text{Result}
-    \label{eq:application1}
-\end{equation}
+    \draw[->] (16.2,0.9) .. controls (18.0,2.6) .. (19.5,4.4) node[midway, above] {$ \tilde{y}$};
+    \draw[->] (16.2,-0.6) .. controls (18.0,-2.2) .. (19.5,-4.2) node[midway, below] {$ y$};
+    \draw[->] (22.6,2.3) -- (22.6,-2.3);
+    \node[right] at (22.7,0) {$ y \circ \tilde{y}^{-1}$};
 
-The physical significance is that [explain the meaning].
+\end{tikzpicture}
+\caption*{Fig: Amateur's depiction of a diffeomorphism $ \phi$}
+\end{figure}
 
-\subsection{Application 2: [Your Application]}
+\begin{definition}
+    Diffeomorphism :=
 
-Another important application involves:
-
-\begin{equation}
-    \text{Condition} \quad \Rightarrow \quad \text{Consequence}
-    \label{eq:application2}
-\end{equation}
-
-This demonstrates how [explain the broader context].
-
-\section{Worked Examples}
-
-\begin{example}[Simple Calculation]
-    \label{ex:simple_calc}
-    
-    Given: $\bv{u} = (1, 2, 3)$ and $\bv{v} = (4, 5, 6)$
-    
-    Find: $\bv{u} \cdot \bv{v}$
-    
-    \textit{Solution:}
-    \begin{align}
-        \bv{u} \cdot \bv{v} &= (1)(4) + (2)(5) + (3)(6) \\
-        &= 4 + 10 + 18 \\
-        &= 32
-    \end{align}
-\end{example}
-
-\begin{example}[Complex Problem]
-    \label{ex:complex_calc}
-    
-    This more involved example demonstrates integration of multiple concepts. [Provide detailed walkthrough]
-\end{example}
-
-\section{Summary and Key Takeaways}
-
-\begin{itemize}
-    \item \textbf{Key Point 1:} [Main concept from section 1]
-    \item \textbf{Key Point 2:} [Main concept from section 2]
-    \item \textbf{Key Point 3:} [Connection to later material]
-\end{itemize}
-
-These foundational concepts will be essential for understanding the more advanced material in subsequent chapters.
-
-\section{Exercises}
-
-\begin{enumerate}
-    \item \textbf{Basic:} [Simple computational problem]
-    \item \textbf{Intermediate:} [Problem requiring multiple concepts]
-    \item \textbf{Advanced:} [Challenge problem extending the theory]
-    \item \textbf{Proof:} [Problem asking to prove a related result]
-\end{enumerate}
-
-\section{Further Reading}
-
-For deeper understanding of the topics covered in this chapter, consult:
-\begin{itemize}
-    \item [Reference 1] - Good introduction to [topic]
-    \item [Reference 2] - Comprehensive treatment of [topic]
-    \item [Reference 3] - Advanced material on [topic]
-\end{itemize}
-
-%\newpage  % Uncomment to force new page for next chapter
-
-\end{comment}
-
-
-
-
-
+    $ \phi: M \longrightarrow N$ be smooth map between smooth mfds. M and N. If $ \phi^{-1}: N \longrightarrow M$ is also smooth, then we call $ \phi$ a diffeomorphism. Diffeomorphism is the structure preserving map between smooth manifolds.
+\end{definition}
 
 
 
@@ -316,7 +719,7 @@ I will define this using coordinate basis. For derivatives, we need n-form field
 \end{align*}
 
 
-To see the components of dA, we expand the RHS of \cref{exterior_derivative_defined}. $ dA = \frac{1}{p!} \partial_m A_{a_1...a_p} dx^m \wedge dx^{a_1} \wedge ...dx^{a_p}$. So the $ \tt{dA}{}{ma_1...a_p}$ component of $ dA$ is given by $ \frac{1}{ \lera{p+1}!} \tt{dA}{}{ma_1...a_p}= \frac{1}{p!} \partial_m \tt{A}{}{a_1...a_p} \implies \tt{dA}{}{ma_1...a_p}= \lera{p+1} \partial_m \tt{A}{}{a_1...a_p} $ .
+To see the components of dA, we expand the RHS of \cref{exterior_derivative_defined}. $ dA = \frac{1}{p!} \partial_m A_{a_1...a_p} dx^m \wedge dx^{a_1} \wedge ...dx^{a_p} = \frac{ \lera{p+1}!}{p!} \partial_m \tt{A}{}{a_1...a_p} dx^{[m} \otimes dx^{a_1} \otimes...\otimes dx^{a_p]} = \lera{p+1}\partial_{[m} \tt{A}{}{a_1...a_p]} dx^{m} \otimes dx^{a_1} \otimes...\otimes dx^{a_p}$ . So the $ \tt{dA}{}{ma_1...a_p}$ component of $ dA$ is given by $ \tt{dA}{}{ma_1...a_p}= \lera{p+1} \partial_{[m} \tt{A}{}{a_1...a_p]} $ .
 
 
 We reiterate here that the RHS of \cref{exterior_derivative_defined} is a tensor by definition ( exterior derivative of a function is a 1-form and wedge product of differential 1-forms is also a differential form).It is quite fascinating that a fully covariant notion of derivative can be cooked up from using only coordiante based partial derivative. 
@@ -349,8 +752,129 @@ We reiterate here that the RHS of \cref{exterior_derivative_defined} is a tensor
 
 
 \section{Integration on a Manifold}
+The following are  very rough sketchy stuff. I was trying to do this and spent an awful lot of time without understanding much. Right now I am just keeping my stuff here and later on I will actually flesh them out.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Orientation and Volume Form}
+
+I will, for the time being, use $ \eta$ for volume forms.
+
+$ \varepsilon$ will indicate Levi-Civita symbol.
+
+Canonical n-form, i.e. the volume form,
+
+\begin{align*}
+    & \ol{M}{\eta} = \sqrt{|g|} \; \varepsilon \\
+\end{align*}
+
+A clever way to write the Levi-Civita symbol is,
+
+\begin{align*}
+    & \tt{\varepsilon}{}{a_1 \ldots a_n} = n! \; \kron{1}{[a_1} \kron{2}{a_2} \kron{3}{a_3} \ldots \kron{n}{a_n]} \\
+\end{align*}
+
+\begin{align*}
+    & \tt{\ol{M}{\eta}}{}{a_1 \ldots a_n} = n! \sqrt{|g|} \; \kron{1}{[a_1} \ldots \kron{n}{a_n]} \\
+\end{align*}
+
+\begin{align*}
+    \tt{\ol{M}{\eta}}{a_1 \ldots a_n}{} &= \tt{g}{a_1 b_1}{} \ldots \tt{g}{a_n b_n}{} \; \tt{\ol{M}{\eta}}{}{b_1 \ldots b_n} \\
+    &= \tt{g}{a_1 b_1}{} \ldots \tt{g}{a_n b_n}{} \; n! \sqrt{|g|} \; \kron{1}{[b_1} \ldots \kron{n}{b_n]} \\
+    & \lera{ \text{supply the argument here}} \\
+    &= (-1)^s \; n! \sqrt{|g|} \; \kron{[a_1}{1} \ldots \kron{a_n]}{n} \\
+\end{align*}
+
+Again, supply $ \longrightarrow$
+
+\begin{align*}
+    & \tt{\ol{M}{\eta}}{ab \ldots d}{} \; \tt{\ol{M}{\eta}}{}{ef \ldots h} = (-1)^s \; n! \; \kron{a}{[e} \kron{b}{f} \ldots \kron{d}{h]} \\
+\end{align*}
+
+\begin{align*}
+    & \tt{\ol{M}{\eta}}{ab \ldots d}{} \; \tt{\ol{M}{\eta}}{}{ab \ldots d} = (-1)^s \; n! \lera{ \text{supply the const.}} \\
+\end{align*}
+
+\begin{align*}
+    & \nabla_m \tt{\ol{M}{\eta}}{a \ldots b}{} = 0 = \nabla_m \tt{\ol{M}{\eta}}{}{a \ldots b} \qquad \lera{ \text{show}} \\
+\end{align*}
+
+Say I have a vector $ \tt{X}{a}{}$.
+
+Define an $ \lera{ n-1}$-form $ \alpha$ by,
+
+\begin{align*}
+    & \tt{\alpha}{}{a_1 \ldots a_{n-1}} = \tt{\ol{M}{\eta}}{}{b a_1 \ldots a_{n-1}} \tt{v}{b}{} \\
+\end{align*}
+
+\begin{align*}
+    \tt{ \lera{ d \alpha}}{}{c a_1 \ldots a_{n-1}} &= n \nabla_{[c} \tt{\alpha}{}{a_1 \ldots a_{n-1}]} \\
+    &= n \nabla_{[c} \lera{ \tt{\ol{M}{\eta}}{}{|b| a_1 \ldots a_{n-1}]} \tt{v}{b}{}} \\
+    &= n \tt{\ol{M}{\eta}}{}{b [a_1 \ldots a_{n-1}} \nabla_{c]} \tt{v}{b}{} \\
+\end{align*}
+
+Also,
+
+\begin{align*}
+    & \tt{ \lera{ d \alpha}}{}{c a_1 \ldots a_{n-1}} = h \tt{\ol{M}{\eta}}{}{c a_1 \ldots a_{n-1}} \\
+    & \implies n \tt{\ol{M}{\eta}}{}{b [a_1 \ldots a_{n-1}} \nabla_{c]} \tt{v}{b}{} = h \tt{\ol{M}{\eta}}{}{c a_1 \ldots a_{n-1}} \\
+\end{align*}
+
+Again show this yourself. How to go from (B.2.20) to (B.2.21)
+
+Finally, $ d \alpha = \lera{ \nabla_a \tt{v}{a}{}} \ol{M}{\eta}$
+
+Stokes $ \implies$
+
+\begin{align*}
+    & \int_V \lera{ \nabla_a \tt{v}{a}{}} \ol{M}{\eta} = \int_{\partial V} \alpha := \int_{\partial V} \phi^* \lera{ \bar{\alpha}} \\
+\end{align*}
+
+Here $ \bar{\alpha}$ = the $ \lera{ n-1}$-form $ \alpha$ restricted to act only on vectors $ X \in \mathcal{T} $.
+
+Now, let me take the following Gaussian Normal coordinates.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
