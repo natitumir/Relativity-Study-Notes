@@ -865,30 +865,7 @@ Now, let me take the following Gaussian Normal coordinates.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Non-coordinate Basis and Tetrad Formalism}
+\subsubsection{Non-coordinate Basis and Tetrad Formalism}
 
 For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. 
 
@@ -976,73 +953,76 @@ It is nice to see how handy the tensor index gymnastics can be. It is almost lik
 Since $ \tt{E}{}{ \mu}$ is a field (at least in a chart U), I can take the covariant derivative of it wrt the basis vector fields of that chart. The result will have to be another vector field and can be expanded in terms of $ \{ \tt{E}{}{ \mu}\}$.
 
 \begin{align*}
-    &\cov{ \tt{E}{}{ \mu}}{ \partial_a} = \omega_ \mu {}^ \nu {}_a \tt{E}{}{ \nu} \\
+    &\cov{ \tt{E}{}{ \mu}}{ \partial_a} = \tt{ \omega}{ \nu}{ \mu a} \tt{E}{}{ \nu} \\
 \end{align*}
 
-We can show that although $ \omega_\mu{}^\nu{}_a$ is a 1-form in the index a, it is not a tensor in the indices $ \mu$ and $ \nu$. First, notice that the definition of $ \omega_\mu{}^\nu{}_a$ can be given as, $ \omega_\mu{}^\nu{}_a=\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_a}}$. Now, say I change the chart, but not the frame $ \{ \tt{E}{}{ \mu}\}$. So,
+We can show that although $ \tt{\omega}{\nu}{\mu a}$ is a 1-form in the index a, it is not a tensor in the indices $ \mu$ and $ \nu$. First, notice that the definition of $ \tt{\omega}{\nu}{\mu a}$ can be given as, $ \tt{\omega}{\nu}{\mu a}=\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_a}}$. Now, say I change the chart, but not the frame $ \{ \tt{E}{}{ \mu}\}$. So,
 
 \begin{align*}
-    \omega_ \mu{}^ \nu{}_{a'} =& \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial'_a}}\\
+    \tt{\omega}{\nu}{\mu a'} =& \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial'_a}}\\
     =&\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \lera{ \pp{ x^m}{x'^a} \partial_m}}}\\
     =&\tt{E}{ \nu}{} \lera{ \pp{ x^m}{x'^a}\cov{ \tt{E}{}{ \mu}}{  \partial_m}}\\ 
     =& \pp{ x^m}{x'^a}  \tt{E}{ \nu}{}\lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_m}}\\
-    =& \pp{ x^m}{x'^a} \omega_\mu{}^\nu{}_m
+    =& \pp{ x^m}{x'^a} \tt{\omega}{\nu}{\mu m}
 \end{align*}
 
-This proves that $ \omega_\mu{}^\nu{}_a$ is a 1-form in the index a. To show that it is NOT a tensor in the Greek indices, I now change only the frame and not the chart, then,
+This proves that $ \tt{\omega}{\nu}{\mu a}$ is a 1-form in the index a. To show that it is NOT a tensor in the Greek indices, I now change only the frame and not the chart, then,
 
 \begin{align*}
-    \omega_{\mu'}{}^{ \nu'}{}_a &= \tt{E'}{ \nu}{} \lera{ \cov{ \tt{E'}{}{ \mu}}{ \partial_a}} \\
+    \tt{\omega}{\nu'}{\mu' a} &= \tt{E'}{ \nu}{} \lera{ \cov{ \tt{E'}{}{ \mu}}{ \partial_a}} \\
     &= \tt{ \Lambda}{ \nu}{ \alpha} \tt{E}{ \alpha}{} \lera{ \cov{ \lera{ \Lambda_ \mu{}^ \beta E_ \beta}}{ \partial_a}} \\
-    &= \tt{ \Lambda}{ \nu}{ \alpha} \tt{E}{ \alpha}{} \lera{ \Lambda_ \mu{^ \beta }}
+    &= \tt{ \Lambda}{ \nu}{ \alpha} \tt{E}{ \alpha}{} \lera{ \Lambda_ \mu{^ \beta } \cov{\tt{E}{}{\beta}}{a}+ \tt{E}{}{\beta} \cov{\du{\Lambda}{\mu}{\beta}}{a}}\\
+     &= \tt{ \Lambda}{ \nu}{ \alpha} \tt{E}{ \alpha}{} \lera{ \Lambda_ \mu{^ \beta } \tt{\omega}{\rho}{\beta a} \tt{E}{}{\rho}+ \tt{E}{}{\beta} \cov{\du{\Lambda}{\mu}{\beta}}{a}}\\
+     &= \tt{\Lambda}{ \nu}{\alpha} \du{\Lambda}{\mu}{\beta} \tt{\omega}{\rho}{\beta a} \kron{\alpha}{\rho}+ \tt{\Lambda}{\nu}{\alpha} \partial_a \du{\Lambda}{\mu}{\beta} \kron{\alpha}{\beta}\\
+     &= \tt{\Lambda}{ \nu}{\alpha} \du{\Lambda}{\mu}{\beta} \tt{\omega}{\alpha}{\beta a}+ \tt{\Lambda}{\nu}{\alpha} \partial_a \du{\Lambda}{\mu}{\alpha} \\
 \end{align*}
-
+The last term shows the inhomogenous nature of the transformation of $ \tt{\omega}{\nu}{\mu a}$ under LT of the frame.
 
 \textcolor{blue}{Write down expressions for $ \cov{ \tt{A}{ \mu}{}}{\nu}$ just like you know how to write $ \cov{ A^a}{ m}$ etc.}
 
-One immediate inquiry is the expression of $ \dud{ \omega}{ \mu}{ \nu }{a}$ in terms of $ \cris{a}{bc}$. We know that, 
+One immediate inquiry is the expression of $ \tt{\omega}{\nu}{\mu a}$ in terms of $ \cris{a}{bc}$. We know that, 
 
 \begin{align*}
     &\cov{ \tt{A}{ \mu}{}}{ a} = \cov{ A^b}{a} \tt{E}{ \mu}{b} \\
-    & \partial_a \lera{ \tt{A}{ \mu}{}} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{A}{ \rho}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
-    & \partial_a \lera{ \tt{E}{ \mu}{m} A^m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{A}{ \rho}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
-    & \partial_a \lera{ \tt{E}{ \mu}{m} A^m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m}\tt{A}{ m}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
-    & \tt{A}{ m}{} \partial_a \tt{E}{ \mu}{m} + \tt{E}{ \mu}{m} \partial_a \tt{A}{m}{} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m}\tt{A}{ m}{} = \tt{E}{ \mu}{m } \partial_a \tt{A}{m}{} + \cris{n}{ ma} \tt{E}{ \mu}{n} \tt{A}{m}{}\\
-    & \tt{A}{ m}{} \partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m}\tt{A}{ m}{} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \tt{A}{m}{}\\
-    &  \partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \\
+    & \partial_a \lera{ \tt{A}{ \mu}{}} + \tt{\omega}{\mu}{\rho a} \tt{A}{ \rho}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
+    & \partial_a \lera{ \tt{E}{ \mu}{m} A^m} + \tt{\omega}{\mu}{\rho a} \tt{A}{ \rho}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
+    & \partial_a \lera{ \tt{E}{ \mu}{m} A^m} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m}\tt{A}{ m}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
+    & \tt{A}{ m}{} \partial_a \tt{E}{ \mu}{m} + \tt{E}{ \mu}{m} \partial_a \tt{A}{m}{} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m}\tt{A}{ m}{} = \tt{E}{ \mu}{m } \partial_a \tt{A}{m}{} + \cris{n}{ ma} \tt{E}{ \mu}{n} \tt{A}{m}{}\\
+    & \tt{A}{ m}{} \partial_a \tt{E}{ \mu}{m} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m}\tt{A}{ m}{} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \tt{A}{m}{}\\
+    &  \partial_a \tt{E}{ \mu}{m} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \\
     & \text{Now simply multiply by $ \du{E}{ \nu}{m}$ on both sides.}\\
-    &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \tt{E}{ \rho}{m}\du{E}{ \nu}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
-    &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \dud{ \omega}{ \rho}{ \mu}{a} \kron{ \rho}{ \nu} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
-    & \dud{ \omega}{ \nu}{ \mu}{a} = \cris{n}{ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m} - \partial_a \tt{E}{ \mu}{m} \;\; \du{ E}{ \nu}{m} \numberthis \label{ omegaintermsofcris}\\
+    &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m}\du{E}{ \nu}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
+    &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \tt{\omega}{\mu}{\rho a} \kron{ \rho}{ \nu} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
+    & \tt{\omega}{\mu}{\nu a} = \cris{n}{ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m} - \partial_a \tt{E}{ \mu}{m} \;\; \du{ E}{ \nu}{m} \numberthis \label{ omegaintermsofcris}\\
 \end{align*}
 
 
 Similarly, multiplying both sides of \cref{ omegaintermsofcris} with $ \du{E}{ \mu}{p} \tt{E}{ \nu}{q}$ so that the two E's with the Christoffel symbol becomes Kronecker deltas and ultimately go away, 
 
 \begin{align*}
-    &\dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \du{E}{ \mu}{p } \tt{E}{ \mu}{n} \du{E}{ \nu}{m} \tt{E}{ \nu}{q} - \partial_a \tt{E}{ \mu}{m} \; \du{E}{ \nu}{m} \tt{E}{ \nu}{q} \du{E}{ \mu}{p} \\
-    & \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \kron{p}{n} \kron{m}{q} - \partial_a \tt{E}{ \mu}{m} \kron{m}{q} \du{E}{ \mu}{p} \\
-    & \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q}= \cris{p}{qa} - \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
-    & \cris{p}{qa} = \dud{ \omega}{ \nu}{ \mu}{a } \du{E}{ \mu}{p} \tt{E}{ \nu}{q} + \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
+    &\tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \du{E}{ \mu}{p } \tt{E}{ \mu}{n} \du{E}{ \nu}{m} \tt{E}{ \nu}{q} - \partial_a \tt{E}{ \mu}{m} \; \du{E}{ \nu}{m} \tt{E}{ \nu}{q} \du{E}{ \mu}{p} \\
+    & \tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \kron{p}{n} \kron{m}{q} - \partial_a \tt{E}{ \mu}{m} \kron{m}{q} \du{E}{ \mu}{p} \\
+    & \tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q}= \cris{p}{qa} - \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
+    & \cris{p}{qa} = \tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q} + \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
     & \text{Just replace p with m, q with n, and swap $ \mu$ and $ \nu$} \\
-    & \cris{m}{na} = \dud{ \omega}{ \mu}{ \nu}{a} \du{E}{ \nu}{ m} \tt{E}{ \mu}{n} + \partial_a \tt{E}{ \nu}{n} \; \du{E}{ \nu}{m} \numberthis \label{crisintermsofomega} \\
+    & \cris{m}{na} = \tt{\omega}{\nu}{\mu a} \du{E}{ \nu}{ m} \tt{E}{ \mu}{n} + \partial_a \tt{E}{ \nu}{n} \; \du{E}{ \nu}{m} \numberthis \label{crisintermsofomega} \\
 \end{align*}
 
 
-This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the frame basis instead of coordinate basis. That is, while a connection one form $ \dud{ \omega}{ \mu}{ \nu}{a}$ has the 1-form index ``a'' from the frame basis, the Ricci rotation coefficient $ \dud{ \omega}{ \mu}{ \nu}{ \rho}$ is the connection 1 form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
+This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the frame basis instead of coordinate basis. That is, while a connection one form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the frame basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1 form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
 
 \begin{align*}
-    &\dud{ \omega}{ \mu}{ \nu}{ \rho} = \dud{ \omega}{ \mu}{ \nu}{ a} \du{E}{ \rho}{a} \numberthis \label{riccirotationdefined}
+    &\tt{\omega}{\nu}{\mu \rho} = \tt{\omega}{\nu}{\mu a} \du{E}{ \rho}{a} \numberthis \label{riccirotationdefined}
 \end{align*}
 
-Another way to express the Ricci rotation coefficient is, $ \dud{ \omega}{ \mu}{ \nu}{ \rho} = \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \tt{E}{}{ \rho}}}$. We can quickly see that as follows, by starting with the RHS,
+Another way to express the Ricci rotation coefficient is, $ \tt{\omega}{\nu}{\mu \rho} = \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \tt{E}{}{ \rho}}}$. We can quickly see that as follows, by starting with the RHS,
 
 \begin{align*}
     \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \tt{E}{}{ \rho}}} &= \tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \lera{ \du{E}{ \rho}{m} \partial_m}}} \\
     &= \tt{E}{ \nu}{} \lera{ \du{E}{ \rho}{m} \cov{ \tt{E}{}{ \mu}}{ \partial_m}} \\
     &=  \du{E}{ \rho}{m}\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_m}} \\
-    &= \du{E}{ \rho}{m} \dud{ \omega}{ \mu}{ \nu}{m} \\
-    &= \dud{ \omega}{ \mu}{ \nu}{ \rho} \\
+    &= \du{E}{ \rho}{m} \tt{\omega}{\nu}{\mu m} \\
+    &= \tt{\omega}{\nu}{\mu \rho} \\
 \end{align*}
 
 
@@ -1054,13 +1034,13 @@ I will first simply define the Torsion and Curvature 2-forms, then show that the
 The torsion 2-form is defined as (suppressing the latin indices),
 
 \begin{align*}
-    \tt{T}{ \mu }{} = d \tt{E}{ \mu}{} + \du{ \omega}{ \nu}{ \mu} \wedge \tt{E}{ \nu}{}  \numberthis \label{torsionform}\\
+    \tt{T}{ \mu }{} = d \tt{E}{ \mu}{} + \tt{\omega}{\mu}{\nu} \wedge \tt{E}{ \nu}{}  \numberthis \label{torsionform}\\
 \end{align*}
 
 The curvature 2-form is defined as (again, supressing the latin indices),
 
 \begin{align*}
-    \tt{R}{ \mu}{ \nu} = d \du{ \omega}{ \nu}{ \mu} + \du{ \omega}{ \alpha}{ \mu} \wedge \du{ \omega}{ \nu}{ \alpha}  \numberthis \label{curvatureform}\\
+    \tt{R}{ \mu}{ \nu} = d \tt{\omega}{\mu}{\nu} + \tt{\omega}{\mu}{\alpha} \wedge \tt{\omega}{\alpha}{\nu}  \numberthis \label{curvatureform}\\
 \end{align*}
 
 
@@ -1068,7 +1048,7 @@ The curvature 2-form is defined as (again, supressing the latin indices),
 To show that the definition of torsion form works, start with expanding the RHS of \cref{torsionform},
 
 \begin{align*}
-    d \tt{E}{ \mu}{ab} + \left( \du{ \omega}{ \nu}{ \mu} \wedge \tt{E}{ \nu } \right)_{ab} &= \partial_a \tt{E}{ \mu}{b} - \partial_b \tt{E}{ \mu}{a} + \dud{ \omega }{ \nu}{ \mu}{a } \tt{E}{ \nu}{b}-\dud{ \omega }{ \nu}{ \mu}{b } \tt{E}{ \nu}{a} \numberthis \label{torsionform_rhs_expanded} \\
+    d \tt{E}{ \mu}{ab} + \left( \tt{\omega}{\mu}{\nu} \wedge \tt{E}{ \nu } \right)_{ab} &= \partial_a \tt{E}{ \mu}{b} - \partial_b \tt{E}{ \mu}{a} + \tt{\omega}{\mu}{\nu a} \tt{E}{ \nu}{b}-\tt{\omega}{\mu}{\nu b} \tt{E}{ \nu}{a} \numberthis \label{torsionform_rhs_expanded} \\
 \end{align*}
 
 
@@ -1080,12 +1060,12 @@ Now, \begin{align*}
     &= \tt{E}{ \mu}{ } \lera{ \cris{m}{ba} \tt{E}{ \nu}{m} \tt{E}{}{ \nu}} - \lera{ a \leftrightarrow b}\\
     &=\cris{m}{ba} \tt{E}{ \nu}{m} \kron{ \mu}{ \nu} - \lera{ a \leftrightarrow b}\\
     &=\cris{m}{ba} \tt{E}{ \mu}{m} - \lera{ a \leftrightarrow b}\\
-    &= \tt{E}{ \mu}{m } \lera{ \dud{ \omega}{ \alpha}{ \beta}{a} \du{E}{ \beta}{ m} \tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \; \du{E}{ \beta}{m}} - \lera{ a \leftrightarrow b}\\ 
-    &= \dud{ \omega}{ \alpha}{ \beta}{a} \tt{E}{ \mu}{m} \du{E}{ \beta}{m } \tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \;\tt{E}{ \mu}{m} \du{E}{ \beta}{m} - \lera{ a \leftrightarrow b}\\
-    &= \dud{ \omega}{ \alpha}{ \beta}{a} \kron{ \mu}{ \beta}\tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \; \kron{ \mu}{ \beta} - \lera{ a \leftrightarrow b}\\
-    &= \partial_a \tt{E}{ \mu}{b} +\dud{ \omega}{ \alpha}{ \mu}{a} \tt{E}{ \alpha}{b} - \lera{ a \leftrightarrow b}\\
-    &= \partial_a \tt{E}{ \mu}{b} +\dud{ \omega}{ \nu}{ \mu}{a} \tt{E}{ \nu}{b} -\partial_b \tt{E}{ \mu}{a} -\dud{ \omega}{ \nu}{ \mu}{b} \tt{E}{ \nu}{a} \\
-    &=\partial_a \tt{E}{ \mu}{b}-\partial_b \tt{E}{ \mu}{a}+\dud{ \omega}{ \nu}{ \mu}{a} \tt{E}{ \nu}{b}-\dud{ \omega}{ \nu}{ \mu}{b} \tt{E}{ \nu}{a}\\
+    &= \tt{E}{ \mu}{m } \lera{ \tt{\omega}{\beta}{\alpha a} \du{E}{ \beta}{ m} \tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \; \du{E}{ \beta}{m}} - \lera{ a \leftrightarrow b}\\ 
+    &= \tt{\omega}{\beta}{\alpha a} \tt{E}{ \mu}{m} \du{E}{ \beta}{m } \tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \;\tt{E}{ \mu}{m} \du{E}{ \beta}{m} - \lera{ a \leftrightarrow b}\\
+    &= \tt{\omega}{\beta}{\alpha a} \kron{ \mu}{ \beta}\tt{E}{ \alpha}{b} + \partial_a \tt{E}{ \beta}{b} \; \kron{ \mu}{ \beta} - \lera{ a \leftrightarrow b}\\
+    &= \partial_a \tt{E}{ \mu}{b} +\tt{\omega}{\mu}{\alpha a} \tt{E}{ \alpha}{b} - \lera{ a \leftrightarrow b}\\
+    &= \partial_a \tt{E}{ \mu}{b} +\tt{\omega}{\mu}{\nu a} \tt{E}{ \nu}{b} -\partial_b \tt{E}{ \mu}{a} -\tt{\omega}{\mu}{\nu b} \tt{E}{ \nu}{a} \\
+    &=\partial_a \tt{E}{ \mu}{b}-\partial_b \tt{E}{ \mu}{a}+\tt{\omega}{\mu}{\nu a} \tt{E}{ \nu}{b}-\tt{\omega}{\mu}{\nu b} \tt{E}{ \nu}{a}\\
     & \text{This matches with \cref{torsionform_rhs_expanded}}
 \end{align*}
 
@@ -1093,4 +1073,24 @@ Now, \begin{align*}
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
