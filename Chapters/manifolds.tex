@@ -944,11 +944,24 @@ To summarize, we have the following rules,
 \end{tcolorbox}
 
 
-It is nice to see how handy the tensor index gymnastics can be. It is almost like a magic. 
+It is nice to see how handy the tensor index gymnastics can be. It is almost like a magic. I can go back and forth between a tensor with its compoenet/s taken in the coordinate basis or the frame basis. For example, say I have a (2,0) tensor $\tt{A}{}{}$. Then, $ \tt{A}{ \mu m}{}= \tt{A}{nm}{} \tt{E}{\mu}{n}$ , $\tt{A}{m \mu}{}= \tt{A}{ \alpha \mu}{} E_\alpha{}^m$ etc. We can easily show these two, and we hope this is enough to convince a normal person about the general validity of this method. 
+
+\begin{align*}
+    \tt{A}{\mu m }{} &= A \lera{E^\mu, dx^m} \\
+    &= A \lera{E^\mu{}_n dx^n, dx^m} \\
+    &= E^\mu{}_n A \lera{dx^n, dx^m} \\
+    &= E^\mu{}_n A^{nm} \\
+\end{align*}
+and , for the second equality,
+
+\begin{align*}
+    \tt{A}{m \mu}{} &= A \lera{dx^m, E^\mu} \\
+    &= A \lera{E_\nu{}^m E^\nu, E^\mu} \\
+    &= 
+\end{align*}
 
 
-
-\subsubsection{Connection 1-form and Ricci Rotation Coefficient}
+\subsection{Connection 1-form and Ricci Rotation Coefficient}
 
 Since $ \tt{E}{}{ \mu}$ is a field (at least in a chart U), I can take the covariant derivative of it wrt the basis vector fields of that chart. The result will have to be another vector field and can be expanded in terms of $ \{ \tt{E}{}{ \mu}\}$.
 
@@ -980,10 +993,16 @@ The last term shows the inhomogenous nature of the transformation of $ \tt{\omeg
 
 \textcolor{blue}{Write down expressions for $ \cov{ \tt{A}{ \mu}{}}{\nu}$ just like you know how to write $ \cov{ A^a}{ m}$ etc.}
 
+Now, just as we know how to expand $ \cov{\tt{A}{a}{}}{b}$ in terms of a partial derivative and Christoffel symbol, we can derive a similar expression for $\cov{\tt{A}{\mu }{}}{m}$. To do so, notice that $ \cov{\tt{A}{\mu}{}}{m}$ is defined as $ \tt{E}{\mu}{}\lera{ \cov{A}{\partial_m}}= \tt{E}{\mu}{} \lera{\cov{\lera{\tt{A}{\nu}{} \tt{E}{}{\nu}}}{\partial_m}}= \tt{E}{\mu}{}\lera{\tt{E}{}{\nu} \partial_m A^{\nu}+\tt{A}{\nu}{} \cov{\tt{E}{}{\nu}}{\partial_m}}= \tt{E}{\mu}{}\lera{\tt{E}{}{\nu} \partial_m A^{\nu}+ A^{\nu} \tt{\omega}{\rho}{\nu m } \tt{E}{}{\rho}}= \partial_m A^{\mu}+ \tt{\omega}{\mu}{\nu m } A^{\nu}$. So,
+
+\begin{align*}
+    \cov{A^{\mu}}{m} &= \partial_m A^{\mu}  +\tt{\omega}{\mu}{\nu m} \tt{A}{\nu}{} \\
+\end{align*}
+
 One immediate inquiry is the expression of $ \tt{\omega}{\nu}{\mu a}$ in terms of $ \cris{a}{bc}$. We know that, 
 
 \begin{align*}
-    &\cov{ \tt{A}{ \mu}{}}{ a} = \cov{ A^b}{a} \tt{E}{ \mu}{b} \\
+    &\cov{ \tt{A}{ \mu}{}}{ a} =  \lera{\cov{ A^b}{a}} \tt{E}{ \mu}{b}\\
     & \partial_a \lera{ \tt{A}{ \mu}{}} + \tt{\omega}{\mu}{\rho a} \tt{A}{ \rho}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
     & \partial_a \lera{ \tt{E}{ \mu}{m} A^m} + \tt{\omega}{\mu}{\rho a} \tt{A}{ \rho}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
     & \partial_a \lera{ \tt{E}{ \mu}{m} A^m} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m}\tt{A}{ m}{} = \lera{ \partial_a \tt{A}{b}{} + \cris{b}{ma} \tt{A}{m}{}} \tt{E}{ \mu }{b} \\
@@ -993,7 +1012,7 @@ One immediate inquiry is the expression of $ \tt{\omega}{\nu}{\mu a}$ in terms o
     & \text{Now simply multiply by $ \du{E}{ \nu}{m}$ on both sides.}\\
     &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \tt{\omega}{\mu}{\rho a} \tt{E}{ \rho}{m}\du{E}{ \nu}{m} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
     &\du{E}{ \nu}{m}\partial_a \tt{E}{ \mu}{m} + \tt{\omega}{\mu}{\rho a} \kron{ \rho}{ \nu} =  \cris{n}{ ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m}\\
-    & \tt{\omega}{\mu}{\nu a} = \cris{n}{ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m} - \partial_a \tt{E}{ \mu}{m} \;\; \du{ E}{ \nu}{m} \numberthis \label{ omegaintermsofcris}\\
+    & \tt{\omega}{\mu}{\nu a} = \cris{n}{ma} \tt{E}{ \mu}{n} \du{E}{ \nu}{m} - \lera{\partial_a \tt{E}{ \mu}{m}} \du{ E}{ \nu}{m} \numberthis \label{ omegaintermsofcris}\\
 \end{align*}
 
 
@@ -1005,11 +1024,11 @@ Similarly, multiplying both sides of \cref{ omegaintermsofcris} with $ \du{E}{ \
     & \tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q}= \cris{p}{qa} - \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
     & \cris{p}{qa} = \tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q} + \partial_a \tt{E}{ \mu}{q} \; \du{E}{ \mu}{p} \\
     & \text{Just replace p with m, q with n, and swap $ \mu$ and $ \nu$} \\
-    & \cris{m}{na} = \tt{\omega}{\nu}{\mu a} \du{E}{ \nu}{ m} \tt{E}{ \mu}{n} + \partial_a \tt{E}{ \nu}{n} \; \du{E}{ \nu}{m} \numberthis \label{crisintermsofomega} \\
+    & \cris{m}{na} = \tt{\omega}{\nu}{\mu a} \du{E}{ \nu}{ m} \tt{E}{ \mu}{n} + \lera{\partial_a \tt{E}{ \nu}{n} } \du{E}{ \nu}{m} \numberthis \label{crisintermsofomega} \\
 \end{align*}
 
 
-This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the frame basis instead of coordinate basis. That is, while a connection one form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the frame basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1 form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
+This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the frame basis instead of coordinate basis. That is, while a connection one form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the coordinate basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1-form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
 
 \begin{align*}
     &\tt{\omega}{\nu}{\mu \rho} = \tt{\omega}{\nu}{\mu a} \du{E}{ \rho}{a} \numberthis \label{riccirotationdefined}
@@ -1026,7 +1045,18 @@ Another way to express the Ricci rotation coefficient is, $ \tt{\omega}{\nu}{\mu
 \end{align*}
 
 
-\subsubsection{Tensor Valued Forms and Exterior Derivatives}
+
+\subsubsection{Properties of Ricci Rotation Coefficients}
+
+
+Several properties of Ricci Rotation coefficients are important to understand. 
+
+
+
+
+
+
+\subsection{Tensor Valued Forms and Exterior Derivatives}
 
 \subsubsection{Torsion and Curvature 2-forms}
 I will first simply define the Torsion and Curvature 2-forms, then show that these definitions work. There are other ways of arriving at these definitions that might be more direct, but since we have to memorize these anyways, I would simply state the definition without motivation. 
