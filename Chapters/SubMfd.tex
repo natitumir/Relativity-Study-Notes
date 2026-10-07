@@ -1,5 +1,3 @@
-
-
 \chapter{Submanifolds and Hypersurfaces}
 \label{ch:hypersurface}
 
@@ -227,7 +225,7 @@ This is as counterintuitive and hard to remember as possible. So we actually use
     \begin{cases}
         \tt{g}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} ; & \text{if } X,Y \text{ are tangent to S}\\
         0; & \text{if any of } X,Y \text{ are normal to S} 
-    \end{cases} \numberthis \label{hab_defiend} \\
+    \end{cases} \numberthis \label{hab_defined}
 \end{align*}
 
 
@@ -238,7 +236,7 @@ Let me show that the equivalence works. Lets say both X and Y are tangent to S. 
     &= \lera{ id^* \tt{g}{}{ab}} \lera{ \phi^{-1} \tt{X}{a}{}} \lera{ \phi^{-1} \tt{Y}{b}{}} \\
     &= \tt{g}{}{ab} \; id_* \lera{ \phi^{-1} \tt{X }{a}{}} \; id_* \lera{ \phi ^{-1} \tt{Y}{b}{}} \\
     &= \tt{g}{}{ab} \; \phi \lera{ \phi^{-1} \tt{X}{a}{}} \phi \lera{ \phi^{-1} \tt{Y}{b}{}} \\
-    &= \tt{g}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} \\
+    &= \tt{g}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} 
 \end{align*}
 
 
@@ -249,7 +247,7 @@ If any of X or Y is not tangent, then by virtue of $ h_{ab}$ being tangent to S,
 We define a perpendicular projection tensor $ k_{ab}$ too which is a smooth symmetric M-tensor field.
 
 \begin{align*}
-    k_{ab} = g_{ab} - h_{ab} \numberthis \label{kab_defined}\\
+    k_{ab} = g_{ab} - h_{ab} \numberthis \label{kab_defined}
 \end{align*}
 
 
@@ -357,7 +355,7 @@ For tensors fields tangent to S, and defined on S, we define the derivative oper
 \begin{align*}
     D_s \lera{aA^{mn} + bB^{mn}} &=  \tt{h}{p}{s} \tt{h}{m}{q} \tt{h}{n}{r} \nabla_p \lera{ aA^{qr}+bB^{qr}}\\
    &= a \tt{h}{p}{s} \tt{h}{m}{q} \tt{h}{n}{r} \nabla_p A^{qr}+ b \tt{h}{p}{s} \tt{h}{m}{q} \tt{h}{n}{r} \nabla_p B^{qr} \\
-   &= a \tt{D}{}{s} \tt{A}{mn}{} + b \tt{D}{}{s} \tt{A}{mn}{} \\
+   &= a \tt{D}{}{s} \tt{A}{mn}{} + b \tt{D}{}{s} \tt{B}{mn}{} 
 \end{align*}
 
 (D3)  $D_X \lera{U \otimes V} = \lera{D_X U} \otimes V + U \otimes D_X V$. This is a Consequence of the Leibniz rule for $ \nabla$. 
@@ -365,7 +363,7 @@ For tensors fields tangent to S, and defined on S, we define the derivative oper
 \begin{align*}
     D_m \lera{U^a V^b} &=  h^n_{\phantom{n}m} h^a_{\phantom{a}p} h^b_{\phantom{b}q} \nabla_n \lera{ U^p V^q} \\
     &= h^n_{\phantom{n}m} h^a_{\phantom{a}p} h^b_{\phantom{b}q} \lera{\nabla_n  U^p}  V^q + h^n_{\phantom{n}m} h^a_{\phantom{a}p} h^b_{\phantom{b}q} U^p \lera{\nabla_n  V^q}   \\
-    &= (D_m U^a)  V^b + U^a \lera{ D_m V^b} \\
+    &= (D_m U^a)  V^b + U^a \lera{ D_m V^b} 
 \end{align*}
 
 (D4)$D_X f = X^m D_m f = X^m h^n_{\phantom{n}m} \nabla_n f = X^m h^n_{\phantom{n}m} \nabla_n \overset{+}{f}$. Now imagine that we are at a point $ p \in S$ and working in a chart where only $X^1$ to $X^k$ is non-zero, i.e. $\{\partial_i\}_{(i=1,\ldots,k)}$ form a basis for $ \mathscr{T}_p$. So, in an expansion like $X^m \partial_m f$ if $m > k$ then it is zero. So, the derivatives of $\overset{+}{f}$ in normal directions to S does not matter, and we can do good enough with only $\partial_n f$ with $n = 1, \ldots, k$ as these are well defined even without the extension of $ f$. So, $D_X f = X^m h^n_{\phantom{n}m} \partial_n \overset{+}{f} = X^n \partial_n f = X(f)$. Since we are dealing with a scalar, it is true regardless of which chart I am using and the result is true chart independently. 
@@ -378,14 +376,14 @@ Another property of $ D $ is quite important. $ D$ is metric compatible in the f
 \end{proposition}
 
 \begin{proof}
-    \begin{align*}
+\begin{align*}
 	D_a h_{bc} &= \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \nabla_m h_{np} \\
 	&= \tt{h}{m}{a} \tt{h}{n}{b} \left[\nabla_m \lera{\tt{h}{p}{c} h_{np}} - h_{np} \nabla_m \tt{h}{p}{c}\right] \\
 	&= \tt{h}{m}{a} \tt{h}{n}{b} \lera{\nabla_m h_{cn} - h_{np} \nabla_m \tt{h}{p}{c}} \\
     &= \tt{h}{m}{a} \tt{h}{n}{b} \lera{\nabla_m h_{cn} - \tt{h}{p}{n} \nabla_m \tt{h}{}{cp}} \\
 	&= \tt{h}{m}{a} \tt{h}{n}{b} \nabla_m h_{cn} - \tt{h}{m}{a} \tt{h}{p}{b} \nabla_m h_{pc} \\
 	&= \tt{h}{m}{a} \tt{h}{n}{b} \nabla_m h_{nc} - \tt{h}{m}{a} \tt{h}{n}{b} \nabla_m h_{nc} \\
-    &= 0 \\
+    &= 0 
 \end{align*}
 \end{proof}
 
@@ -415,7 +413,7 @@ Based on this,
 	&= \omega_p \overset{+}{X^n} \nabla_n \overset{+}{Y^p} - \omega_p \overset{+}{Y^n} \nabla_n \overset{+}{X^p} - \omega_p [\overset{+}{X}, \overset{+}{Y}]^p \\
 	&= \omega_p \lera{\nabla_{\overset{+}{X}} \overset{+}{Y} - \nabla_{\overset{+}{Y}} \overset{+}{X} - [\overset{+}{X}, \overset{+}{Y}]}^p \\
 	&= \omega\lera{\nabla_{\overset{+}{X}} \overset{+}{Y} - \nabla_{\overset{+}{Y}} \overset{+}{X} - [\overset{+}{X}, \overset{+}{Y}]} \\
-	&= T\lera{\omega, \overset{+}{X}, \overset{+}{Y}} \quad \text{(where $T$ is regular torsion)} \\
+	&= T\lera{\omega, \overset{+}{X}, \overset{+}{Y}} \quad \text{(where $T$ is regular torsion)} 
 	&= 0
 \end{align*}
 \end{proof}
@@ -458,7 +456,7 @@ where $X = \phi(\tilde{X})$ and $T = \phi(\tilde{T})$. Our way to prove the prop
 \begin{align*}
 	\mathcal{D}_{\tilde{X}} f &= \phi^{-1}\lera{D_X f} \\
 	&= \phi^{-1}\lera{X(f)} \\
-	&= X(f) \quad \text{(since $X(f)$ is a scalar function)} \\
+	&= X(f) \quad \text{(since $X(f)$ is a scalar function)} 
 	&= \tilde{X}(f)
 \end{align*}
 Thinking about the meaning of a vector and the fact that both $\tilde{X}$ and $X$ are tangent vectors to the same curve will convince us of the last equality
@@ -502,14 +500,14 @@ We know that,
 
 \begin{align*}
     \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \cov{ \tt{h}{}{np}}{m} =0 \\
-    \tt{h}{m}{a} \tt{k}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} =0 \\
+    \tt{h}{m}{a} \tt{k}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} =0 
 \end{align*}
 
 
 However, the hhk projection, $\tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} $ is not zero and we define a new quantity, called the extrinsic curvature of S, as follows,
 
 \begin{align*}
-    \tt{K}{}{abc} = \tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} \\
+    \tt{K}{}{abc} = \tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} 
 \end{align*}
 
 
@@ -525,14 +523,14 @@ Before proving those equations, let me remind one useful way of characterizing t
 \begin{align*}
     [ \nabla_c \;, \nabla_d  ] v^a &= \tt{R}{a}{mcd} v^m  \\
     2 \nabla_{[c} \nabla_{d] } v^a &= \tt{R}{a}{mcd} v^m \\
-    \nabla_{[c} \nabla_{d] } v^a &=  \frac{1}{2} \tt{R}{a}{mcd} v^m \\
+    \nabla_{[c} \nabla_{d] } v^a &=  \frac{1}{2} \tt{R}{a}{mcd} v^m 
 \end{align*}
 
 
 This can also be generalized, in the following way. Say, $ \tt{T}{a}{b}$ is a (1,1) field. Then the antisymmetrized double covariant derivative on it can be expanded in temrs of the Riemann tensor as follows, 
 
 \begin{align*}
-    2 \nabla_{[c} \nabla_{d]} \tt{T}{a}{b} &= \tt{R}{a}{mcd} \tt{T}{m}{b}- \tt{R }{m}{bcd} \tt{T}{a}{m} \\
+    2 \nabla_{[c} \nabla_{d]} \tt{T}{a}{b} &= \tt{R}{a}{mcd} \tt{T}{m}{b}- \tt{R }{m}{bcd} \tt{T}{a}{m} 
 \end{align*}
 
 One final fact about the Riemann tensors that needs a reminder is, $ \tt{R}{}{abcd}= \tt{R}{}{cdab}$.
@@ -551,8 +549,8 @@ Now,
     &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \lera{ \nabla_m \tt{h}{q}{n}} \tt{h}{p}{r} \nabla_q v^r + \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \tt{h}{q}{n} \lera{ \nabla_m \tt{h}{p}{r}} \nabla_q v^r \\
     & + \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{p} \tt{h}{q}{n} \tt{h}{p}{r} \nabla_m \nabla_q v^r \\
     &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{r} \lera{ \nabla_m \tt{h}{q}{n} } \nabla_q v^r + \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{p} \lera{ \nabla_m \tt{h}{p}{r}} \nabla_q v^r \\
-    &+ \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{r} \nabla_m \nabla_q v^r \\\
-    & \lera{\text{ Mostly using  $ \tt{h}{a}{b} \tt{h}{b}{c}= \tt{h}{a}{c}$}} \numberthis \label{weird1}\\
+    &+ \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{r} \nabla_m \nabla_q v^r \\
+    & \lera{\text{ Mostly using  $ \tt{h}{a}{b} \tt{h}{b}{c}= \tt{h}{a}{c}$}} \numberthis \label{weird1}
 \end{align*}
 
 
@@ -593,7 +591,7 @@ Now, let's look at them term by term.
     &=- K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} \lera{ \tt{h}{t}{u} v^u} \\
     &= - K^{\;\;ar}_{[c} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{}{tr}} \lera{ \tt{h}{t}{u} v^u} \\
     &= -K^{\;\; ar}_{[c} \tt{h}{q}{d]} \tt{h}{t}{u} \lera{ \nabla_q h_{tr}} v^u \\
-    &= K^{\; \; ar}_{[c} K_{d]ur} v^u \\
+    &= K^{\; \; ar}_{[c} K_{d]ur} v^u 
 \end{align*}
 
 
@@ -603,21 +601,21 @@ Third Term:
     & \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{a}{r} \nabla_m \nabla_q v^r \\
     &= \tt{h}{m}{c} \tt{h}{q}{d} \tt{h}{a}{r} \nabla_{[m} \nabla_{q]} v^r \\
     &= \tt{h}{m}{c} \tt{h}{q}{d} \tt{h}{a}{r} \left(\frac{1}{2} \right) \tt{R}{r}{nmq} v^n \\
-    &= \frac{1}{2} \tt{R}{r}{nmq} \tt{h}{m}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^n \\
+    &= \frac{1}{2} \tt{R}{r}{nmq} \tt{h}{m}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^n 
 \end{align*}
 
 Collecting the terms, I get from \cref{weird1},
 
 \begin{align*}
     D_{[c} D_{d]}v^a &= \frac{1}{2} \tt{R}{r}{nmq} \tt{h}{m}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^n +K^{\; \; ar}_{[c} K_{d]ur} v^u \\
-    &= \frac{1}{2} \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^m +K^{\; \; ar}_{[c} K_{d]mr} v^m \\
+    &= \frac{1}{2} \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^m +K^{\; \; ar}_{[c} K_{d]mr} v^m 
 \end{align*}
 
 Now, from our earlier characterization of $ \tt{ \mathcal{R}}{}{} $, we have,
 
 \begin{align*}
     &\tt{ \mathcal{R}}{a}{mcd} v^m = 2 D_{[c} D_{d]}v^a \\
-    \implies&  \tt{ \mathcal{R}}{a}{mcd} v^m =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^m +2K^{\; \; ar}_{[c} K_{d]mr} v^m \\
+    \implies&  \tt{ \mathcal{R}}{a}{mcd} v^m =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} v^m +2K^{\; \; ar}_{[c} K_{d]mr} v^m 
 \end{align*}
 
 
@@ -635,7 +633,7 @@ Now, taking any vector $ \eta$, not necessarily tangent, and then taking the tan
     & \lera{ \text{$ r \leftrightarrow m $}} \\
     & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{p}{c } \tt{h}{q}{d} \tt{h}{a}{m} \tt{h}{n}{b}  +2K^{\; \; am}_{[c} K_{d]bm} \\
     & \lera{ \text{$ r \rightarrow n , n \rightarrow p$}} \\  
-    &  \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d}    +2K^{\; \; am}_{[c} K_{d]bm} \\
+    &  \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d}    +2K^{\; \; am}_{[c} K_{d]bm} 
 \end{align*}
 
 
@@ -654,7 +652,7 @@ To prove it, let's start with the LHS,
     &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \lera{ - \tt{h}{s}{a} \tt{h}{t}{b} \nabla_s h_{tc}}\\
     &= -\tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{s}{a}} \tt{h}{t}{b} \nabla_s \tt{h}{}{tc} - \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
     &- \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \tt{h}{t}{b} \nabla_m \nabla_s \tt{h}{}{tc} \\
-    & \equiv -A-B-C \text{  (Naming the three terms.)}\\
+    & \equiv -A-B-C \text{  (Naming the three terms.)}
 \end{align*}
 
 
@@ -665,7 +663,7 @@ Term A:
     &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{}{as}} \tt{h}{t}{b} \nabla^s \tt{h}{}{tc} \\
     &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{t}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{}{as}} \lera{ \nabla^s \tt{h}{}{tc}} \\
     &= - \tt{K}{}{[np]s} \tt{h}{t}{q} \tt{k}{c}{r} \nabla^s \tt{h}{}{tc} \\
-    &= 0 \\
+    &= 0 
 \end{align*}
 
 
@@ -682,7 +680,7 @@ Term B:
     &= - \tt{k}{tu}{} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{}{tc} \\ 
     &= - \tt{k}{t}{u} K^{\;\;\;u}_{[n\;\;\;|q|} \tt{h}{s}{p]} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
     &= - K^{\;\;\;u}_{[n\;\;\;|q|} \tt{h}{s}{p]} \tt{k}{t}{u} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
-    &= 0 \\
+    &= 0 
 \end{align*}
 
 
@@ -700,12 +698,12 @@ Term C:
    &= -\frac{1}{2} \lera{\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \lera{\tt{k}{c}{r} \tt{h}{u}{c}} \tt{R}{}{utms} +\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \tt{h}{u}{t} \tt{R}{}{ucms}} \\
    &= -\frac{1}{2} \lera{ 0 + \tt{h}{m}{n} \tt{h}{s}{p} \tt{h}{u}{q} \tt{k}{c}{r} \tt{R}{}{ucms} } \\
    &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{s}{p} \tt{h}{u}{q} \tt{k}{c}{r} \tt{R}{}{msuc} \\
-   &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} \\
+   &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} 
 \end{align*}
 
 In short, 
 \begin{align*}
-    \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} &= \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} \\
+    \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} &= \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} 
 \end{align*}
 
 
@@ -722,7 +720,7 @@ In short,
 
 \begin{align*}
     & \tt{h}{}{ab} = \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b} \numberthis \label{hab_explicit} \\
-    & \tt{k}{}{ab} = \varepsilon \tt{n}{}{a} \tt{n}{}{b} \numberthis \label{kab_explicit} \\
+    & \tt{k}{}{ab} = \varepsilon \tt{n}{}{a} \tt{n}{}{b} \numberthis \label{kab_explicit} 
 \end{align*}
  
 This is shown by testing this definition of $ \tt{h}{}{ab} = \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}$ against the main definition.
@@ -733,7 +731,7 @@ Take a vector $ X \in T$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $ \tt{g}{}{
     \tt{h}{}{ab} \tt{X}{b}{} &= \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} \tt{X}{b}{} \\
     &= \tt{g}{}{ab} \tt{X}{b}{} - \varepsilon \tt{n}{}{a} \underbrace{ \tt{n}{}{b} \tt{X}{b}{}}_{=0} \\
     & \lera{ \text{$ X$ is tangent to S, $ n$ is normal}} \\
-    &= \tt{g}{}{ab} \tt{X}{b}{} \\
+    &= \tt{g}{}{ab} \tt{X}{b}{} 
 \end{align*}
  
 For a vector $ Y \in N$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It suffices to simply take $ \tt{n}{a}{} \in N$ as $ N$ is 1 dimensional anyways.
@@ -742,21 +740,21 @@ For a vector $ Y \in N$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It suffices t
     \tt{h}{}{ab} \tt{n}{b}{} &= \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} \tt{n}{b}{} \\
     &= \tt{g}{}{ab} \tt{n}{b}{} - \varepsilon \tt{n}{}{a} \lera{ \tt{n}{}{b} \tt{n}{b}{}} \\
     &= \tt{n}{}{a} - \varepsilon^2 \tt{n}{}{a} \\
-    &= \tt{n}{}{a} - \tt{n}{}{a} \\
+    &= \tt{n}{}{a} - \tt{n}{}{a} 
     &= 0 \\
 \end{align*}
  
 Getting the form of $ \tt{k}{}{ab}$ is easy.
  
 \begin{align*}
-    \tt{k}{}{ab} = \tt{g}{}{ab} - \tt{h}{}{ab} = \tt{g}{}{ab} - \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} = \varepsilon \tt{n}{}{a} \tt{n}{}{b} \\
+    \tt{k}{}{ab} = \tt{g}{}{ab} - \tt{h}{}{ab} = \tt{g}{}{ab} - \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} = \varepsilon \tt{n}{}{a} \tt{n}{}{b} 
 \end{align*}
  
  
 Define,
  
 \begin{align*}
-    & \tt{K}{}{ab} = \tt{K}{}{abc} \tt{n}{c}{} \numberthis \label{Kab_defined} \\
+    & \tt{K}{}{ab} = \tt{K}{}{abc} \tt{n}{c}{} \numberthis \label{Kab_defined} 
 \end{align*}
  
 In the context of hypersurfaces, this is often called the ``Extrinsic Curvature'' or ``2nd Fundamental Form''.
@@ -764,7 +762,7 @@ In the context of hypersurfaces, this is often called the ``Extrinsic Curvature'
 Another way $ \tt{K}{}{ab}$ is expressed,
  
 \begin{align*}
-    & \tt{K}{}{ab} = - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q} \numberthis \label{Kab_in_terms_of_normal} \\
+    & \tt{K}{}{ab} = - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q} \numberthis \label{Kab_in_terms_of_normal} 
 \end{align*}
  
 \begin{align*}
@@ -773,18 +771,18 @@ Another way $ \tt{K}{}{ab}$ is expressed,
     &= \tt{h}{p}{a} \tt{h}{q}{b} \lera{ \nabla_p \lera{ \underbrace{ \tt{h}{}{qc} \tt{n}{c}{}}_{=0}} - \tt{h}{}{qc} \nabla_p \tt{n}{c}{}} \\
     &= - \tt{h}{p}{a} \tt{h}{q}{b} \tt{h}{}{qc} \nabla_p \tt{n}{c}{} \\
     &= - \tt{h}{p}{a} \tt{h}{c}{b} \nabla_p \tt{n}{}{c} \\
-    &= - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q} \\
+    &= - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q} 
 \end{align*}
  
  
-$ \tt{K}{}{[ab]} = 0$ ; $ \tt{K}{}{ab}$ is antisymmetric.
+$ \tt{K}{}{[ab]} = 0$ ; $ \tt{K}{}{ab}$ is symmetric.
  
 \begin{align*}
-    & \tt{K}{}{[ab]} = \tt{K}{}{[ab]c} \tt{n}{c}{} = 0 \numberthis \label{Kab_bracket_zero} \\
+    & \tt{K}{}{[ab]} = \tt{K}{}{[ab]c} \tt{n}{c}{} = 0 \numberthis \label{Kab_bracket_zero} 
 \end{align*}
  
 \begin{align*}
-    & \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \numberthis \label{Kabc_in_terms_of_Kab} \\
+    & \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \numberthis \label{Kabc_in_terms_of_Kab} 
 \end{align*}
  
 We show it by acting on both sides with an arbitrary vector. In this case, it suffices to act with $ \tt{X}{a}{} \in T$ and $ \tt{n}{a}{}$.
@@ -794,20 +792,20 @@ First, act with $ \tt{X}{a}{} \in T$.
 \begin{align*}
     \text{LHS} &\implies \tt{K}{}{abc} \tt{X}{c}{} = 0 \\
     & \lera{ \text{$ \tt{K}{}{abc}$ is normal in the index c}} \\
-    \text{RHS} &\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{X}{c}{} = 0 \\
+    \text{RHS} &\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{X}{c}{} = 0 
 \end{align*}
  
 Then, act with $ \tt{n}{a}{}$,
  
 \begin{align*}
     \text{LHS} &\implies \tt{K}{}{abc} \tt{n}{c}{} = \tt{K}{}{ab} \\
-    \text{RHS} &\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{n}{c}{} = \varepsilon \tt{K}{}{ab} \varepsilon = \varepsilon^2 \tt{K}{}{ab} = \tt{K}{}{ab} \\
+    \text{RHS} &\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{n}{c}{} = \varepsilon \tt{K}{}{ab} \varepsilon = \varepsilon^2 \tt{K}{}{ab} = \tt{K}{}{ab} 
 \end{align*}
  
 Yet another way to express $ \tt{K}{}{ab}$ is,
  
 \begin{align*}
-    & \tt{K}{}{ab} = - \frac{1}{2} \Lie{n} \tt{h}{}{ab} \numberthis \label{Kab_as_lie_derivative} \\
+    & \tt{K}{}{ab} = - \frac{1}{2} \Lie{n} \tt{h}{}{ab} \numberthis \label{Kab_as_lie_derivative} 
 \end{align*}
  
 
@@ -819,7 +817,7 @@ The first GC eqn was,
  
 \begin{align*}
     \tt{ \mathcal{R}}{a}{bcd} &= \tt{R}{m}{npq} \tt{h}{a}{m} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} + 2 \du{K}{[c}{am} \tt{K}{}{d]bm} \\
-    \implies \tt{ \mathcal{R}}{}{abcd} &= \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} + 2 \du{K}{[c|a|}{m} \tt{K}{}{d]bm} \numberthis \label{first_gauss_codazzi} \\
+    \implies \tt{ \mathcal{R}}{}{abcd} &= \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} + 2 \du{K}{[c|a|}{m} \tt{K}{}{d]bm} \numberthis \label{first_gauss_codazzi} 
 \end{align*}
  
 Now, I use the eqn $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in \cref{first_gauss_codazzi}. Start with the second term.
@@ -827,38 +825,38 @@ Now, I use the eqn $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in \c
 \begin{align*}
     \du{K}{[c|a|}{m} \tt{K}{}{d]bm} &= \varepsilon \tt{K}{}{[c|a|} \tt{n}{m}{} \; \varepsilon \tt{K}{}{d]b} \tt{n}{}{m} \\
     &= \tt{n}{m}{} \tt{n}{}{m} \varepsilon^2 \tt{K}{}{[c|a|} \tt{K}{}{d]b} \\
-    &= - \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} \\
+    &= - \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} 
 \end{align*}
  
 So, \cref{first_gauss_codazzi} $ \implies$
  
 \begin{align*}
-    & \tt{ \mathcal{R}}{}{abcd} = \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} - 2 \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} \numberthis \label{first_gauss_codazzi_final} \\
+    & \tt{ \mathcal{R}}{}{abcd} = \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} - 2 \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} \numberthis \label{first_gauss_codazzi_final} 
 \end{align*}
  
 The second GC eqn was,
  
 \begin{align*}
-    & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \tt{K}{}{abc} = - \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} \tt{k}{c}{s} \tt{R}{}{mabc} \numberthis \label{second_gauss_codazzi} \\
+    & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \tt{K}{}{abc} = - \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} \tt{k}{c}{s} \tt{R}{}{mabc} \numberthis \label{second_gauss_codazzi} 
 \end{align*}
  
 Now, to substitute $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in the LHS, I have,
  
 \begin{align*}
     & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \lera{ \varepsilon \tt{K}{}{ab} \tt{n}{}{c}} \\
-    &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \lera{ \lera{ \nabla_m \tt{K}{}{ab}} \tt{n}{}{c} + \tt{K}{}{ab} \lera{ \nabla_m \tt{n}{}{c}}} \numberthis \label{second_gc_lhs_expanded} \\
+    &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \lera{ \lera{ \nabla_m \tt{K}{}{ab}} \tt{n}{}{c} + \tt{K}{}{ab} \lera{ \nabla_m \tt{n}{}{c}}} \numberthis \label{second_gc_lhs_expanded} 
 \end{align*}
  
 The second term in \cref{second_gc_lhs_expanded} actually goes to zero. Notice that, $ \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0$. This is because $ \tt{n}{a}{} \tt{n}{}{a} = \varepsilon$
  
 \begin{align*}
-    & \nabla_b \lera{ \tt{n}{a}{} \tt{n}{}{a}} = 0 \implies \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0 \\
+    & \nabla_b \lera{ \tt{n}{a}{} \tt{n}{}{a}} = 0 \implies \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0 
 \end{align*}
  
 So,
  
 \begin{align*}
-    & \tt{k}{c}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{c}{} \tt{n}{}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{}{s} \tt{n}{c}{} \nabla_m \tt{n}{}{c} = 0 \\
+    & \tt{k}{c}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{c}{} \tt{n}{}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{}{s} \tt{n}{c}{} \nabla_m \tt{n}{}{c} = 0 
 \end{align*}
  
 And this makes the 2nd term of \cref{second_gc_lhs_expanded} zero.
@@ -868,7 +866,7 @@ So, \cref{second_gc_lhs_expanded} $ \implies$
 \begin{align*}
     & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \lera{ \varepsilon \tt{K}{}{ab} \tt{n}{}{c}} \\
     &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \tt{n}{}{c} \nabla_m \tt{K}{}{ab} \\
-    &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{n}{}{s} \nabla_m \tt{K}{}{ab} \numberthis \label{second_gc_lhs_reduced} \\
+    &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{n}{}{s} \nabla_m \tt{K}{}{ab} \numberthis \label{second_gc_lhs_reduced} 
 \end{align*}
  
 Using this in the LHS of \cref{second_gauss_codazzi} $ \implies$
@@ -879,7 +877,7 @@ Using this in the LHS of \cref{second_gauss_codazzi} $ \implies$
 
 
 \subsection{Integration on Hypersurfaces}
-\subsubsection{Surface Element (on-Null Case)}
+\subsubsection{Surface Element (non-Null Case)}
 
 
 
