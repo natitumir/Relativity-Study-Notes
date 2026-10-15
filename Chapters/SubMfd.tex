@@ -9,13 +9,13 @@ This is a crucial ingredient in understanding almost anything that has to do wit
 
 \section{Submanifolds}
 
-We will discuss the idea of a submanifold first. Hypersurfaces are a special tyrpe of submanifold. The key idea needed to be introduced to define a submanifold is the idea of imbedding. 
+We will discuss the idea of a submanifold first. Hypersurfaces are a special type of submanifold. The key idea needed to be introduced to define a submanifold is the idea of imbedding. 
 \subsection{Imbedding}
 
  Let S and M be two manifolds. Let there be a smooth map $\Psi:S \longrightarrow M $. $\Psi$ is called an imbedding if the following three conditions hold.
  \begin{itemize}
      \item $\Psi$ is injective.
-     \item at all p in S, the push forward map $\lera{\Psi_p}_*: T_p S \longrightarrow T_pM$ is injective.
+     \item at all$p$in S, the push forward map $\lera{\Psi_p}_*: T_p S \longrightarrow T_pM$ is injective.
      \item the inverse map $\Psi^{-1}: \Psi \left[ S \right] \longrightarrow S$ is continuous with respect to the relative topology in $\Psi\left[S \right]$.
  \end{itemize}
 
@@ -25,15 +25,15 @@ At first glance, this definition might seem unmotivated and built out of thin ai
 Now, suppose that S$\subseteq$M, then we say that S is an imbedded submanifold of M if the map $id:S \longrightarrow M $ is an imbedding. If the dimension of M is n, and the dimension of S is k, and $k=n-1$ then we say that S is a \textit{hypersurface} in M. 
 
 
-In this and the next few sections, let me fix S to be a k-dimensional imbedded submanifold of M. Later on we will think more specifically in terms of hypersurfaces. But for now let me go through some mathematical machinary needed for imbedded submanifolds in general. 
+In this and the next few sections, let me fix S to be a k-dimensional imbedded submanifold of M. Later on we will think more specifically in terms of hypersurfaces. But for now let me go through some mathematical machinery needed for imbedded submanifolds in general. 
 
 
 
 \subsection{Tensors Tangent and Normal to S}
 
-At a point $ p$ in M, we can talk about tensors with respect to M, or with respect to S. We refer to the former as M-tensors, and the later as S-tensors. The S-tensors are S's own objects and we do not need to refer to M while talking about them. We will use a tilde over the name of a tensor to show that it is an S-tensor. 
+At a point $ p$ in M, we can talk about tensors with respect to M, or with respect to S. We refer to the former as M-tensors, and the latter as S-tensors. The S-tensors are S's own objects and we do not need to refer to M while talking about them. We will use a tilde over the name of a tensor to show that it is an S-tensor. 
 
-If S is a metric submanifold of M (I will explain what a metric submanifold is in a bit), we can divide $T_pM$ into two subspaces, one is a subspace of vectors ``tangent'' to S, and the other one is a subspace of tensors ``normal'' to S. 
+If S is a metric submanifold of M (I will explain what a metric submanifold is in a bit), we can divide $T_pM$ into two subspaces, one is a subspace of vectors ``tangent'' to S, and the other one is a subspace of vectors ``normal'' to S. 
 (I am using quotes here because this ``tangent'' is not related to the word ``tangent'' in ``tangent vector''). 
 
 \begin{definition}
@@ -47,7 +47,7 @@ If S is a metric submanifold of M (I will explain what a metric submanifold is i
 
 We denote the space of all M-vectors tangent to S at $p$ as $\mathscr{T}_p$ and the space of all M-covectors normal to S at $p$ as $\mathscr{N}_p^{*}$. As we took $T_pS$ and then pushed it forward with an imbedding (which basically maps $T_pS$ to $T_pM$ injectively), the dimension of $\mathscr{T}_p$ is $k$. We can also show that the dimension of $\mathscr{N}^*_p$ is $n-k$.
 
-Another way to describe tangent vector comes from what it means to push forward a vector from one manifold to another. For a vector $ \tilde{X}$ in S, there is obviously a curve $ \gamma$ to which the vector $ \tilde{X}$ is tangent to. Since push forward of a vector tangent to a curve is tangent to the image of the curve, $ id_* \tilde{X}$ is tangent to $ id( \gamma)$. In fact, we are considering S to be a subset of M, and $ id( \gamma)$ is actually just $ \gamma$. This means, any M-vector at p that is tangent to a curve $ \gamma$ which lies entirely in S, is a memeber of $ \mathscr{T}_p$.
+Another way to describe tangent vector comes from what it means to push forward a vector from one manifold to another. For a vector $ \tilde{X}$ in S, there is obviously a curve $ \gamma$ to which the vector $ \tilde{X}$ is tangent to. Since push forward of a vector tangent to a curve is tangent to the image of the curve, $ id_* \tilde{X}$ is tangent to $ id( \gamma)$. In fact, we are considering S to be a subset of M, and $ id( \gamma)$ is actually just $ \gamma$. This means, any M-vector at$p$that is tangent to a curve $ \gamma$ which lies entirely in S, is a member of $ \mathscr{T}_p$.
 Wait, how do you show the converse.....?????
 
 
@@ -73,7 +73,7 @@ Once we have $\mathscr{N}^*_p$ defined, we can prove the following proposition, 
     Now, let $X \in \mathscr{T}_p$. By our definition of the space of covectors at $ p$ that are normal to S, any member $ \eta$ of $ \mathscr{N}^*_p$ will follow $ \eta \lera{X}=0$.
 
 
-    Lets now assume that we have an $X \in T_pM$ such that for any $\eta \in \mathscr{N}^*_p$, $\eta(X)=0$.\\
+    Let's now assume that we have an $X \in T_pM$ such that for any $\eta \in \mathscr{N}^*_p$, $\eta(X)=0$.\\
     This means in the expansion of $ X$, there cannot be any term of the form $a_j \overset{j}{X}$ where $j>k$. And so $ X$ is a linear combination of only $\{\overset{1}{X},.... \overset{k}{X}\}$. And that means, $X \in \mathscr{T}_p$
     
     
@@ -123,7 +123,7 @@ Right now, for M-vectors and M-covectors at $p$, we have 4 different spaces in t
 We know that the dimension of $\mathscr{T}_p$ is $k$ and the dimension of $\mathscr{N}^*_p$ is $(n-k)$. What is the dimension of $\mathscr{T}^*_p$ and $\mathscr{N}_p$ ?
 
 \begin{proposition}
-    The dimesion of $\mathscr{T}^*_p$ is $k$ and the dimension of $\mathscr{N}_p$ is $(n-k)$.
+    The dimension of $\mathscr{T}^*_p$ is $k$ and the dimension of $\mathscr{N}_p$ is $(n-k)$.
 \end{proposition}
 
 \begin{proof}
@@ -155,17 +155,17 @@ A key fact in this case is that for metric manifolds, at a point p, $T_pM = \mat
 
 \subsection{Sticking to Only M-Tensors}
 
-At any point p, there is a natural isomorphism between S-tensors of any index structure and M-tensors of the same index structure that are tangent to S. This is the very basis of how we talk about a hypersurface. The idea is that we will commit to M-tenosrs tangent to S and not talk about S-tensors.
+At any point $p$, there is a natural isomorphism between S-tensors of any index structure and M-tensors of the same index structure that are tangent to S. This is the basis of how we talk about a hypersurface. The idea is that in general we will commit to M-tensors tangent to S and not talk about S-tensors. However, on occasions we will use S-tensors too. We will show later how to use S-tensors. 
 
-Let me first describe the isomorphism. Here I will satisfy myself by only defining the map, and I will skip the proof of the map being an isomorphism. 
+Let us first describe the isomorphism, denoted by $ \phi_p$. Here we will satisfy ourselves by only defining the map, and will skip the proof that the map is an isomorphism. 
 
-The map $ \phi_{p}$ takes an S-tensor $ \tt{ \tilde{X}}{ab}{cd}$ to $ \phi_{p} \lera{ \tt{ \tilde{X}}{ab}{cd}}$, which is an M-tensor. We define the isomorphism in stages, first for scalars, then for vectors, covectors and finally for tensors of arbitray index structure. 
+The isomorphism $ \phi_{p}$ takes an S-tensor $ \tt{ \tilde{X}}{ab}{cd}$ at $ p$ to $ \phi_{p} \lera{ \tt{ \tilde{X}}{ab}{cd}}$, which is an M-tensor at $p$. We define the isomorphism in stages, first for scalars, then for vectors, covectors and finally for tensors of arbitrary index structure. 
 
-First, for a scalar $ \alpha$ at p, $ \phi_{p} \lera{ \alpha}= \alpha$. There is no need to use tilde as scalars are just numbers. 
+First, for a scalar $ \alpha$ at $p$, $ \phi_{p} \lera{ \alpha}= \alpha$. There is no need to use tilde as scalars are just numbers. 
 
-Second, for an S-vector $ \tt{ \tilde{X}}{a}{}$ at p, $ \phi_{p} \lera{ \tt{ \tilde{X}}{a}{}} = \lera{ id_p}_* \tt{ \tilde{X}}{a}{}$. By the very definition of a vector being tangent to S at p, $ \phi_p \lera{ \tt{ \tilde{X}}{a}{}}$ is tangent to S. 
+Second, for an S-vector $ \tt{ \tilde{X}}{a}{}$ at $p$, $ \phi_{p} \lera{ \tt{ \tilde{X}}{a}{}} = \lera{ id_p}_* \tt{ \tilde{X}}{a}{}$. By the definition of a vector being tangent to S at $p$, $ \phi_p \lera{ \tt{ \tilde{X}}{a}{}}$ is tangent to S. 
 
-Third, for a S-covector $ \tt{ \tilde{ \eta}}{}{a} $ at p, $ \phi_{p} \lera{ \tt{ \tilde{ \eta}}{}{a}}$ is defined by its action on any M-vector $ X^a$. 
+Third, for an S-covector $ \tt{ \tilde{ \eta}}{}{a} $ at $p$, $ \phi_{p} \lera{ \tt{ \tilde{ \eta}}{}{a}}$ is defined by its action on any M-vector $ X^a$. 
  
 \[
 \phi_{p} \lera{ \tt{ \tilde{ \eta}}{}{a}} \tt{X}{a}{}=
@@ -176,10 +176,10 @@ Third, for a S-covector $ \tt{ \tilde{ \eta}}{}{a} $ at p, $ \phi_{p} \lera{ \tt
 \]
 
 
-We remark that this is well defined, as $ \phi_{p}^{-1} \tt{X}{a}{}$ is well defined.  Also, notice that the second clause of the definition of $ \phi_p \lera{ \tt{\tilde{ \eta}}{}{a}}$ ensures that it is tangent to S.
+We remark that this is well defined since $ \phi_{p}^{-1} \tt{X}{a}{}$ is well defined.  Also, notice that the second clause of the definition of $ \phi_p \lera{ \tt{\tilde{ \eta}}{}{a}}$ ensures that it is tangent to S.
 
 
-Lastly, lets take an arbitray index structure S-tensor $ \tt{ \tilde{X}}{ab}{c}$, then,
+Lastly, let's take an arbitrary index structure S-tensor $ \tt{ \tilde{X}}{ab}{c}$, then,
 
 \[
 \phi_{p} \lera{ \tt{ \tilde{X}}{ab}{c}} \tt{A}{}{a} \tt{ B}{}{b} \tt{ C}{c}{} = 
@@ -201,24 +201,37 @@ For example,
 
 
 
-In short, at any point p in S, the tensor algebra of S-tensors is isomorphic to the tensor algebra of M-tensors that are tangent to S. With every S-tensor, I get an evil twin M-tensor of the same index structure.
+In short, at any point $p$ in S, the tensor algebra of S-tensors is isomorphic to the tensor algebra of M-tensors that are tangent to S. With every S-tensor, I get an evil twin M-tensor of the same index structure.
 
 Now, this can be extended to the whole of S, and we have a map $ \phi$ that takes any S-tensor field to an M-tensor field that is tangent to S and have the same index structure, and they also follow the same tensor algebra on both sides of the ``river''.
 
+
+
+
+
+\subsection{S-tensors}
+Given we have a coordinate system $ \{x^a\}$ on the ambient space M, and a cooridnate system $ \{y^{\alpha}\}$ on the submanifold, the identity map $ id: S \longrightarrow M$ is defined by $ x^a(y^{\alpha})$ at any point. As a map between two manifolds, we can apply the familiar notions of push forward and pull back on $ id$. 
+\textcolor{blue}{Complete this section.}
+
+
+
+
+
+
 \subsection{S-smoothness and M-smoothness}
 
-First of all, let us recall  a very handy notion of the smoothness of a tensor field. Say, we have a manifold M, and an atlas $ \mathcal{A}$. Now, a tensor field $ \tt{T}{a}{b}$ is smooth iff the components are smooth functions with respect to any coordinatization of the manifold with charts from the atlas $ \mathcal{A}$. This means the idea of smoothess is tied to the atlas of a manifold. 
+Let us recall  a handy notion of the smoothness of a tensor field. Suppose we have a manifold M, and an atlas $ \mathcal{A}_M$. Now, a tensor field $ \tt{T}{a}{b}$ is smooth iff the components are smooth functions with respect to any coordinatization of the manifold with charts from the atlas $ \mathcal{A}$. This means the idea of smoothness is tied to the atlas of a manifold. 
 
-Now think of the manifold S. Let me define by O an open set of M that covers S, i.e. S is a subset of O. This is going to be our working definition of O for quite some time in this discussion, unless otherwise specified. An M-tensor field T tangent to S can be smooth in two senses. If an extension of T on O, named $ \overset{+}{T}$, is smooth wrt $ \mathcal{A}_M$, then T is M-smooth. If, on the other hand, the S-tensor field $ \phi^{-1} T$ is smooth wrt $ \mathcal{A}_S$, then T is S-smooth. Now, there is a theorem that says for any M-tensor field T tangent to S, it is M-smooth iff it is S-smooth. So saying that T (when it is tangent to S) is smooth means it is smooth in both ways. On the other hand if  T is not tangent to S, then it can only be M-smooth.
-
-
+Suppose S is a metric submanifold of M. Let us define by O an open set of M that covers S, i.e. S is a subset of O. This is going to be our working definition of O for quite some time in this discussion, unless otherwise specified. An M-tensor field $T$ tangent to S can be smooth in two senses. If an extension of $T$  on O, named $ \overset{+}{T}$, is smooth  with respect to $ \mathcal{A}_M$, then $T$  is M-smooth. If, on the other hand, the S-tensor field $ \phi^{-1} T$ is smooth  with respect to $ \mathcal{A}_S$, then $T$  is S-smooth. Now, there is a theorem which says that for any M-tensor field $T$  tangent to S, it is M-smooth iff it is S-smooth. So saying that $T$  (when it is tangent to S) is smooth means it is smooth in both ways. On the other hand if  $T$  is not tangent to S, then it can only be M-smooth.
 
 
-\subsection{ $ \tt{h}{}{ab}$}
 
-This is the star of the show. We call it a projector for reasons to become clear soon. Let us define it first. Say there is a metric $ \tt{g}{}{ab}$ on M. We define the ``induced metric'' or ``first fundamental form'' on S by taking the pull back of $ \tt{g}{}{ab}$ wrt to the identity map. The induced metric, an S-field, $ \tt{ \tilde{h}}{}{ab} = id^* \tt{g}{}{ab}$. Then, we define the smooth symmetric M-tensor $ \tt{h}{}{ab}$ which is tangent to S as the $ \phi$-image of this induced metric $ \tt{\tilde{h}}{}{ab}$, so that $ \tt{ h}{}{ab }= \phi \lera{ \tt{ \tilde{h}}{}{ab}}= \phi \lera{ id^* \tt{g}{}{ab}}$. 
 
-This is as counterintuitive and hard to remember as possible. So we actually use an equivalent definition of $ \tt{h}{}{ab}$. Here, we define $ \tt{h}{}{ab}$ by the way it acts on M-vectors. 
+\subsection{$\tt{h}{}{ab}$}
+
+Suppose there is a metric $ \tt{g}{}{ab}$ on M. We define the ``induced metric'' or ``first fundamental form'' on S by taking the pull back of $ \tt{g}{}{ab}$  with respect to the identity map. The induced metric is an S-field $ \tt{ \tilde{h}}{}{ab} = id^* \tt{g}{}{ab}$. Then, we define the smooth symmetric M-tensor field $ \tt{h}{}{ab}$ which is tangent to S as the $ \phi$-image of this induced metric $ \tt{\tilde{h}}{}{ab}$, so that $ \tt{ h}{}{ab }= \phi \lera{ \tt{ \tilde{h}}{}{ab}}= \phi \lera{ id^* \tt{g}{}{ab}}$. 
+
+This is a bit counterintuitive and hard to remember. So we actually use an equivalent definition of $ \tt{h}{}{ab}$. Here, we define $ \tt{h}{}{ab}$ by how it acts on M-vectors at any point in S. 
 
 \begin{align*}
     \tt{h}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} = 
@@ -229,20 +242,20 @@ This is as counterintuitive and hard to remember as possible. So we actually use
 \end{align*}
 
 
-Let me show that the equivalence works. Lets say both X and Y are tangent to S. Then,
+Let us show that the equivalence works. Let's say both $X$ and $Y$ are tangent to S at a point $p$ in S. Then,
 
 \begin{align*}
-    \tt{h}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} &= \phi \lera{id^* \tt{g}{}{ab}} \tt{X}{a}{} \tt{Y}{b}{} \\
-    &= \lera{ id^* \tt{g}{}{ab}} \lera{ \phi^{-1} \tt{X}{a}{}} \lera{ \phi^{-1} \tt{Y}{b}{}} \\
-    &= \tt{g}{}{ab} \; id_* \lera{ \phi^{-1} \tt{X }{a}{}} \; id_* \lera{ \phi ^{-1} \tt{Y}{b}{}} \\
-    &= \tt{g}{}{ab} \; \phi \lera{ \phi^{-1} \tt{X}{a}{}} \phi \lera{ \phi^{-1} \tt{Y}{b}{}} \\
+    \tt{h}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} &= \phi_p \lera{(id_p)^* \tt{g}{}{ab}} \tt{X}{a}{} \tt{Y}{b}{} \\
+    &= \lera{ (id_p)_* \tt{g}{}{ab}} \lera{ \phi_p^{-1} \tt{X}{a}{}} \lera{ \phi_p^{-1} \tt{Y}{b}{}} \\
+    &= \tt{g}{}{ab} \; (id_p)_* \lera{ \phi_p^{-1} \tt{X}{a}{}} \; (id_p)_* \lera{ \phi_p^{-1} \tt{Y}{b}{}} \\
+    &= \tt{g}{}{ab} \; \phi_p \lera{ \phi_p^{-1} \tt{X}{a}{}} \phi_p \lera{ \phi_p^{-1} \tt{Y}{b}{}} \\
     &= \tt{g}{}{ab} \tt{X}{a}{} \tt{Y}{b}{} 
 \end{align*}
 
 
 
 
-If any of X or Y is not tangent, then by virtue of $ h_{ab}$ being tangent to S, $ h_{ab} X^a Y^b$ is 0.
+If any of $X$ or $Y$ is not tangent, then by virtue of $h_{ab}$ being tangent to S, $h_{ab} X^a Y^b$ is 0.
 
 We define a perpendicular projection tensor $ k_{ab}$ too which is a smooth symmetric M-tensor field.
 
@@ -251,11 +264,11 @@ We define a perpendicular projection tensor $ k_{ab}$ too which is a smooth symm
 \end{align*}
 
 
-Notice that $ k_{ab}$ is normal to S. If X is a M-vector tangent to S, then, $ k_{ab} X^a = g_{ab} X^a - h_{ab} X^a = g_{ab} X^a - g_{ab} X^a =0 $. So $ k_{ab}$ is normal to S in the first index. But being a symmetric tensor, it must be also normal in the second index too, so it is normal as a whole. 
+Notice that $ k_{ab}$ is normal to S. If $X$ is an M-vector tangent to S, then, $k_{ab} X^a = g_{ab} X^a - h_{ab} X^a = g_{ab} X^a - g_{ab} X^a =0 $. So $ k_{ab}$ is normal to S in the first index. But being a symmetric tensor, it must be also normal in the second index too, so it is normal as a whole. 
 
 
 
-The following propositions show that it is okay to call $ h_{ab}$ a tangential projector and $ k_{ab}$ a perpendicular or normal projector.  notice that $ k_{ab}$ is normal to S. 
+The following propositions show that it is okay to call $ h_{ab}$ a tangential projector and $ k_{ab}$ a perpendicular or normal projector. 
 
 
 
@@ -272,27 +285,16 @@ The following propositions show that it is okay to call $ h_{ab}$ a tangential p
     
     First equivalence: 
     
-    Let X be tangent to S. 
-
-    I will show that the action of $X^a$ and $ \tt{h}{a}{b} X^b$ is the same on any M-covector $ \eta_a$. If $ \eta_a $ is normal to S, then both sides give zero. If $ \eta_a$ is tangent to S, then $ \tt{h}{a}{b} X^b \eta_a = h_{ab}  \eta^a X^b = g_{ab}  \eta^a X^b= X^a \eta_a$.
+    Let $X$ be tangent to S. We will show that the action of $X^a$ and $ \tt{h}{a}{b} X^b$ is the same on any M-covector $ \eta_a$. If $ \eta_a $ is normal to S, then both sides give zero since on both sides the upper index $ a $ is tangent and the contraction of a tangent index with a normal index gives zero. If $ \eta_a$ is tangent to S, then $ \tt{h}{a}{b} X^b \eta_a = h_{ab}  \eta^a X^b = g_{ab}  \eta^a X^b= X^a \eta_a$.
 
 
-    Conversely, let $ \tt{h}{a}{b} X^b = X^a$.
-    I need to show that $ X^a$ is tangent to S. Take $ \eta_a$ normal to S. Then $ \eta_a X^a = \eta_a \tt{h}{a}{b} X^b = 0 $. The last equality follows from the fact that $ h_{ab}$ is tangent in both indices.
-
-    This completes the proof for the first equivalence. 
+    Conversely, let $ \tt{h}{a}{b} X^b = X^a$. I need to show that $ X^a$ is tangent to S. Take $ \eta_a$ normal to S. Then $ \eta_a X^a = \eta_a \tt{h}{a}{b} X^b = 0 $. The last equality follows from the fact that $ h_{ab}$ is tangent in both indices. This completes the proof for the first equivalence. 
     
     Second equivalence: 
 
-    Let $ \tt{h}{a}{b} X^b = X^a$.
+    Let $ \tt{h}{a}{b} X^b = X^a$. Then, $ \tt{k}{a}{b} X^b = \lera{ \tt{g}{a}{b}- \tt{h}{a}{b}} X^b = X^a- X^a =0$.
 
-   Then, $ \tt{k}{a}{b} X^b = \lera{ \tt{g}{a}{b}- \tt{h}{a}{b}} X^b = X^a- X^a =0$
-
-    Conversely, let, $ \tt{k}{a}{b} X^b =0 $.
-
-    Then, $ \tt{h}{a}{b } X^b = \lera{ \tt{g}{a}{b} - \tt{k}{a}{b}} X^b = X^a - 0 = X^a $
-
-    This completes the proof of the second equivalence. 
+    Conversely, let, $ \tt{k}{a}{b} X^b =0 $. Then, $ \tt{h}{a}{b } X^b = \lera{ \tt{g}{a}{b} - \tt{k}{a}{b}} X^b = X^a - 0 = X^a $. This completes the proof of the second equivalence. 
     
     
     
@@ -306,25 +308,26 @@ The following propositions show that it is okay to call $ h_{ab}$ a tangential p
 
 
 \begin{proof}
-    Similar as before. 
+    Similar to before. 
 \end{proof}
 
 
-While I stated proposition 4.9 and 4.10 for a (1,0) tensor field, i.e. a vector field $ X^a$, these propositions actually hold for tensor fields of arbitrary index structure. For example, if $ \tt{T}{ab}{c}$ is tangent to S in the second upper index, then $ \tt{h}{b}{m} \tt{T}{am}{c}= \tt{T}{ab}{c}$ and $ \tt{k}{b}{m} \tt{T}{am}{c}=0$.
+While I stated proposition 4.9 and 4.10 for a (1,0) tensor, i.e. a vector $ X^a$, these propositions actually hold for tensors of arbitrary index structure. For example, if $ \tt{T}{ab}{c}$ is tangent to S in the second upper index $b$, then $ \tt{h}{b}{m} \tt{T}{am}{c}= \tt{T}{ab}{c}$ and $ \tt{k}{b}{m} \tt{T}{am}{c}=0$.
 
 \begin{proposition}
     $ \tt{h}{a}{b} \tt{h}{b}{c} = \tt{h}{a}{c}$
 \end{proposition}
 
-\textcolor{blue}{Let me pause here for a moment, and fill up the rest of the proofs up to the Gauss Codazzi equations}
-
+\begin{proof}
+    \textcolor{blue}{To do.}
+\end{proof}
 
 
 
 
 \subsection{Derivatives on S}
 
-To define a derivative operator $\tilde D$ on S-tensors is not hard. Since there is a metric $ \tilde{h}$ on S, we can define a torsionless covariant derivative which is compatible with that metric. It is also possible to make a derivative opertor $ D$ that acts on M-tensors tangent to S and which in a way mimics the action of $ \tilde{D}$ on S-tensors.
+To define a derivative operator $\tilde D$ on S-tensors is not hard. Since there is a metric $ \tilde{h}$ on S, we can define a torsionless covariant derivative which is compatible with that metric. It is also possible to make a derivative operator $ D$ that acts on M-tensors tangent to S and which in a way mimics the action of $ \tilde{D}$ on S-tensors.
 
 We will define $D$ in terms of $\nabla$. To use $\nabla$ on a field $T^a_{\phantom{a}b}$ defined on S, we need to know how $T^a_{\phantom{a}b}$ changes when we move in directions away from S, which is not well defined because $ \tt{T}{a}{b}$ is not defined away from S. The following proposition rescues us.
 
@@ -340,14 +343,14 @@ We will define $D$ in terms of $\nabla$. To use $\nabla$ on a field $T^a_{\phant
 
 The key message is that we can simply extend a field to an open set $O$ (such that $S \subseteq O$) and then define the derivative of $T^a_{\phantom{a}b}$ on $S$ by $ \tt{h}{m}{n}\cov{T^a_{\phantom{a}b}}{m} = h^m_{\phantom{m}n} \nabla_m  \overset{+}{ \tt{T}{a}{b}}$. It does not matter how we extend $T^a_{\phantom{a}b}$ to $\overset{+}{\tt{T}{a}{b}}$.
 
-For tensors fields tangent to S, and defined on S, we define the derivative operator $D$ as follows,
+For tensor fields tangent to S, and defined on S, we define the derivative operator $D$ as follows,
 
-(1) $ D_{fX+Z} Y = f D_X Y+ D_Z Y$. This actually is the familiar condition (D1) for a covariant derivative.
+(1) $ D_{fX+Z} T = f D_X T+ D_Z T$. This actually is the familiar condition (D1) for a covariant derivative.
 
 (2) $D_a T^b_{\phantom{b}c} = h^m_{\phantom{m}a} h^b_{\phantom{b}p} h^n_{\phantom{n}c} \nabla_m  T^p_{\phantom{p}n} $. By construction, $D_a T^b_{\phantom{b}c}$ is tangent to S.
 
 
- $D$ itself defines a legitimate derivative operator. We can prove (D1) to (D4) for the operator $ D$.
+ $D$ itself defines a legitimate derivative operator. We can prove (D1) to (D5) for the operator $ D$.
 
 (D1) Part of the definition.
 
@@ -358,7 +361,7 @@ For tensors fields tangent to S, and defined on S, we define the derivative oper
    &= a \tt{D}{}{s} \tt{A}{mn}{} + b \tt{D}{}{s} \tt{B}{mn}{} 
 \end{align*}
 
-(D3)  $D_X \lera{U \otimes V} = \lera{D_X U} \otimes V + U \otimes D_X V$. This is a Consequence of the Leibniz rule for $ \nabla$. 
+(D3) Leibniz rule. For example,  $D_X \lera{U \otimes V} = \lera{D_X U} \otimes V + U \otimes D_X V$. This is a consequence of the Leibniz rule for $ \nabla$. 
 
 \begin{align*}
     D_m \lera{U^a V^b} &=  h^n_{\phantom{n}m} h^a_{\phantom{a}p} h^b_{\phantom{b}q} \nabla_n \lera{ U^p V^q} \\
@@ -366,7 +369,19 @@ For tensors fields tangent to S, and defined on S, we define the derivative oper
     &= (D_m U^a)  V^b + U^a \lera{ D_m V^b} 
 \end{align*}
 
-(D4)$D_X f = X^m D_m f = X^m h^n_{\phantom{n}m} \nabla_n f = X^m h^n_{\phantom{n}m} \nabla_n \overset{+}{f}$. Now imagine that we are at a point $ p \in S$ and working in a chart where only $X^1$ to $X^k$ is non-zero, i.e. $\{\partial_i\}_{(i=1,\ldots,k)}$ form a basis for $ \mathscr{T}_p$. So, in an expansion like $X^m \partial_m f$ if $m > k$ then it is zero. So, the derivatives of $\overset{+}{f}$ in normal directions to S does not matter, and we can do good enough with only $\partial_n f$ with $n = 1, \ldots, k$ as these are well defined even without the extension of $ f$. So, $D_X f = X^m h^n_{\phantom{n}m} \partial_n \overset{+}{f} = X^n \partial_n f = X(f)$. Since we are dealing with a scalar, it is true regardless of which chart I am using and the result is true chart independently. 
+(D4)Commuting with contraction. $C\lera{D_X T} = D_X C(T) $.
+
+To see this for the simple case of $T = \omega \otimes Y$ with $\omega \in \mathscr{N}$ and $Y \in \mathscr{T}$, use component notation. Our claim now is that applying $(b,c)-$contraction to $D_a \omega_b Y^c$ is the same as applying $D_a$ to $\omega_m Y^m$. 
+
+We note that due to (D3) we have $  D_a \omega_b Y^c = \lera{D_a \omega_b} Y^c + \omega_b \lera{D_a Y^c}$. When we apply the $(b,c)-$contraction $C$ to $ D_a \omega_b Y^c $, we get $C \lera{D_a \omega_b Y^c}= C\lera{\lera{D_a \omega_b} Y^c + \omega_b \lera{D_a Y^c}} = \lera{D_a \omega_m} Y^m + \omega_m \lera{D_a Y^m}$. We need to show that this is equal to $D_a \lera{\omega_m Y^m}$, that is, $D_a (\omega_m Y^m )= \omega_m D_a Y^m + Y^m D_a \omega_m$. Proving this is simple.
+\begin{align*}
+	D_a (\omega_m Y^m) &= \tt{h}{q}{a} \tt{h}{p}{m} \tt{h}{m}{n} \nabla_q \lera{\omega_p Y^n} \\
+	&= \tt{h}{q}{a} \tt{h}{p}{m} \tt{h}{m}{n} \lera{\omega_p \nabla_q Y^n + Y^n \nabla_q \omega_p} \\
+	&= \omega_m D_a Y^m + Y^m D_a \omega_m
+\end{align*}
+
+
+(D5)$D_X f = X^m D_m f = X^m h^n_{\phantom{n}m} \nabla_n f = X^m h^n_{\phantom{n}m} \nabla_n \overset{+}{f}$. Now imagine that we are at a point $ p \in S$ and working in a chart where only $X^1$ to $X^k$ is non-zero, i.e. $\{\partial_i\}_{(i=1,\ldots,k)}$ form a basis for $ \mathscr{T}_p$. So in an expansion like $X^m \partial_m f$ terms with $m > k$ do not contribute. Hence the derivatives of $\overset{+}{f}$ in normal directions to S does not matter and it suffices to work with only $\partial_n f$ with $n = 1, \ldots, k$ as these are well defined even without the extension of $ f$. So, $D_X f = X^m h^n_{\phantom{n}m} \partial_n \overset{+}{f} = X^n \partial_n f = X(f)$. Since we are dealing with a scalar, it is true regardless of which chart we are using. 
 
 
 Another property of $ D $ is quite important. $ D$ is metric compatible in the following sense,  
@@ -390,8 +405,7 @@ Another property of $ D $ is quite important. $ D$ is metric compatible in the f
 
 
 
-
-$\overset{D}{T}$ is a $(1,2)$-tensor defined as follows:- $\overset{D}{T}(\omega, X, Y) = 0$ if any of $\omega, X, Y$ are normal to S. On vectors and covectors tangent to S, $\overset{D}{T}$ acts as,
+Let us now define a $(1,2)$-tensor field $\overset{D}{T}$ as follows:- $\overset{D}{T}(\omega, X, Y) = 0$ if any of $\omega, X, Y \in \mathscr{N}$. On vectors and covectors tangent to S, $\overset{D}{T}$ acts as,
 \begin{align*}
 	\overset{D}{T}(\omega, X, Y) = \omega\lera{D_X Y - D_Y X - [X, Y]} \numberthis \label{dummy1}
 \end{align*}
@@ -402,23 +416,23 @@ $\overset{D}{T}$ is a $(1,2)$-tensor defined as follows:- $\overset{D}{T}(\omega
 \end{proposition}
 
 \begin{proof}
-    First of all, $\overset{D}{T}(\omega, X, Y) = \omega\lera{D_X Y - D_Y X - [X, Y]}$. Now, we can extend $X, Y$ to $\overset{+}{X}, \overset{+}{Y}$. That extension will still coincide with $X, Y$ on S. We also have $[X, Y] = [\overset{+}{X}, \overset{+}{Y}]$ on S.
+    First of all, $\overset{D}{T}(\omega, X, Y) = \omega\lera{D_X Y - D_Y X - [X, Y]}$ for all $ \omega, X, Y \in \mathscr{T}$. Now, we can extend $X, Y, \omega$ to $\overset{+}{X}, \overset{+}{Y}, \overset{+}{ \omega}$. That extension will still coincide with $X, Y, \omega$ on S. We also have $[X, Y] = [\overset{+}{X}, \overset{+}{Y}]$ on S \footnote{ It might not be obvious that this is the case. \textcolor{blue}{Elaborate}}.
 
 Based on this,
 \begin{align*}
 	\overset{D}{T}(\omega, X, Y) &= \omega\lera{D_X Y - D_Y X - [X, Y]} \\
 	&= \omega_a \left(\lera{D_X Y}^a - \lera{D_Y X}^a - [X, Y]^a\right) \\
 	&= \omega_a \lera{X^m D_m Y^a - Y^m D_m X^a - [X, Y]^a} \\
-	&= \omega_a \lera{\overset{+}{X^m} \tt{h}{n}{m} \tt{h}{a}{p} \nabla_n \overset{+}{Y^p} - \overset{+}{Y^m} \tt{h}{n}{m} \tt{h}{a}{p} \nabla_n \overset{+}{X^p} - [\overset{+}{X}, \overset{+}{Y}]^a} \\
-	&= \omega_p \overset{+}{X^n} \nabla_n \overset{+}{Y^p} - \omega_p \overset{+}{Y^n} \nabla_n \overset{+}{X^p} - \omega_p [\overset{+}{X}, \overset{+}{Y}]^p \\
-	&= \omega_p \lera{\nabla_{\overset{+}{X}} \overset{+}{Y} - \nabla_{\overset{+}{Y}} \overset{+}{X} - [\overset{+}{X}, \overset{+}{Y}]}^p \\
-	&= \omega\lera{\nabla_{\overset{+}{X}} \overset{+}{Y} - \nabla_{\overset{+}{Y}} \overset{+}{X} - [\overset{+}{X}, \overset{+}{Y}]} \\
-	&= T\lera{\omega, \overset{+}{X}, \overset{+}{Y}} \quad \text{(where $T$ is regular torsion)} 
+	&= \overset{+}{\omega_a} \lera{\overset{+}{X^m} \tt{h}{n}{m} \tt{h}{a}{p} \nabla_n \overset{+}{Y^p} - \overset{+}{Y^m} \tt{h}{n}{m} \tt{h}{a}{p} \nabla_n \overset{+}{X^p} - [\overset{+}{X}, \overset{+}{Y}]^a} \\
+	&= \overset{+}{\omega_p} \overset{+}{X^n} \nabla_n \overset{+}{Y^p} - \omega_p \overset{+}{Y^n} \nabla_n \overset{+}{X^p} - \omega_p [\overset{+}{X}, \overset{+}{Y}]^p \\
+	&= \overset{+}{\omega_p} \lera{\nabla_{\overset{+}{X}} \overset{+}{Y} - \nabla_{\overset{+}{Y}} \overset{+}{X} - [\overset{+}{X}, \overset{+}{Y}]}^p \\
+	&= \overset{+}{\omega}\lera{\nabla_{\overset{+}{X}} \overset{+}{Y} - \nabla_{\overset{+}{Y}} \overset{+}{X} - [\overset{+}{X}, \overset{+}{Y}]} \\
+	&= T\lera{\overset{+}{\omega}, \overset{+}{X}, \overset{+}{Y}} \quad \text{(where $T$ is regular torsion)} \\
 	&= 0
 \end{align*}
 \end{proof}
 
-Now, we have defined both the unique torsionless metric compatible derivative operator $ \tilde{D}$ on S-tensors and the operator $ D$ on M-tensors on S that are tangent to S. The basic result that we will now show is the following,
+So far, we have defined both the unique torsionless metric compatible derivative operator $ \tilde{D}$ on S-tensors and the operator $ D$ on M-tensors on S that are tangent to S. The basic result that we will now show is the following,
 
 \begin{proposition}
   $\phi \lera{\tilde{D}_{\tilde{X}} \tilde{T}} = D_X T $ where $X = \phi\lera{\tilde{X}}$ and $T = \phi \lera{ \tilde{T}}$  
@@ -429,14 +443,14 @@ Now, we have defined both the unique torsionless metric compatible derivative op
 \begin{align*}
 	\mathcal{D}_{\tilde{X}} \tilde{T} = \phi^{-1}\lera{D_X T}
 \end{align*}
-where $X = \phi(\tilde{X})$ and $T = \phi(\tilde{T})$. Our way to prove the proposition is to show that $ \mathcal{D}$ is a torsionless metric compatible derivative operator and by virtue of the uniqueness of such operators $ \mathcal{D} = \tilde{D}$. To show that $\mathcal{D}$ is a covariant derivative on S, we need to show that it follow (D1) to (D4). The key underlying fact here is that $ \phi$ is an isomorphism and it preserves the structure of tensor algebra. 
+where $X = \phi(\tilde{X})$ and $T = \phi(\tilde{T})$. Our way to prove the proposition is to show that $ \mathcal{D}$ is a torsionless metric compatible derivative operator and by virtue of the uniqueness of such operators $ \mathcal{D} = \tilde{D}$. To show that $\mathcal{D}$ is a covariant derivative on S, we need to show that it follows (D1) to (D4). The key underlying fact here is that $ \phi$ is an isomorphism and it preserves the structure of tensor algebra. 
 
 (D1)
 \begin{align*}
-	\mathcal{D}_{f\tilde{X} + \tilde{Y}} \tilde{Z} &= \phi^{-1}\lera{D_{fX + Y} Z} \\
-	&= \phi^{-1}\lera{f D_X Z + D_Y Z} \\
-	&= f \phi^{-1}\lera{D_X Z} + \phi^{-1}\lera{D_Y Z} \\
-	&= f \mathcal{D}_{\tilde{X}} \tilde{Z} + \mathcal{D}_{\tilde{Y}} \tilde{Z}
+	\mathcal{D}_{f\tilde{X} + \tilde{Y}} \tilde{T} &= \phi^{-1}\lera{D_{fX + Y} T} \\
+	&= \phi^{-1}\lera{f D_X T + D_Y T} \\
+	&= f \phi^{-1}\lera{D_X T} + \phi^{-1}\lera{D_Y T} \\
+	&= f \mathcal{D}_{\tilde{X}} \tilde{T} + \mathcal{D}_{\tilde{Y}} \tilde{T}
 \end{align*}
 
 (D2)
@@ -452,16 +466,26 @@ where $X = \phi(\tilde{X})$ and $T = \phi(\tilde{T})$. Our way to prove the prop
 	&= \mathcal{D}_{\tilde{X}} \tilde{A} \otimes \tilde{B} + \tilde{A} \otimes \mathcal{D}_{\tilde{X}} \tilde{B}
 \end{align*}
 
-(D4)
+(D4) Commuting with contraction.
+\begin{align*}
+	C\lera{D_{\tilde{X}} \tilde{T}} &= C\, \phi^{-1}\lera{D_X T} \\
+	&= \phi^{-1}\lera{C\lera{D_X T}} \\
+	&= \phi^{-1}\lera{D_X C(T)} \\
+	&= D_{\tilde{X}}\lera{\phi^{-1} C(T)} \\
+	&= D_{\tilde{X}}\, C\lera{\phi^{-1}(T)} \\
+	&= D_{\tilde{X}}\, C(\tilde{T})
+\end{align*}
+
+(D5)
 \begin{align*}
 	\mathcal{D}_{\tilde{X}} f &= \phi^{-1}\lera{D_X f} \\
 	&= \phi^{-1}\lera{X(f)} \\
-	&= X(f) \quad \text{(since $X(f)$ is a scalar function)} 
+	&= X(f) \quad \text{(since $X(f)$ is a scalar function)} \\
 	&= \tilde{X}(f)
 \end{align*}
-Thinking about the meaning of a vector and the fact that both $\tilde{X}$ and $X$ are tangent vectors to the same curve will convince us of the last equality
+Thinking about the meaning of a vector and the fact that both $\tilde{X}$ and $X$ are tangent vectors to the same curve will convince us of the last equality.
 
-More over, $\mathcal{D}$ follows the torsionless condition,
+$\mathcal{D}$ also follows the torsionless condition,
 
 (DT)
 \begin{align*}
@@ -481,7 +505,7 @@ And $\mathcal{D}$ is metric compatible.
 	&= 0
 \end{align*}
 
-So, $\mathcal{D}$ is the unique metric compatible torsionless operator on S so we denote it by $\tilde{D}$, and we have the result,
+So, $\mathcal{D}$ is the unique metric compatible torsionless operator on S and so we denote it by $\tilde{D}$. Hence, we have the result,
 \begin{align*}
 	\phi\lera{\tilde{D}_{\tilde{X}} \tilde{T}} = D_X T
 \end{align*}
@@ -494,7 +518,7 @@ So, $\mathcal{D}$ is the unique metric compatible torsionless operator on S so w
 
 
 \subsection{Extrinsic Curvature}
-Now that we are sufficiently familiar with the notion of derivatives on a submanifold, we can turn to the concept of extrinsic curvature. Intuitively, extrinsic curvature should tell us how bend a surface is on an ambient space. Before elaborating on how exactly the extrinsic curvature tells us about the bending of a submanifold, let us define the quantity mathematically first.
+Now that we are sufficiently familiar with the notion of derivatives on a submanifold, we can turn to the concept of extrinsic curvature. Intuitively, extrinsic curvature should tell us how bent a surface is on an ambient space. Before elaborating on how exactly the extrinsic curvature tells us about the bending of a submanifold, let us define the quantity mathematically first.
 
 We know that, 
 
@@ -503,15 +527,18 @@ We know that,
     \tt{h}{m}{a} \tt{k}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} =0 
 \end{align*}
 
+First one is true because the LHS is just $D_a h_{bc}$ and we have shown that it is zero. For the second one, $\tt{h}{m}{a} \tt{k}{n}{b} \tt{k}{p}{c} \nabla_m h_{np} = \tt{h}{m}{a} \tt{k}{n}{b} \lera{\nabla_m \lera{\tt{k}{p}{c} h_{np}} - h_{np} \nabla_m \tt{k}{p}{c}}$. But since $\tt{k}{p}{c} h_{np} = 0$ on S, its derivative projected tangent to the surface S is also zero, that is, $  \tt{h}{m}{a}\nabla_m  \lera{ \tt{k}{p}{c} \tt{h}{}{np}}=0$. And for the second term $\tt{k}{n}{b} h_{np}$ is also zero.
 
-However, the hhk projection, $\tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} $ is not zero and we define a new quantity, called the extrinsic curvature of S, as follows,
+While the $ hhh$ and $ hkk$ projections are zero, the $ hhk$ projection, $\tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} $ is not zero and we define a new quantity, called the extrinsic curvature of S, as follows,
 
 \begin{align*}
-    \tt{K}{}{abc} = \tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} 
+    \tt{K}{}{abc} = \tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \cov{ \tt{h}{}{np}}{m} \numberthis \label{dummy2} 
 \end{align*}
 
 
 $ \tt{K}{}{abc}$ has particular geometric significance, and we will show some of those significance in this section. 
+
+
 
 
 
@@ -527,7 +554,7 @@ Before proving those equations, let me remind one useful way of characterizing t
 \end{align*}
 
 
-This can also be generalized, in the following way. Say, $ \tt{T}{a}{b}$ is a (1,1) field. Then the antisymmetrized double covariant derivative on it can be expanded in temrs of the Riemann tensor as follows, 
+This can also be generalized, in the following way. Say, $ \tt{T}{a}{b}$ is a (1,1) field. Then the antisymmetrized double covariant derivative on it can be expanded in terms of the Riemann tensor as follows, 
 
 \begin{align*}
     2 \nabla_{[c} \nabla_{d]} \tt{T}{a}{b} &= \tt{R}{a}{mcd} \tt{T}{m}{b}- \tt{R }{m}{bcd} \tt{T}{a}{m} 
@@ -537,7 +564,7 @@ One final fact about the Riemann tensors that needs a reminder is, $ \tt{R}{}{ab
 
 
 
-We will use a script R, $ \mathcal{R}$, to denote the Riemann tensor defined wrt to D. This is going to be a tangent tensor field. So, we define the Riemann tensor to be, $ \tt{ \mathcal{R}}{a}{mcd} v^m = 2 D_{[c} D_{d]} v^a $ where $ v^a $ is an M-field tangent to S.
+We will use a script R, $ \mathcal{R}$, to denote the Riemann tensor defined with respect to D. This is going to be a tangent tensor field. So, we define the Riemann tensor to be, $ \tt{ \mathcal{R}}{a}{mcd} v^m = 2 D_{[c} D_{d]} v^a $ where $ v^a $ is an M-field tangent to S.
 
 \textcolor{blue}{To Do: Write down some more words about the proper definition of $ \mathcal{R} $}
 
@@ -725,7 +752,7 @@ In short,
  
 This is shown by testing this definition of $ \tt{h}{}{ab} = \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}$ against the main definition.
  
-Take a vector $ X \in T$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $ \tt{g}{}{ab} \tt{X}{b}{}$. Now,
+Take a vector $ X \in \mathscr{T}$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $ \tt{g}{}{ab} \tt{X}{b}{}$. Now,
  
 \begin{align*}
     \tt{h}{}{ab} \tt{X}{b}{} &= \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} \tt{X}{b}{} \\
@@ -734,13 +761,13 @@ Take a vector $ X \in T$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $ \tt{g}{}{
     &= \tt{g}{}{ab} \tt{X}{b}{} 
 \end{align*}
  
-For a vector $ Y \in N$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It suffices to simply take $ \tt{n}{a}{} \in N$ as $ N$ is 1 dimensional anyways.
+For a vector $ Y \in \mathscr{N}$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It suffices to simply take $ \tt{n}{a}{} \in \mathscr{N}$ as $ \mathscr{N}$ is 1 dimensional anyways.
  
 \begin{align*}
     \tt{h}{}{ab} \tt{n}{b}{} &= \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} \tt{n}{b}{} \\
     &= \tt{g}{}{ab} \tt{n}{b}{} - \varepsilon \tt{n}{}{a} \lera{ \tt{n}{}{b} \tt{n}{b}{}} \\
     &= \tt{n}{}{a} - \varepsilon^2 \tt{n}{}{a} \\
-    &= \tt{n}{}{a} - \tt{n}{}{a} 
+    &= \tt{n}{}{a} - \tt{n}{}{a} \\
     &= 0 \\
 \end{align*}
  
@@ -885,7 +912,7 @@ If $\Sigma$ is non-null, then we define a surface element on $\Sigma$ by
 \begin{align*}
 	d\Sigma = |h|^{1/2} d^3 y \numberthis \label{surface-element-non-null}
 \end{align*}
-where $h = \det\left[h_{\alpha\beta}\right]$. $n_a d\Sigma$ is a directed surface element which points in the direction of increasing $\Phi$. In the null case neither $d\Sigma$ not $ n_a d \Sigma$ is defined as $h = 0$ and $n_a$ does not exist. So, for the null case we need to make a generaliztion of \cref{surface-element-non-null} so that it works for null hypersurfaces too. The general formula for a directed surface element is,
+where $h = \det\left[h_{\alpha\beta}\right]$. $n_a d\Sigma$ is a directed surface element which points in the direction of increasing $\Phi$. In the null case neither $d\Sigma$ nor $ n_a d \Sigma$ is defined as $h = 0$ and $n_a$ does not exist. So, for the null case we need to make a generalization of \cref{surface-element-non-null} so that it works for null hypersurfaces too. The general formula for a directed surface element is,
 
 
 \begin{align*}
@@ -895,7 +922,7 @@ where $\varepsilon_{abcd} = \sqrt{-g} [abcd]$ is the Levi-Civita tensor.
 
 We will later show that when $\Sigma$ is not null, $d\Sigma_a = \varepsilon n_a d\Sigma$. This means, for a spacelike $\Sigma$, $d\Sigma_a$ points in the direction of decreasing $\Phi$. For timelike $\Sigma$, $d\Sigma_a$ points in the direction of increasing $\Phi$. Before proving that $d\Sigma_a = \varepsilon n_a d\Sigma$, we need to fix a convention for $d\Sigma_a$ itself as there is an ambiguity of how we order the coordinates intrinsic to the hypersurface. 
 
- The ordering we pick is such that the scalar $f = \varepsilon_{abcd} n^a e^b_1 e^c_2 e^d_3$ is positive. (We will see later that $f = |h|^{1/2}$ in the non null case.) To see how this is ordering is done in practice, we give two examples in Minkowski space. First, consider a constant $t$ hypersurface. Then, $\Phi = t = c$ (for some constant c). Then, $ n_a = \frac{ -\partial_a \Phi}{\sqrt{| \partial_m \Phi \partial^m \Phi|}} =\frac{ -\partial_a t}{\sqrt{|\partial_m t \partial^m t|}}= - \partial_a t$. If we take the ordering $y^\alpha = (x,y,z)$, then, $ f = \varepsilon_{mabc} n^m e^a_1 e^b_2 e^c_3 = \varepsilon_{mabc} (-\partial^m t) \kron{a}{x} \kron{b}{y} \kron{c}{z}= \varepsilon_{txyz} = 1 > 0$
+ The ordering we pick is such that the scalar $f = \varepsilon_{abcd} n^a e^b_1 e^c_2 e^d_3$ is positive. (We will see later that $f = |h|^{1/2}$ in the non null case.) To see how this ordering is done in practice, we give two examples in Minkowski space. First, consider a constant $t$ hypersurface. Then, $\Phi = t = c$ (for some constant c). Then, $ n_a = \frac{ -\partial_a \Phi}{\sqrt{| \partial_m \Phi \partial^m \Phi|}} =\frac{ -\partial_a t}{\sqrt{|\partial_m t \partial^m t|}}= - \partial_a t$. If we take the ordering $y^\alpha = (x,y,z)$, then, $ f = \varepsilon_{mabc} n^m e^a_1 e^b_2 e^c_3 = \varepsilon_{mabc} (-\partial^m t) \kron{a}{x} \kron{b}{y} \kron{c}{z}= \varepsilon_{txyz} = 1 > 0$
 
 
 For the second example, take a constant $x$ surface, $\Phi = x= c$. So, $ n_a = \frac{\partial_a x}{\sqrt{\partial_a x \partial^a x}} = \partial_a x$. Here, the ordering $y^\alpha = (y,t,z)$ works. $f = \varepsilon_{mabc} n^m e^a_1 e^b_2 e^c_3 = \varepsilon_{mabc} (\partial^m x) \kron{a}{y} \kron{b}{t} \kron{c}{z} = \varepsilon_{xytz} = -\varepsilon_{xtyz} = \varepsilon_{txyz} = 1 > 0$. Note that the more intuitive ordering $y^\alpha = (t,y,z)$ does not work. $f = \varepsilon_{mabc} (\partial^m x) \kron{a}{t} \kron{b}{y} \kron{c}{z} = \varepsilon_{xtyz} = -\varepsilon_{txyz} = -1<0$. 

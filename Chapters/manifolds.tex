@@ -867,23 +867,23 @@ Now, let me take the following Gaussian Normal coordinates.
 
 \section{Non-coordinate Basis and Tetrad Formalism}
 
-For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. 
+For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. Let us first define the non-coordiante bases. At any point p in the manifold, we can always find a set of four vectors $ \{ E_{\mu}\}$ that follow the relation, 
 
-
-Here is a consistent story, 
 \begin{align*}
-    g \lera{ \tt{E}{}{ \mu}, \tt{E}{}{ \nu}} &= \tt{ \eta}{}{ \mu \nu } \numberthis \label{ tetrad}
+    g \lera{ \tt{E}{}{ \mu}, \tt{E}{}{ \nu}} &= \tt{ \eta}{}{ \mu \nu } \numberthis \label{tetrad}
 \end{align*}
+
+It is not necesary that the inner product equals $ \tt{ \eta}{}{ \mu \nu}$. However, we will make this choice in the following discussion. 
 
 Since $ \tt{E}{ \mu}{}$ is a covecotor, it can be expanded in terms of the coordinate basis, 
 \begin{align*}
-    \tt{E}{ \mu}{} &= \tt{E}{ \mu} {a} dx^ {a} \\
+    \tt{E}{ \mu}{} &= \tt{E}{ \mu} {a} dx^ {a} \numberthis \label{dummy3}
 \end{align*}
 
 Now, E can be thought of as a matrix. Our convention is as usual, upper index is for row, lower index is for column. And, for any matrix A, $ \tt{ \lera{A^{-1}}}{i}{j}$ is denoted by $A_j^{\;\;i}$. Based on this, $ dx^a$ can be expanded as, 
 
 \begin{align*}
-    dx^{a} &= E_{ \mu}^{\;\;a} \tt{E}{ \mu}{}
+    dx^{a} &= E_{ \mu}^{\;\;a} \tt{E}{ \mu}{} \numberthis \label{dummy4}
 \end{align*}
 
 Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \mu}{}$, that is, $ \tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}}= \kron{ \mu}{ \nu}$. The basis vectors $ \tt{E}{}{ \mu}$ can also be expanded in terms of the coordiante basis vectors $ \partial_a$, as, $\tt{E}{}{ \mu}= F_{ \mu}^{ \;\; a} \partial_a $. The nice thing is that F is nothing but E! Let me show that.
@@ -899,7 +899,7 @@ Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \m
 
 This simply means, $ F^{-1} = E^{-1}$ or, $ F=E$. And,
 \begin{align*}
-    \tt{E}{}{ \mu}=& E_{ \mu}^{ \;\; a} \partial_a
+    \tt{E}{}{ \mu}=& E_{ \mu}^{ \;\; a} \partial_a \numberthis \label{dummy5}
 \end{align*}
 
 
@@ -910,7 +910,7 @@ It is now easy to see how $ \partial_a $ is expressed as a linear combination of
     & \tt{E}{}{ \mu} \tt{E}{ \mu}{b} = \tt{E}{ \mu}{b} E_ \mu {}^a \partial_a \\
     & \tt{E}{ \mu}{b} \tt{E}{}{ \mu} = \kron{a}{b} \partial_a \\
     & \partial_b = \tt{E}{ \mu}{b} \tt{E}{}{ \mu} \\
-    & \partial_a = \tt{E}{ \mu}{a} \tt{E}{}{ \mu} \\
+    & \partial_a = \tt{E}{ \mu}{a} \tt{E}{}{ \mu} \numberthis \label{dummy6}
 \end{align*}
 
 
@@ -944,6 +944,71 @@ To summarize, we have the following rules,
 \end{tcolorbox}
 
 
+
+The following summarizes the key identities involving $ \tt{E}{ \mu}{a}$ and $ E_\mu{}^a$. 
+
+(1) From the fact that $E^\mu$ and $E_\nu$ are dual to each other, we have, $\tt{E}{\mu}{}\lera{\tt{E}{}{\nu}} = \kron{\mu}{\nu} 
+	\Rightarrow\;  \tt{E}{\mu}{a} \du{E}{\nu}{a} = \kron{\mu}{\nu}$. 
+
+(2) From the fact that $dx^a$ and $\partial_b$ are dual to each other, we have, $ dx^a\lera{\partial_b} = \kron{a}{b} 
+	\Rightarrow\;  \du{E}{\mu}{a} \tt{E}{\mu}{b} = \kron{a}{b}$.
+
+(3) From \cref{tetrad} we have, $ \tt{g}{}{ab} E_\mu{}^a E_\nu{}^b = \tt{ \eta}{}{ \mu \nu}$. 
+
+(4) $\eta_{\mu\nu} \tt{E}{\mu}{a} \tt{E}{\nu}{b}  = g_{ab}$. The proof is as follows,
+ \begin{align*}
+	& g\lera{\partial_a, \partial_b} = g_{ab} \\
+	\Rightarrow\; & g\lera{\tt{E}{\mu}{a} \tt{E}{}{\mu}, \tt{E}{\nu}{b} \tt{E}{}{\nu}} = g_{ab} \\
+	\Rightarrow\; & \tt{E}{\mu}{a} \tt{E}{\nu}{b}\, g\lera{\tt{E}{}{\mu}, \tt{E}{}{\nu}} = g_{ab} \\
+	\Rightarrow\; & \tt{E}{\mu}{a} \tt{E}{\nu}{b} \eta_{\mu\nu} = g_{ab}
+\end{align*}
+
+Now, consider the inverse metric, $\tilde{g}$. We know that, $\tilde{g}\lera{dx^a, dx^b} = g^{ab}$; where $g^{ab}$ is just the inverse of the matrix $g_{ab}$. Since $\tilde{g}$ is the inverse metric, we necessarily have $\tilde{g}^{\mu\nu} = \eta^{\mu\nu}$.
+
+(5) $ \eta^{\mu\nu}\du{E}{\mu}{a} \du{E}{\nu}{b}  = g^{ab} $. The proof proceeds as follows,
+\begin{align*}
+	& \tilde{g}\lera{dx^a, dx^b} = g^{ab} \\
+	\Rightarrow\; & \tilde{g}\lera{\du{E}{\mu}{a} \tt{E}{\mu}{}, \du{E}{\nu}{b} \tt{E}{\nu}{}} = g^{ab} \\
+	\Rightarrow\; & \du{E}{\mu}{a} \du{E}{\nu}{b} \tilde{g}^{\mu\nu} = g^{ab} \\
+	\Rightarrow\; & \du{E}{\mu}{a} \du{E}{\nu}{b} \eta^{\mu\nu} = g^{ab}
+\end{align*}
+
+(6) $g^{ab} \tt{E}{\mu}{a} \tt{E}{\nu}{b}  = \eta^{\mu\nu}$.  The proof proceeds as follows,
+\begin{align*}
+	& \tilde{g}\lera{\tt{E}{\mu}{}, \tt{E}{\nu}{}} = \eta^{\mu\nu} \\
+	\Rightarrow\; & \tilde{g}\lera{\tt{E}{\mu}{a} dx^a, \tt{E}{\nu}{b} dx^b} = \eta^{\mu\nu} \\
+	\Rightarrow\; & \tt{E}{\mu}{a} \tt{E}{\nu}{b} g^{ab} = \eta^{\mu\nu}
+\end{align*}
+
+
+
+We define $E^{\mu a}$ or $E_{\mu a}$ by the usual index raising and lowering using $ \tt{g}{}{mn}$. That is, $E^{\mu a} = g^{ab} \tt{E}{\mu}{b} $ and $ \tt{E}{}{ \mu a} = \tt{g}{}{ab} E_\mu{}^b$ etc. On the other hand, we can use $\eta_{\mu\nu}$ to raise and lower tetrad indices. For example, $\eta_{\mu\nu} \tt{E}{\nu}{a} = E_{\mu a}$ etc. This needs proofs, as we want the two notions of $ E_{ \mu a}$ (for example) to match.
+
+\begin{align*}
+	E_{\mu a} &= g_{ab} \du{E}{\mu}{b} \\
+	&= \tt{E}{\alpha}{a} \tt{E}{\beta}{b} \eta_{\alpha\beta} \du{E}{\mu}{b} \\
+	&= \tt{E}{\beta}{b} \du{E}{\mu}{b} \tt{E}{\alpha}{a} \eta_{\alpha\beta} \\
+	&= \kron{\beta}{\mu} \eta_{\alpha\beta} \tt{E}{\alpha}{a} \\
+	&= \eta_{\alpha\mu} \tt{E}{\alpha}{a} \\
+	\Rightarrow E_{\mu a}&= \eta_{\mu\alpha} \tt{E}{\alpha}{a}
+\end{align*}
+And,
+
+\begin{align*}
+	E^{\mu a} &= g^{ba} \tt{E}{\mu}{b} \\
+	&= \du{E}{\rho}{b} \du{E}{\sigma}{a} \eta^{\rho\sigma} \tt{E}{\mu}{b} \\
+	&= \du{E}{\rho}{b} \tt{E}{\mu}{b} \du{E}{\sigma}{a} \eta^{\rho\sigma} \\
+	&= \kron{\mu}{\rho} \du{E}{\sigma}{a} \eta^{\rho\sigma} \\
+	\Rightarrow E^{\mu a} &= \eta^{\mu\sigma} \du{E}{\sigma}{a}
+\end{align*}
+
+
+
+
+
+
+
+
 It is nice to see how handy the tensor index gymnastics can be. It is almost like a magic. I can go back and forth between a tensor with its compoenet/s taken in the coordinate basis or the frame basis. For example, say I have a (2,0) tensor $\tt{A}{}{}$. Then, $ \tt{A}{ \mu m}{}= \tt{A}{nm}{} \tt{E}{\mu}{n}$ , $\tt{A}{m \mu}{}= \tt{A}{ \alpha \mu}{} E_\alpha{}^m$ etc. We can easily show these two, and we hope this is enough to convince a normal person about the general validity of this method. 
 
 \begin{align*}
@@ -957,8 +1022,14 @@ and , for the second equality,
 \begin{align*}
     \tt{A}{m \mu}{} &= A \lera{dx^m, E^\mu} \\
     &= A \lera{E_\nu{}^m E^\nu, E^\mu} \\
-    &= 
+    &= E_\nu{}^m A \lera{ \tt{E}{ \nu}{}, \tt{E}{ \mu}{} } \\
+    &= E_\nu{}^m \tt{A}{ \nu \mu}{}
 \end{align*}
+
+
+
+
+
 
 
 \subsection{Connection 1-form and Ricci Rotation Coefficient}
@@ -966,7 +1037,7 @@ and , for the second equality,
 Since $ \tt{E}{}{ \mu}$ is a field (at least in a chart U), I can take the covariant derivative of it wrt the basis vector fields of that chart. The result will have to be another vector field and can be expanded in terms of $ \{ \tt{E}{}{ \mu}\}$.
 
 \begin{align*}
-    &\cov{ \tt{E}{}{ \mu}}{ \partial_a} = \tt{ \omega}{ \nu}{ \mu a} \tt{E}{}{ \nu} \\
+    &\cov{ \tt{E}{}{ \mu}}{ \partial_a} = \tt{ \omega}{ \nu}{ \mu a} \tt{E}{}{ \nu} \numberthis \label{dummy7}
 \end{align*}
 
 We can show that although $ \tt{\omega}{\nu}{\mu a}$ is a 1-form in the index a, it is not a tensor in the indices $ \mu$ and $ \nu$. First, notice that the definition of $ \tt{\omega}{\nu}{\mu a}$ can be given as, $ \tt{\omega}{\nu}{\mu a}=\tt{E}{ \nu}{} \lera{ \cov{ \tt{E}{}{ \mu}}{ \partial_a}}$. Now, say I change the chart, but not the frame $ \{ \tt{E}{}{ \mu}\}$. So,
@@ -991,13 +1062,58 @@ This proves that $ \tt{\omega}{\nu}{\mu a}$ is a 1-form in the index a. To show 
 \end{align*}
 The last term shows the inhomogenous nature of the transformation of $ \tt{\omega}{\nu}{\mu a}$ under LT of the frame.
 
-\textcolor{blue}{Write down expressions for $ \cov{ \tt{A}{ \mu}{}}{\nu}$ just like you know how to write $ \cov{ A^a}{ m}$ etc.}
+Our next task is to write down expressions for $ \cov{\tt{A}{\mu}{\nu}}{a}$ just like we know how to expand $ \cov{ A^b{}_c}{a}$ etc. To do that, we follow steps very similar to our treatment of covariant derivatives with Christoffel symbols. In \cref{dummy7} we defined the functions $ \tt{ \omega}{ \mu}{ \nu a}$ as $ \cov{ \tt{E}{}{ \mu}}{ \partial_a} = \tt{ \omega}{ \nu}{ \mu a} \tt{E}{}{ \nu}$. Now we define $ \cov{ \tt{E}{\mu}{}}{ \partial_a} = \tt{ \Omega}{ \mu}{ \nu a} \tt{E}{\nu}{}$. We will show below that, $ \tt{ \Omega}{ \mu}{ \nu a} =- \tt{ \omega}{ \mu}{ \nu a}$. 
 
-Now, just as we know how to expand $ \cov{\tt{A}{a}{}}{b}$ in terms of a partial derivative and Christoffel symbol, we can derive a similar expression for $\cov{\tt{A}{\mu }{}}{m}$. To do so, notice that $ \cov{\tt{A}{\mu}{}}{m}$ is defined as $ \tt{E}{\mu}{}\lera{ \cov{A}{\partial_m}}= \tt{E}{\mu}{} \lera{\cov{\lera{\tt{A}{\nu}{} \tt{E}{}{\nu}}}{\partial_m}}= \tt{E}{\mu}{}\lera{\tt{E}{}{\nu} \partial_m A^{\nu}+\tt{A}{\nu}{} \cov{\tt{E}{}{\nu}}{\partial_m}}= \tt{E}{\mu}{}\lera{\tt{E}{}{\nu} \partial_m A^{\nu}+ A^{\nu} \tt{\omega}{\rho}{\nu m } \tt{E}{}{\rho}}= \partial_m A^{\mu}+ \tt{\omega}{\mu}{\nu m } A^{\nu}$. So,
 
 \begin{align*}
-    \cov{A^{\mu}}{m} &= \partial_m A^{\mu}  +\tt{\omega}{\mu}{\nu m} \tt{A}{\nu}{} \\
+	& \nabla_{\partial_a}\lera{\tt{E}{\mu}{}\lera{\tt{E}{}{\nu}}} = \lera{\cov{\tt{E}{\mu}{}}{\partial_a}}\lera{\tt{E}{}{\nu}} + \tt{E}{\mu}{}\lera{\cov{\tt{E}{}{\nu}}{\partial_a}} \\
+	\Rightarrow\; & \nabla_{\partial_a}  \lera{ \kron{ \mu}{ \nu}}= \tt{\Omega}{\mu}{\rho a} \tt{E}{\rho}{}\lera{\tt{E}{}{\nu}} + \tt{E}{\mu}{}\lera{\tt{\omega}{\rho}{\mu a} \tt{E}{}{\rho}} \\
+	\Rightarrow\; & 0 = \tt{\Omega}{\mu}{\rho a} \kron{\rho}{\nu} + \tt{\omega}{\rho}{\mu a} \kron{\mu}{\rho} \\
+	\Rightarrow\; & 0 = \tt{\Omega}{\mu}{\nu a}  + \tt{\omega}{\mu}{\nu a} \\
+	\Rightarrow\; & \tt{\Omega}{\mu}{\nu a} = - \tt{\omega}{\mu}{\nu a}
 \end{align*}
+
+This just means,
+
+\begin{align*}
+    \cov{ \tt{E}{\mu}{}}{ \partial_a} = -\tt{ \omega}{ \mu}{ \nu a} \tt{E}{\nu}{} \numberthis \label{dummy8}
+\end{align*}
+
+
+
+For a (1,1)-tensor $\tt{A}{\mu}{\nu}$, we have $\nabla_a \tt{A}{\mu}{\nu} = \tt{\lera{\nabla_{\partial_a} A}}{\mu}{\nu} $.
+
+
+\begin{align*}
+	\nabla_{\partial_a} A &= \nabla_{\partial_a}\lera{\tt{A}{\mu}{\nu} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{}} \\
+	&= \lera{\partial_a \tt{A}{\mu}{\nu}} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{} + \tt{A}{\mu}{\nu} \lera{\cov{\tt{E}{}{\mu}}{\partial_a}} \otimes \tt{E}{\nu}{} + \tt{A}{\mu}{\nu} \tt{E}{}{\mu} \otimes \lera{\cov{\tt{E}{\nu}{}}{\partial_a}} \\
+	&= \partial_a \tt{A}{\mu}{\nu} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{} + \tt{A}{\mu}{\nu} \tt{\omega}{\rho}{\mu a} \tt{E}{}{\rho} \otimes \tt{E}{\nu}{} - \tt{A}{\mu}{\nu} \tt{\omega}{\nu}{\rho a} \tt{E}{}{\mu} \otimes \tt{E}{\rho}{} \\
+	&= \lera{\partial_a \tt{A}{\mu}{\nu} + \tt{\omega}{\mu}{\rho a} \tt{A}{\rho}{\nu} - \tt{\omega}{\rho}{\nu a} \tt{A}{\mu}{\rho}} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{}
+\end{align*}
+
+Therefore,
+\begin{align*}
+    \nabla_a \tt{A}{\mu}{\nu} = \partial_a \tt{A}{\mu}{\nu} + \tt{\omega}{\mu}{\rho a} \tt{A}{\rho}{\nu} - \tt{\omega}{\rho}{\nu a} \tt{A}{\mu}{\rho} \numberthis \label{dummy9}
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 One immediate inquiry is the expression of $ \tt{\omega}{\nu}{\mu a}$ in terms of $ \cris{a}{bc}$. We know that, 
 
@@ -1028,7 +1144,7 @@ Similarly, multiplying both sides of \cref{omegaintermsofcris} with $ \du{E}{ \m
 \end{align*}
 
 
-This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the frame basis instead of coordinate basis. That is, while a connection one form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the coordinate basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1-form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
+This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the tetrad basis instead of coordinate basis. That is, while a connection one form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the coordinate basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1-form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
 
 \begin{align*}
     &\tt{\omega}{\nu}{\mu \rho} = \tt{\omega}{\nu}{\mu a} \du{E}{ \rho}{a} \numberthis \label{riccirotationdefined}
@@ -1045,11 +1161,58 @@ Another way to express the Ricci rotation coefficient is, $ \tt{\omega}{\nu}{\mu
 \end{align*}
 
 
+Now, our task is to write an expression for $ \cov{\tt{A}{\mu}{\nu}}{ \alpha}$ just like we showed how to expand $ \cov{ A^\mu{}_\nu}{a}$ etc. To do that, we follow steps very similar to what we have done in the previous case. First, we claim that $\nabla_{\tt{E}{}{\alpha}} \tt{E}{\beta}{} = - \tt{\omega}{\beta}{\mu\alpha} \tt{E}{\mu}{}$. This is easily shown, $ \nabla_{\tt{E}{}{\alpha}} \tt{E}{\beta}{}= \nabla_{ \lera{E_\alpha{}^a \partial_a}} \tt{E}{\beta}{} = E_\alpha{}^a \nabla_{\partial_a}E^{\beta}= -E_\alpha{}^a \omega^{ \beta}{}_{ \mu a} E^{\mu}= - \tt{ \omega}{ \beta}{ \mu \alpha} E^{\mu} $.
+
+
+
+
+
+
+
+Take the $(1,1)$ tensor $\tt{A}{\mu}{\nu}$. We know that, $\nabla_\alpha \tt{A}{\mu}{\nu} = \tt{\lera{\nabla_{\tt{E}{}{\alpha}} A}}{\mu}{\nu} $. Then,
+\begin{align*}
+	\nabla_\alpha A &= \nabla_{\tt{E}{}{\alpha}} A \\
+	&= \nabla_{\tt{E}{}{\alpha}}\lera{\tt{A}{\mu}{\nu} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{}} \\
+	&= \tt{E}{}{\alpha}\lera{\tt{A}{\mu}{\nu}} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{} + \tt{A}{\mu}{\nu} \lera{\nabla_{\tt{E}{}{\alpha}} \tt{E}{}{\mu}} \otimes \tt{E}{\nu}{} + \tt{A}{\mu}{\nu} \tt{E}{}{\mu} \otimes \nabla_{\tt{E}{}{\alpha}} \tt{E}{\nu}{} \\
+	&= \du{E}{\alpha}{a} \partial_a \tt{A}{\mu}{\nu} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{} + \tt{A}{\mu}{\nu} \tt{\omega}{\rho}{\mu\alpha} \tt{E}{}{\rho} \otimes \tt{E}{\nu}{}- \tt{A}{\mu}{\nu} \tt{\omega}{\nu}{\rho\alpha} \tt{E}{}{\mu} \otimes \tt{E}{\rho}{} \\
+	&= \lera{\du{E}{\alpha}{a} \partial_a \tt{A}{\mu}{\nu} + \tt{\omega}{\mu}{\rho\alpha} \tt{A}{\rho}{\nu} - \tt{\omega}{\rho}{\nu\alpha} \tt{A}{\mu}{\rho}} \tt{E}{}{\mu} \otimes \tt{E}{\nu}{}
+\end{align*}
+Hence,
+\begin{align*}
+	\nabla_\alpha \tt{A}{\mu}{\nu} = \partial_\alpha \tt{A}{\mu}{\nu} + \tt{\omega}{\mu}{\rho\alpha} \tt{A}{\rho}{\nu} - \tt{\omega}{\rho}{\nu\alpha} \tt{A}{\mu}{\rho} \numberthis \label{dummy10}
+\end{align*}
+where I defined, $\partial_\alpha \tt{A}{\mu}{\nu} \equiv \du{E}{\alpha}{a} \partial_a \tt{A}{\mu}{\nu}$. We can always go back and forth between different kinds of indices. For example, for a $(0,1)$-tensor $A$,
+\begin{align*}
+	\nabla_\mu A_\nu &= \nabla_a A_b \du{E}{\mu}{a} \du{E}{\nu}{b} \\
+	\nabla_a A_b &= \nabla_\mu A_\nu \tt{E}{\mu}{a} \tt{E}{\nu}{b}
+\end{align*}
+
 
 \subsubsection{Properties of Ricci Rotation Coefficients}
 
 
-Several properties of Ricci Rotation coefficients are important to understand. 
+Several properties of Ricci Rotation coefficients are important to understand. Let us list them below,
+
+(1) Antisymmetry in the first two indices. $ \tt{ \omega}{}{ \mu \nu \alpha}= -\tt{ \omega}{}{ \nu \mu \alpha}$
+
+
+\begin{proof}
+    Since the covariant derivative is compatible with the metric $ g_{ab}$, we have $ \nabla_a g_{\mu\nu} = \lera{\nabla_a g}_{\mu\nu} = \lera{\nabla_{\partial_a} g}_{\mu\nu} = 0$.
+    \begin{align*}
+        & \nabla_a \tt{g}{}{ \mu \nu} =0 \\
+	\Rightarrow\; & \partial_a \eta_{\mu\nu} - \tt{\omega}{\rho}{\mu a} \eta_{\rho\nu} - \tt{\omega}{\rho}{\nu a} \eta_{\mu\rho} = 0 \\
+	\Rightarrow\; & 0 - \omega_{\nu\mu a} = \omega_{\mu\nu a} \\
+	\Rightarrow\; & \omega_{\mu\nu a} = - \omega_{\nu\mu a} \\
+	\Rightarrow\; & \omega_{\mu\nu\alpha} = - \omega_{\nu\mu\alpha}
+\end{align*}
+
+
+\end{proof}
+
+The crucial step in the proof was the constancy of $ \tt{ \eta}{}{ \mu \nu}$ which lead to $ \partial_a \tt{ \eta}{}{ \mu \nu}=0$. Any tetrad frame which shows this property is called a \textbf{rigid} tetrad. 
+	
+
+
 
 
 
