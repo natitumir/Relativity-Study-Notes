@@ -15,7 +15,7 @@ We will discuss the idea of a submanifold first. Hypersurfaces are a special typ
  Let S and M be two manifolds. Let there be a smooth map $\Psi:S \longrightarrow M $. $\Psi$ is called an imbedding if the following three conditions hold.
  \begin{itemize}
      \item $\Psi$ is injective.
-     \item at all$p$in S, the push forward map $\lera{\Psi_p}_*: T_p S \longrightarrow T_pM$ is injective.
+     \item at all $p$ in S, the push forward map $\lera{\Psi_p}_*: T_p S \longrightarrow T_pM$ is injective.
      \item the inverse map $\Psi^{-1}: \Psi \left[ S \right] \longrightarrow S$ is continuous with respect to the relative topology in $\Psi\left[S \right]$.
  \end{itemize}
 
@@ -47,7 +47,7 @@ If S is a metric submanifold of M (I will explain what a metric submanifold is i
 
 We denote the space of all M-vectors tangent to S at $p$ as $\mathscr{T}_p$ and the space of all M-covectors normal to S at $p$ as $\mathscr{N}_p^{*}$. As we took $T_pS$ and then pushed it forward with an imbedding (which basically maps $T_pS$ to $T_pM$ injectively), the dimension of $\mathscr{T}_p$ is $k$. We can also show that the dimension of $\mathscr{N}^*_p$ is $n-k$.
 
-Another way to describe tangent vector comes from what it means to push forward a vector from one manifold to another. For a vector $ \tilde{X}$ in S, there is obviously a curve $ \gamma$ to which the vector $ \tilde{X}$ is tangent to. Since push forward of a vector tangent to a curve is tangent to the image of the curve, $ id_* \tilde{X}$ is tangent to $ id( \gamma)$. In fact, we are considering S to be a subset of M, and $ id( \gamma)$ is actually just $ \gamma$. This means, any M-vector at$p$that is tangent to a curve $ \gamma$ which lies entirely in S, is a member of $ \mathscr{T}_p$.
+Another way to describe tangent vector comes from what it means to push forward a vector from one manifold to another. For a vector $ \tilde{X}$ in S, there is obviously a curve $ \gamma$ to which the vector $ \tilde{X}$ is tangent. Since push forward of a vector tangent to a curve is tangent to the image of the curve, $ id_* \tilde{X}$ is tangent to $ id( \gamma)$. In fact, we are considering S to be a subset of M, and $ id( \gamma)$ is actually just $ \gamma$. This means, any M-vector at $p$ that is tangent to a curve $ \gamma$ which lies entirely in S, is a member of $ \mathscr{T}_p$.
 Wait, how do you show the converse.....?????
 
 
@@ -96,7 +96,7 @@ While the M-vectors tangent to S come directly from S via a push forward map, th
 \end{proof}
 
 
-Now, more general M-tensors at $p$ can also be tangent and normal, in different indices. For example, we can say that a (2,3) M-tensor $ \tt{T}{ab}{cde}$ at $p$ is tangent in the first upper index $a$, or normal in the third lower index $e$. The follwing definition can easily be generalized.
+Now, more general M-tensors at $p$ can also be tangent and normal, in different indices. For example, we can say that a (2,3) M-tensor $ \tt{T}{ab}{cde}$ at $p$ is tangent in the first upper index $a$, or normal in the third lower index $e$. The following definition can easily be generalized.
 
 \begin{definition}
     A (2,3) M-tensor $\tensor{T}{ab}{\quad cde}$ at point $p$ is tangent to S in the second upper index $ b$  if for any $\eta \in \mathscr{N}^*_p$, $\tensor{T}{ab}{\quad cde} \eta_b =0$. It is normal to S in the third lower index $e$ if for any $X \in \mathscr{T}_p$ , $\tensor{T}{ab}{\quad cdn}X^n=0$. And so on for tensors of different index structures.
@@ -129,7 +129,7 @@ We know that the dimension of $\mathscr{T}_p$ is $k$ and the dimension of $\math
 \begin{proof}
     We know that the metric tensor $g_{ab}$ creates a bijective mapping between $T_pM$ and $T^*_pM$. So thinking from that perspective, $\mathscr{T}^*_p$ is basically the set of all covectors $ \eta$ such that $ \eta_a = g_{am} X^m$ where $X \in \mathscr{T}_p$. And the dimension of such a space is obviously the dimension of $\mathscr{T}_p$, that is, $k$.
 
-    In a similar way, the space $\mathscr{N}_p$ is made of all vectors $X$ that has the form $X^a = g^{am} \eta_m$ where $\eta \in \mathscr{N}^*_p$. And the dimension of such a space is equal to the dimension of $\mathscr{N}^*_p$, which is $(n-k)$.
+    In a similar way, the space $\mathscr{N}_p$ is made of all vectors $X$ that have the form $X^a = g^{am} \eta_m$ where $\eta \in \mathscr{N}^*_p$. And the dimension of such a space is equal to the dimension of $\mathscr{N}^*_p$, which is $(n-k)$.
 \end{proof}
 
 
@@ -203,14 +203,14 @@ For example,
 
 In short, at any point $p$ in S, the tensor algebra of S-tensors is isomorphic to the tensor algebra of M-tensors that are tangent to S. With every S-tensor, I get an evil twin M-tensor of the same index structure.
 
-Now, this can be extended to the whole of S, and we have a map $ \phi$ that takes any S-tensor field to an M-tensor field that is tangent to S and have the same index structure, and they also follow the same tensor algebra on both sides of the ``river''.
+Now, this can be extended to the whole of S, and we have a map $ \phi$ that takes any S-tensor field to an M-tensor field that is tangent to S and has the same index structure, and they also follow the same tensor algebra on both sides of the ``river''.
 
 
 
 
 
 \subsection{S-tensors}
-Given we have a coordinate system $ \{x^a\}$ on the ambient space M, and a cooridnate system $ \{y^{\alpha}\}$ on the submanifold, the identity map $ id: S \longrightarrow M$ is defined by $ x^a(y^{\alpha})$ at any point. As a map between two manifolds, we can apply the familiar notions of push forward and pull back on $ id$. 
+Given we have a coordinate system $ \{x^a\}$ on the ambient space M, and a coordinate system $ \{y^{\alpha}\}$ on the submanifold, the identity map $ id: S \longrightarrow M$ is defined by $ x^a(y^{\alpha})$ at any point. As a map between two manifolds, we can apply the familiar notions of push forward and pull back on $ id$. 
 \textcolor{blue}{Complete this section.}
 
 
@@ -264,7 +264,7 @@ We define a perpendicular projection tensor $ k_{ab}$ too which is a smooth symm
 \end{align*}
 
 
-Notice that $ k_{ab}$ is normal to S. If $X$ is an M-vector tangent to S, then, $k_{ab} X^a = g_{ab} X^a - h_{ab} X^a = g_{ab} X^a - g_{ab} X^a =0 $. So $ k_{ab}$ is normal to S in the first index. But being a symmetric tensor, it must be also normal in the second index too, so it is normal as a whole. 
+Notice that $ k_{ab}$ is normal to S. If $X$ is an M-vector tangent to S, then, $k_{ab} X^a = g_{ab} X^a - h_{ab} X^a = g_{ab} X^a - g_{ab} X^a =0 $. So $ k_{ab}$ is normal to S in the first index. But being a symmetric tensor, it must be normal in the second index, so it is normal as a whole. 
 
 
 
@@ -274,7 +274,7 @@ The following propositions show that it is okay to call $ h_{ab}$ a tangential p
 
 
 
-\begin{proposition}
+\begin{proposition}\label{prop:tangent_projector}
      $ X^a$ is tangent to S $ \iff$ $ \tt{h}{a}{b} X^b = X^a \iff \tt{k}{a}{b} X^b =0 $
 \end{proposition}
 
@@ -302,7 +302,7 @@ The following propositions show that it is okay to call $ h_{ab}$ a tangential p
 
 
 
-\begin{proposition}
+\begin{proposition}\label{prop:normal_projector}
    $ X^a$ is normal to S $ \iff$ $ \tt{k}{a}{b} X^b = X^a \iff \tt{h}{a}{b} X^b =0 $ 
 \end{proposition}
 
@@ -312,7 +312,7 @@ The following propositions show that it is okay to call $ h_{ab}$ a tangential p
 \end{proof}
 
 
-While I stated proposition 4.9 and 4.10 for a (1,0) tensor, i.e. a vector $ X^a$, these propositions actually hold for tensors of arbitrary index structure. For example, if $ \tt{T}{ab}{c}$ is tangent to S in the second upper index $b$, then $ \tt{h}{b}{m} \tt{T}{am}{c}= \tt{T}{ab}{c}$ and $ \tt{k}{b}{m} \tt{T}{am}{c}=0$.
+While I stated \cref{prop:tangent_projector,prop:normal_projector} for a (1,0) tensor, i.e. a vector $ X^a$, these propositions actually hold for tensors of arbitrary index structure. For example, if $ \tt{T}{ab}{c}$ is tangent to S in the second upper index $b$, then $ \tt{h}{b}{m} \tt{T}{am}{c}= \tt{T}{ab}{c}$ and $ \tt{k}{b}{m} \tt{T}{am}{c}=0$.
 
 \begin{proposition}
     $ \tt{h}{a}{b} \tt{h}{b}{c} = \tt{h}{a}{c}$
@@ -381,7 +381,7 @@ We note that due to (D3) we have $  D_a \omega_b Y^c = \lera{D_a \omega_b} Y^c +
 \end{align*}
 
 
-(D5)$D_X f = X^m D_m f = X^m h^n_{\phantom{n}m} \nabla_n f = X^m h^n_{\phantom{n}m} \nabla_n \overset{+}{f}$. Now imagine that we are at a point $ p \in S$ and working in a chart where only $X^1$ to $X^k$ is non-zero, i.e. $\{\partial_i\}_{(i=1,\ldots,k)}$ form a basis for $ \mathscr{T}_p$. So in an expansion like $X^m \partial_m f$ terms with $m > k$ do not contribute. Hence the derivatives of $\overset{+}{f}$ in normal directions to S does not matter and it suffices to work with only $\partial_n f$ with $n = 1, \ldots, k$ as these are well defined even without the extension of $ f$. So, $D_X f = X^m h^n_{\phantom{n}m} \partial_n \overset{+}{f} = X^n \partial_n f = X(f)$. Since we are dealing with a scalar, it is true regardless of which chart we are using. 
+(D5)$D_X f = X^m D_m f = X^m h^n_{\phantom{n}m} \nabla_n f = X^m h^n_{\phantom{n}m} \nabla_n \overset{+}{f}$. Now imagine that we are at a point $ p \in S$ and working in a chart where only $X^1$ to $X^k$ are non-zero, i.e. $\{\partial_i\}_{(i=1,\ldots,k)}$ form a basis for $ \mathscr{T}_p$. So in an expansion like $X^m \partial_m f$ terms with $m > k$ do not contribute. Hence the derivatives of $\overset{+}{f}$ in normal directions to S do not matter and it suffices to work with only $\partial_n f$ with $n = 1, \ldots, k$ as these are well defined even without the extension of $ f$. So, $D_X f = X^m h^n_{\phantom{n}m} \partial_n \overset{+}{f} = X^n \partial_n f = X(f)$. Since we are dealing with a scalar, it is true regardless of which chart we are using. 
 
 
 Another property of $ D $ is quite important. $ D$ is metric compatible in the following sense,  
@@ -536,8 +536,79 @@ While the $ hhh$ and $ hkk$ projections are zero, the $ hhk$ projection, $\tt{h}
 \end{align*}
 
 
-$ \tt{K}{}{abc}$ has particular geometric significance, and we will show some of those significance in this section. 
+$ \tt{K}{}{abc}$ has particular geometric significance, and we will show some of those significance in this section.
 
+\begin{proposition}
+    $K_{[ab]c} = 0$, that is, $ \tt{K}{}{abc}$ is symmetric in the first two indices. 
+\end{proposition}
+
+\begin{proof}
+At a point $p$ in S, if we can show that for any vector $X^a$ at $p$, $K_{[ab]c} X^c = 0$, then $K_{[ab]c} = 0$. $X^a$ can either be tangent to S, or normal to S. If $X^a$ is tangent, then, $K_{[ab]c} X^c = \tt{h}{m}{[a} \tt{h}{n}{b]} \tt{k}{p}{c} \nabla_m h_{np} X^c = 0$ due to $\tt{k}{p}{c} X^c = 0$. It remains to show that $K_{[ab]c} X^c = 0$ when $X^a \in \mathscr{N}_p$.
+
+We know that, for an embedded submanifold, at the point $p$, there is an M-chart $(U, x)$ around $p$ such that on $S \cap U$, $x^{k+1} = \cdots = x^n = 0$. We can take $k$ scalar functions $\overset{i}{\alpha} = x^i$ on U. On $S \cap U$, $\partial_a \overset{i}{\alpha}$'s are normal to S. That they are normal is easily shown as follows. Take any tangent vector X at any point in $S \cap U$. Since $ X$ is tangent to S, it necessarily measures the rate of change of any scalar function along a curve entirely in S. But along such a curve $\overset{i}{\alpha}$'s do not change (they remain zero). So, $X(\overset{i}{\alpha}) = 0 = X^a \partial_a \overset{i}{\alpha} = 0$.
+
+Moreover, at the point $p$, $\{\partial_a \overset{i}{\alpha}\}$ form a basis for $\mathscr{N}_p$. This is also seen easily. $\{d\overset{i}{\alpha}\}$ are linearly independent as they come from different coordinate functions. And, there are $ k$ of them, so they can easily form the basis of $\mathscr{N}^*_p$ and $\{\partial^a \overset{i}{\alpha}\}$ form the basis of $\mathscr{N}_p$.
+
+So, it suffices for us to show that for any $i = 1, \ldots, k$, $K_{[ab]c} \partial^c \overset{i}{\alpha} = 0$.
+\begin{align*}
+	K_{[ab]c} \partial^c \overset{i}{\alpha} &= \tt{h}{m}{[a} \tt{h}{n}{b]} \tt{k}{p}{c} \nabla_m h_{np} \partial^c \overset{i}{\alpha} \\
+	&= \tt{h}{m}{[a} \tt{h}{n}{b]} \partial^p \overset{i}{\alpha} \nabla_m h_{np} \\
+	&= - \tt{h}{m}{[a} \tt{h}{n}{b]} \nabla_p \overset{i}{\alpha} \nabla_m \tt{h}{p}{n} \\
+	&= \tt{h}{m}{[a} \tt{h}{n}{b]} \lera{\nabla_m \lera{\tt{h}{p}{n} \nabla_p \overset{i}{\alpha}} - \tt{h}{p}{n} \nabla_m \nabla_p \overset{i}{\alpha}} \\
+	&= \tt{h}{m}{[a} \tt{h}{n}{b]} \lera{0 - \tt{h}{p}{n} \nabla_m \nabla_p \overset{i}{\alpha}} \\
+	&= - \tt{h}{m}{[a} \tt{h}{p}{b]} \nabla_m \nabla_p \overset{i}{\alpha} \\
+	&= - \tt{h}{m}{a} \tt{h}{p}{b} \nabla_{[m} \nabla_{p]} \overset{i}{\alpha} \\
+	&= 0 \quad \text{(torsionless)}
+\end{align*}
+In the fifth equality, we used the fact that since $\tt{h}{p}{n} \nabla_p \overset{i}{\alpha} = 0$ on $S \cap U$, so, $\tt{h}{m}{a} \nabla_m \lera{\tt{h}{p}{n} \nabla_p \overset{i}{\alpha}} = 0$ too.
+\end{proof}
+
+Now, let's show the geometric significance of the quantity $ \tt{K}{}{abc}$. Suppose, $\gamma$ is a geodesic of S. Is it also a geodesic of M? Before going to the mathematics properly, let us give an everyday example. Imagine a sheet of paper rolled up. Within that rolled up paper, the intrinsic curvature is zero. However, are the geodesics of the rolled up paper (axial rings) also geodesics of the ambient space? Certainly not. This is what we mean when we say the rolled up sheet of paper has extrinsic curvature. On the other hand, take a plane sheet of paper. This one also does not have any intrinsic curvature. It does not have extrinsic curvature either. A geodesic of the flat sheet of paper (a straight line) is also a geodesic of the ambient space. 
+
+\textcolor{blue}{Add a picture.}
+ 
+
+To make the idea precise, let us first make sure we know what a geodesic intrinsic to S means. If $\gamma$ is a geodesic in $(S, \tilde{h})$, then for any point on $\gamma$, $\tilde{D}_{\tilde{X}} \tilde{X} = 0$, where $\tilde{X}$ is the S-vector tangent to $\gamma$. Now, $\tilde{D}_{\tilde{X}} \tilde{X} = 0 \iff D_X X = 0$. So we can say, $\gamma$ is a geodesic of the submanifold if and only if $D_X X = 0$. The following theorem shows that the extrinsic curvature is a measure of how much $\gamma$ fails to be a geodesic of M. That is, instead of $X^a \nabla_a X^b =0 $ being true, we have,
+
+
+\begin{proposition}
+     $X^a \nabla_a X^b = K_{mn}{}^{b} X^m X^n$
+\end{proposition}
+
+\begin{proof}
+    \begin{align*}
+	 X^a D_a X^b &= 0 \\
+	\Rightarrow\;  X^a \tt{h}{e}{a} \tt{h}{b}{f} \nabla_e X^f &= 0 \\
+	\Rightarrow\;  X^e \tt{h}{b}{f} \nabla_e X^f &= 0 \\
+	\Rightarrow\;  X^e \lera{\kron{b}{f} - \tt{k}{b}{f}} \nabla_e X^f &= 0 \\
+	\Rightarrow\;  X^e \nabla_e X^b - \tt{k}{b}{f} X^e \nabla_e X^f &= 0 \\
+	\Rightarrow\;  X^a \nabla_a X^b &= \tt{k}{b}{f} \tt{h}{e}{i} X^i \nabla_e \lera{\tt{h}{f}{j} X^j} \\
+	&= \tt{k}{b}{f} \tt{h}{e}{i} X^i \lera{\tt{h}{f}{j} \nabla_e X^j + X^j \nabla_e \tt{h}{f}{j}} \\
+	&= \tt{k}{b}{f} \tt{h}{f}{j} \tt{h}{e}{i} X^i \nabla_e X^j + \tt{k}{b}{f} \tt{h}{e}{i} X^i X^j \nabla_e \tt{h}{f}{j} \\
+	&= 0 + \tt{k}{b}{f} \tt{h}{e}{i} X^i X^j \nabla_e \tt{h}{f}{j} \\
+	&= \tt{h}{e}{i} k^{fb} X^i X^j \nabla_e h_{jf} \\
+	&= \tt{h}{e}{i} k^{fb} \lera{\tt{h}{j}{t} X^t} X^i \nabla_e h_{jf} \\
+	&= \tt{h}{e}{i} \tt{h}{j}{t} k^{fb} \nabla_e h_{jf} X^i X^t \\
+	&= K_{it}{}^{b} X^i X^t \\
+	&= K_{mn}{}^{b} X^m X^n \quad (i \to m;\ t \to n)
+\end{align*}
+
+\end{proof}
+
+This tells us: if $ K_{abc}=0$ everywhere on S, that is, S does not have any extrinsic curvature anywhere, then any geodesic of S is also a geodesic of M. 
+
+\begin{proposition}
+    $ \tt{K}{}{abc} $ can also be expressed as $ \tt{K}{}{abc}= \tt{h}{m}{a} \tt{h}{n}{b} \nabla_m \tt{h}{}{nc}$.
+\end{proposition}
+\begin{proof}
+    \begin{align*}
+        \tt{K}{}{abc} &= \tt{h}{m}{a} \tt{h}{n}{b} \tt{k}{p}{c} \nabla_m \tt{h}{}{np} \\
+        &= \tt{h}{m}{a} \tt{h}{n}{b} \lera{ \tt{g}{p}{c}-\tt{h}{p}{c}}  \nabla_m \tt{h}{}{np} \\
+        &=\tt{h}{m}{a} \tt{h}{n}{b}  \tt{g}{p}{c} \nabla_m \tt{h}{}{np}- \tt{h}{m}{a} \tt{h}{n}{b}\tt{h}{p}{c} \nabla_m \tt{h}{}{np}\\
+        &= \tt{h}{m}{a} \tt{h}{n}{b}  \nabla_m \tt{h}{}{nc}- 0 \\
+        &= \tt{h}{m}{a} \tt{h}{n}{b}  \nabla_m \tt{h}{}{nc}
+    \end{align*}
+\end{proof}
 
 
 
@@ -545,7 +616,7 @@ $ \tt{K}{}{abc}$ has particular geometric significance, and we will show some of
 
 \subsection{Gauss Codazzi Equations}
 
-Before proving those equations, let me remind one useful way of characterizing the Riemann tensor. If $ v^a$ is a vector field, then,
+Before proving those equations, let us remind ourselves of a useful way of characterizing the Riemann tensor. If $ v^a$ is a vector field, then,
 
 \begin{align*}
     [ \nabla_c \;, \nabla_d  ] v^a &= \tt{R}{a}{mcd} v^m  \\
@@ -554,7 +625,7 @@ Before proving those equations, let me remind one useful way of characterizing t
 \end{align*}
 
 
-This can also be generalized, in the following way. Say, $ \tt{T}{a}{b}$ is a (1,1) field. Then the antisymmetrized double covariant derivative on it can be expanded in terms of the Riemann tensor as follows, 
+This can also be generalized in the following way. Say, $ \tt{T}{a}{b}$ is a (1,1) field. Then the antisymmetrized double covariant derivative on it can be expanded in terms of the Riemann tensor as follows, 
 
 \begin{align*}
     2 \nabla_{[c} \nabla_{d]} \tt{T}{a}{b} &= \tt{R}{a}{mcd} \tt{T}{m}{b}- \tt{R }{m}{bcd} \tt{T}{a}{m} 
@@ -589,10 +660,10 @@ Now, let's look at them term by term.
   & \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{r} \lera{ \nabla_m \tt{h}{q}{n} } \nabla_q v^r \\
   &= \tt{h}{m}{[c} \tt{h}{n}{d]} \tt{h}{a}{r} \lera{ \nabla_m \tt{h}{}{nq} } \nabla^q v^r \\
   &= \tt{h}{a}{r} \tt{h}{m}{[c} \tt{h}{n}{d]}  \lera{ \nabla_m \tt{h}{}{nq} } \nabla^q v^r \\
-  &= - \tt{h}{a}{r} \tt{K}{}{[cd]q} \nabla^q v^r \\
-  & \lera{ \text{Using the relation $ \tt{K}{}{abc}= - \tt{h}{m}{a } \tt{h}{n}{b} \nabla_m h_{nc}$}}\\
+  &= \tt{h}{a}{r} \tt{K}{}{[cd]q} \nabla^q v^r \\
+  & \lera{ \text{Using the relation $ \tt{K}{}{abc}=  \tt{h}{m}{a } \tt{h}{n}{b} \nabla_m h_{nc}$}}\\
   &= 0 \\
-  & \lera{ \text{ Since the antisymmetrization of the first two indices of $ \tt{K}{}{abc}$ gives zero.}}
+  & \lera{ \text{Since the antisymmetrization of the first two indices of $ \tt{K}{}{abc}$ gives zero.}}
 \end{align*}
 
  Second Term:
@@ -603,21 +674,21 @@ Now, let's look at them term by term.
     &= \tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{pa}{} \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
     &= \tt{g}{sa}{}\tt{h}{m}{[c} \tt{h}{q}{d]} \tt{h}{p}{s} \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
     &= \tt{g}{sa}{}\tt{h}{m}{[c} \tt{h}{p}{|s|} \tt{h}{q}{d]}  \lera{ \nabla_m \tt{h}{}{pr}} \nabla_q v^r \\
-    &= -\tt{g}{sa}{} \tt{K}{}{[c|sr|} \tt{h}{q}{d]} \nabla_q v^r \\
-    &= -\tt{g}{sa}{} \tt{K}{}{[c|sr|} \tt{h}{q}{d]} \nabla_q \lera{ \tt{h}{r}{t} v^t} \\
-    & \lera{ \text{The trick is to realize that v is tangent to S.}} \\
-    &= - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \nabla_q \lera{ \tt{h}{r}{t} v^t} \\
-    &= - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} v^t - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \tt{h}{r}{t} \nabla_q v^t \\
-    &= - K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} v^t -0 \\
+    &= \tt{g}{sa}{} \tt{K}{}{[c|sr|} \tt{h}{q}{d]} \nabla_q v^r \\
+    &= \tt{g}{sa}{} \tt{K}{}{[c|sr|} \tt{h}{q}{d]} \nabla_q \lera{ \tt{h}{r}{t} v^t} \\
+    & \lera{\text{The trick is to realize that $v$ is tangent to S.}} \\
+    &=  K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \nabla_q \lera{ \tt{h}{r}{t} v^t} \\
+    &=  K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} v^t + K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \tt{h}{r}{t} \nabla_q v^t \\
+    &=  K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} v^t +0 \\
     & \lera{
     \begin{aligned}[]
         &\text{The second term goes to zero as the extrinsic curvature $ \tt{K}{}{abc}$ is} \\
         &\text{normal in the third index.}
     \end{aligned}
     }\\
-    &=- K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} \lera{ \tt{h}{t}{u} v^u} \\
-    &= - K^{\;\;ar}_{[c} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{}{tr}} \lera{ \tt{h}{t}{u} v^u} \\
-    &= -K^{\;\; ar}_{[c} \tt{h}{q}{d]} \tt{h}{t}{u} \lera{ \nabla_q h_{tr}} v^u \\
+    &= K^{\;\;a}_{[c \;\;\; |r|} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{r}{t}} \lera{ \tt{h}{t}{u} v^u} \\
+    &= K^{\;\;ar}_{[c} \tt{h}{q}{d]} \lera{ \nabla_q \tt{h}{}{tr}} \lera{ \tt{h}{t}{u} v^u} \\
+    &= K^{\;\; ar}_{[c} \tt{h}{q}{d]} \tt{h}{t}{u} \lera{ \nabla_q h_{tr}} v^u \\
     &= K^{\; \; ar}_{[c} K_{d]ur} v^u 
 \end{align*}
 
@@ -653,33 +724,46 @@ Now, taking any vector $ \eta$, not necessarily tangent, and then taking the tan
     & \tt{ \mathcal{R}}{a}{mcd} \tt{h}{m}{s} \eta^s = \left( \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s}  +2K^{\; \; ar}_{[c} K_{d]mr} \tt{h}{m}{s}\right) \eta^s\\
     &\tt{ \mathcal{R}}{a}{mcd} \tt{h}{m}{s}  =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s}  +2K^{\; \; ar}_{[c} K_{d]mr} \tt{h}{m}{s}\\
     & \tt{ \mathcal{R}}{a}{scd}  =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{s}  +2K^{\; \; ar}_{[c} K_{d]sr} \\
-    & \lera{ \text{We assumed that $ \tt{ \mathcal{R}}{}{}$ is a tangent field, also K is tangent in the second index. }} \\
+    & \lera{ \text{We assumed that $ \tt{ \mathcal{R}}{}{}$ is a tangent field, also $K$ is tangent in the second index.}} \\
     & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{r}{mnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{r} \tt{h}{m}{b}  +2K^{\; \; ar}_{[c} K_{d]br} \\
     & \lera{ \text{$ s \rightarrow b $}} \\
     & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{rnq} \tt{h}{n}{c } \tt{h}{q}{d} \tt{h}{a}{m} \tt{h}{r}{b}  +2K^{\; \; am}_{[c} K_{d]bm} \\
     & \lera{ \text{$ r \leftrightarrow m $}} \\
     & \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{p}{c } \tt{h}{q}{d} \tt{h}{a}{m} \tt{h}{n}{b}  +2K^{\; \; am}_{[c} K_{d]bm} \\
     & \lera{ \text{$ r \rightarrow n , n \rightarrow p$}} \\  
-    &  \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d}    +2K^{\; \; am}_{[c} K_{d]bm} 
+    &  \tt{ \mathcal{R}}{a}{bcd}  =  \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d}    +2K^{\; \; am}_{[c} K_{d]bm} \\
+    & \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d} = \tt{ \mathcal{R}}{a}{bcd}-2K^{\; \; am}_{[c} K_{d]bm} \numberthis \label{dummy11}
 \end{align*}
 
 
-And let me put this in a box, as I have to memorize this as the \textcolor{blue}{Make the box. Then start deriving the second Gauss Codazzi relation.}
+Let us put this in a box, as we have to memorize this. 
+
+\begin{tcolorbox}[
+    colback=red!10,
+    colframe=black!70,
+    %boxrule=0.5pt,
+    arc=2mm
+]
+$\qquad \qquad \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d} = \tt{ \mathcal{R}}{a}{bcd}-2K^{\; \; am}_{[c} K_{d]bm} $
+\end{tcolorbox}
+
+
+
 
 The second Gauss Codazzi equation is
 \begin{equation}
-    \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} = \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{h}{c}{r} \tt{R}{}{mabc} \label{secondGaussCodacci}
+     \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{h}{c}{r} \tt{R}{}{mabc}=-\tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} \label{secondGaussCodacci}
 \end{equation}
  
 
-To prove it, let's start with the LHS,
+To prove it, let's start with the -RHS,
 
 \begin{align*}
-    LHS &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} \\
-    &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \lera{ - \tt{h}{s}{a} \tt{h}{t}{b} \nabla_s h_{tc}}\\
-    &= -\tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{s}{a}} \tt{h}{t}{b} \nabla_s \tt{h}{}{tc} - \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
-    &- \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \tt{h}{t}{b} \nabla_m \nabla_s \tt{h}{}{tc} \\
-    & \equiv -A-B-C \text{  (Naming the three terms.)}
+    \text{-RHS} &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} \\
+    &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \lera{\tt{h}{s}{a} \tt{h}{t}{b} \nabla_s h_{tc}}\\
+    &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{s}{a}} \tt{h}{t}{b} \nabla_s \tt{h}{}{tc} + \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
+    &+ \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \tt{h}{t}{b} \nabla_m \nabla_s \tt{h}{}{tc} \\
+    & \equiv A+B+C \quad \text{(Naming the three terms.)}
 \end{align*}
 
 
@@ -689,8 +773,8 @@ Term A:
     A &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{s}{a}} \tt{h}{t}{b} \nabla_s \tt{h}{}{tc}\\
     &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{}{as}} \tt{h}{t}{b} \nabla^s \tt{h}{}{tc} \\
     &= \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{t}{q} \tt{k}{c}{r} \lera{ \nabla_m \tt{h}{}{as}} \lera{ \nabla^s \tt{h}{}{tc}} \\
-    &= - \tt{K}{}{[np]s} \tt{h}{t}{q} \tt{k}{c}{r} \nabla^s \tt{h}{}{tc} \\
-    &= 0 
+    &= \tt{K}{}{[np]s} \tt{h}{t}{q} \tt{k}{c}{r} \nabla^s \tt{h}{}{tc} \\
+    &= 0 \quad \lera{\text{Since, $K_{abc}$ is symmetric in the first two indices.}}
 \end{align*}
 
 
@@ -701,13 +785,14 @@ Term B:
     B &=  \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
     &= \tt{h}{m}{[n} \tt{h}{s}{p]} \tt{h}{b}{q} \tt{k}{c}{r}  \lera{ \nabla_m\tt{h}{t}{b}} \nabla_s \tt{h}{}{tc} \\
     &= \tt{h}{m}{[n} \tt{h}{s}{p]} \tt{h}{b}{q} \tt{k}{c}{r}  \lera{ \nabla_m\tt{h}{}{bt}} \nabla_s \tt{h}{t}{c} \\
-    &= -K_{[n|qt|} \tt{h}{s}{p]} \tt{k}{c}{r} \nabla_s \tt{h}{t}{c} \\
-    &= - \tt{k}{u}{t} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{t}{c} \\
-    & \lera{ \text{K is normal in the third index, so introducing k makes sense.}}\\
-    &= - \tt{k}{tu}{} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{}{tc} \\ 
-    &= - \tt{k}{t}{u} K^{\;\;\;u}_{[n\;\;\;|q|} \tt{h}{s}{p]} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
-    &= - K^{\;\;\;u}_{[n\;\;\;|q|} \tt{h}{s}{p]} \tt{k}{t}{u} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
-    &= 0 
+    &= \tt{h}{m}{[n}\tt{h}{b}{|q|} \tt{h}{s}{p]}  \tt{k}{c}{r}  \lera{ \nabla_m\tt{h}{}{bt}} \nabla_s \tt{h}{t}{c} \\
+    &= K_{[n|qt|} \tt{h}{s}{p]} \tt{k}{c}{r} \nabla_s \tt{h}{t}{c} \\
+    &=  \tt{k}{u}{t} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{t}{c} \\
+    & \lera{ \text{ $ K_{nqt}$ is normal in the third index, so introducing $ \tt{k}{u}{t}$ makes sense.}}\\
+    &=  \tt{k}{tu}{} \tt{K}{}{[n|qu|} \tt{h}{s}{p]} \tt{k}{c}{r}\nabla_s \tt{h}{}{tc} \\ 
+    &= \tt{k}{t}{u} K_{[n|q|}{}^{u} \tt{h}{s}{p]} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
+    &=  K_{[n|q|}{}^{u} \tt{h}{s}{p]} \tt{k}{t}{u} \tt{k}{c}{r} \cov{ \tt{h}{}{tc}}{s} \\
+    &= 0 \quad\lera{\text{As $hkk$ combination is zero.}}
 \end{align*}
 
 
@@ -718,23 +803,27 @@ Term C:
 
 \begin{align*}
    C&=  \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \tt{h}{s}{a} \tt{h}{t}{b} \nabla_m \nabla_s \tt{h}{}{tc} \\
-   &= \tt{h}{m}{[n} \tt{h}{s}{p]} \lera{ \nabla_m \nabla_s \tt{h}{}{tc}} \tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \\
-   &= \tt{h}{m}{n} \tt{h}{s}{p} \lera{ \nabla_{[m} \nabla_{s]} \tt{h}{}{tc}} \tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \\
-   &= \tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r}\lera{ \nabla_{[m} \nabla_{s]} \tt{h}{}{tc}} \\
-   &= \frac{1}{2}  \tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \lera{- \tt{R}{u}{tms} \tt{h}{}{uc}- \tt{R}{u}{cms} \tt{h}{}{tu}} \\
-   &= -\frac{1}{2} \lera{\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \lera{\tt{k}{c}{r} \tt{h}{u}{c}} \tt{R}{}{utms} +\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{b}{q} \tt{h}{t}{b} \tt{k}{c}{r} \tt{h}{u}{t} \tt{R}{}{ucms}} \\
+   &= \tt{h}{m}{[n} \tt{h}{s}{p]}  \tt{h}{t}{q} \tt{k}{c}{r}\lera{ \nabla_m \nabla_s \tt{h}{}{tc}} \\
+   &= \tt{h}{m}{n} \tt{h}{s}{p}  \tt{h}{t}{q} \tt{k}{c}{r}\lera{ \nabla_{[m} \nabla_{s]} \tt{h}{}{tc}} \\
+   &= \frac{1}{2}  \tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{t}{q} \tt{k}{c}{r} \lera{- \tt{R}{u}{tms} \tt{h}{}{uc}- \tt{R}{u}{cms} \tt{h}{}{tu}} \\
+   &= -\frac{1}{2} \lera{\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{t}{q} \lera{\tt{k}{c}{r} \tt{h}{u}{c}} \tt{R}{}{utms} +\tt{h}{m}{n} \tt{h}{s}{p}\tt{h}{t}{q} \tt{k}{c}{r} \tt{h}{u}{t} \tt{R}{}{ucms}} \\
    &= -\frac{1}{2} \lera{ 0 + \tt{h}{m}{n} \tt{h}{s}{p} \tt{h}{u}{q} \tt{k}{c}{r} \tt{R}{}{ucms} } \\
    &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{s}{p} \tt{h}{u}{q} \tt{k}{c}{r} \tt{R}{}{msuc} \\
    &= - \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} 
 \end{align*}
 
 In short, 
-\begin{align*}
-    \tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc} &= \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{k}{c}{r} \tt{R}{}{mabc} 
-\end{align*}
+\begin{tcolorbox}[
+    colback=red!10,
+    colframe=black!70,
+    %boxrule=0.5pt,
+    arc=2mm
+]
+$\qquad \qquad \frac{1}{2} \tt{h}{m}{n} \tt{h}{a}{p} \tt{h}{b}{q} \tt{h}{c}{r} \tt{R}{}{mabc}=-\tt{h}{m}{[n} \tt{h}{a}{p]} \tt{h}{b}{q} \tt{k}{c}{r} \nabla_m \tt{K}{}{abc}$
+\end{tcolorbox}
 
 
-\textcolor{blue}{Make another box for this equation.} 
+
 
 
 
@@ -742,17 +831,24 @@ In short,
 
 \section{Hypersurfaces}
 
+A hypersurface is a submanifold with $ k= n-1$. In our understanding of the $ 3+1$ formalism it is the main ingredient. In fact, most physics textbooks directly introduce the special case of the hypersurface rather than starting with submanifolds. For a hypersurface, the dimension of the space $ \mathscr{N}$ is just 1. We take $ n^a$ to be a unit vector normal to S. 
 
 
+\[
+n_a n^a = \varepsilon  =
+\begin{cases}
+    1 & \text{if S is timelike} \\
+    -1  & \text{if S is spacelike }
+\end{cases}
+\]
 
+In the case of a hypersurface, we can express $ \tt{h}{}{ab}$ and $ \tt{k}{}{ab}$ in the following form,
 \begin{align*}
     & \tt{h}{}{ab} = \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b} \numberthis \label{hab_explicit} \\
     & \tt{k}{}{ab} = \varepsilon \tt{n}{}{a} \tt{n}{}{b} \numberthis \label{kab_explicit} 
 \end{align*}
  
-This is shown by testing this definition of $ \tt{h}{}{ab} = \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}$ against the main definition.
- 
-Take a vector $ X \in \mathscr{T}$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $ \tt{g}{}{ab} \tt{X}{b}{}$. Now,
+This is shown by testing this definition of $ \tt{h}{}{ab} = \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}$ against the main definition. Take a vector $ X \in \mathscr{T}$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $ \tt{g}{}{ab} \tt{X}{b}{}$. Now,
  
 \begin{align*}
     \tt{h}{}{ab} \tt{X}{b}{} &= \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} \tt{X}{b}{} \\
@@ -761,7 +857,7 @@ Take a vector $ X \in \mathscr{T}$. I expect $ \tt{h}{}{ab} \tt{X}{b}{}$ to be $
     &= \tt{g}{}{ab} \tt{X}{b}{} 
 \end{align*}
  
-For a vector $ Y \in \mathscr{N}$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It suffices to simply take $ \tt{n}{a}{} \in \mathscr{N}$ as $ \mathscr{N}$ is 1 dimensional anyways.
+For a vector $ Y \in \mathscr{N}$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It suffices to simply take $ Y^a = \tt{n}{a}{}$ as $ \mathscr{N}$ is 1 dimensional anyways.
  
 \begin{align*}
     \tt{h}{}{ab} \tt{n}{b}{} &= \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} \tt{n}{b}{} \\
@@ -771,124 +867,96 @@ For a vector $ Y \in \mathscr{N}$, I expect $ \tt{h}{}{ab} \tt{Y}{b}{} = 0$. It 
     &= 0 \\
 \end{align*}
  
-Getting the form of $ \tt{k}{}{ab}$ is easy.
- 
-\begin{align*}
-    \tt{k}{}{ab} = \tt{g}{}{ab} - \tt{h}{}{ab} = \tt{g}{}{ab} - \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} = \varepsilon \tt{n}{}{a} \tt{n}{}{b} 
-\end{align*}
- 
- 
-Define,
+Getting the form of $ \tt{k}{}{ab}$ is easy. $\tt{k}{}{ab} = \tt{g}{}{ab} - \tt{h}{}{ab} = \tt{g}{}{ab} - \lera{ \tt{g}{}{ab} - \varepsilon \tt{n}{}{a} \tt{n}{}{b}} = \varepsilon \tt{n}{}{a} \tt{n}{}{b}  $. We next define,
  
 \begin{align*}
     & \tt{K}{}{ab} = \tt{K}{}{abc} \tt{n}{c}{} \numberthis \label{Kab_defined} 
 \end{align*}
  
-In the context of hypersurfaces, this is often called the ``Extrinsic Curvature'' or ``2nd Fundamental Form''.
+In the context of hypersurfaces, this (as opposed to $ K_{abc}$) is often called the ``Extrinsic Curvature'' or ``2nd Fundamental Form''.
  
-Another way $ \tt{K}{}{ab}$ is expressed,
+\begin{proposition}
+    Another way to express $ \tt{K}{}{ab}$ is $ \tt{K}{}{ab} = - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q}$.
+\end{proposition}
+
  
-\begin{align*}
-    & \tt{K}{}{ab} = - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q} \numberthis \label{Kab_in_terms_of_normal} 
-\end{align*}
- 
-\begin{align*}
+\begin{proof}
+    \begin{align*}
     \tt{K}{}{ab} &= \tt{K}{}{abc} \tt{n}{c}{} \\
     &= \tt{h}{p}{a} \tt{h}{q}{b} \lera{ \nabla_p \tt{h}{}{qc}} \tt{n}{c}{} \\
     &= \tt{h}{p}{a} \tt{h}{q}{b} \lera{ \nabla_p \lera{ \underbrace{ \tt{h}{}{qc} \tt{n}{c}{}}_{=0}} - \tt{h}{}{qc} \nabla_p \tt{n}{c}{}} \\
     &= - \tt{h}{p}{a} \tt{h}{q}{b} \tt{h}{}{qc} \nabla_p \tt{n}{c}{} \\
     &= - \tt{h}{p}{a} \tt{h}{c}{b} \nabla_p \tt{n}{}{c} \\
     &= - \tt{h}{p}{a} \tt{h}{q}{b} \nabla_p \tt{n}{}{q} 
-\end{align*}
+    \end{align*}
+\end{proof}
+ 
+\begin{proposition}
+    $ \tt{K}{}{[ab]} = 0$ i.e. $ \tt{K}{}{ab}$ is symmetric.
+\end{proposition}
  
  
-$ \tt{K}{}{[ab]} = 0$ ; $ \tt{K}{}{ab}$ is symmetric.
+\begin{proof}
+    \begin{align*}
+    & \tt{K}{}{[ab]} = \tt{K}{}{[ab]c} \tt{n}{c}{} = 0 
+    \end{align*}
+\end{proof}
  
-\begin{align*}
-    & \tt{K}{}{[ab]} = \tt{K}{}{[ab]c} \tt{n}{c}{} = 0 \numberthis \label{Kab_bracket_zero} 
-\end{align*}
+\begin{proposition}
+    $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c} $
+\end{proposition}
  
-\begin{align*}
-    & \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \numberthis \label{Kabc_in_terms_of_Kab} 
-\end{align*}
- 
-We show it by acting on both sides with an arbitrary vector. In this case, it suffices to act with $ \tt{X}{a}{} \in T$ and $ \tt{n}{a}{}$.
- 
-First, act with $ \tt{X}{a}{} \in T$.
- 
-\begin{align*}
-    \text{LHS} &\implies \tt{K}{}{abc} \tt{X}{c}{} = 0 \\
-    & \lera{ \text{$ \tt{K}{}{abc}$ is normal in the index c}} \\
-    \text{RHS} &\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{X}{c}{} = 0 
-\end{align*}
- 
-Then, act with $ \tt{n}{a}{}$,
- 
-\begin{align*}
-    \text{LHS} &\implies \tt{K}{}{abc} \tt{n}{c}{} = \tt{K}{}{ab} \\
-    \text{RHS} &\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{n}{c}{} = \varepsilon \tt{K}{}{ab} \varepsilon = \varepsilon^2 \tt{K}{}{ab} = \tt{K}{}{ab} 
-\end{align*}
- 
-Yet another way to express $ \tt{K}{}{ab}$ is,
- 
-\begin{align*}
-    & \tt{K}{}{ab} = - \frac{1}{2} \Lie{n} \tt{h}{}{ab} \numberthis \label{Kab_as_lie_derivative} 
-\end{align*}
- 
-
+\begin{proof}
+    We show it by acting on both sides with an arbitrary vector. In this case, it suffices to act with $ \tt{X}{a}{} \in \mathscr{T}$ and $ \tt{n}{a}{}$. First, act with $ \tt{X}{a}{}$. LHS gives, $\implies \tt{K}{}{abc} \tt{X}{c}{} = 0$ since $\tt{K}{}{abc}$ is normal in the index c. RHS gives $\implies \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{X}{c}{} = 0  $
 
  
-\subsection{Gauss-Codazzi eqns for hypersurface}
+Then, act with $ \tt{n}{a}{}$. LHS gives $ \tt{K}{}{abc} \tt{n}{c}{} = \tt{K}{}{ab}$. And RHS gives $ \varepsilon \tt{K}{}{ab} \tt{n}{}{c} \tt{n}{c}{} = \varepsilon \tt{K}{}{ab} \varepsilon = \varepsilon^2 \tt{K}{}{ab} = \tt{K}{}{ab}$.
  
-The first GC eqn was,
+\end{proof}
+
+ \begin{proposition}
+    Yet another way to express $ \tt{K}{}{ab}$ is $\tt{K}{}{ab} = - \frac{1}{2} \Lie{n} \tt{h}{}{ab} $.
+ \end{proposition}
+
+\textcolor{blue}{proof.}
  
-\begin{align*}
-    \tt{ \mathcal{R}}{a}{bcd} &= \tt{R}{m}{npq} \tt{h}{a}{m} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} + 2 \du{K}{[c}{am} \tt{K}{}{d]bm} \\
-    \implies \tt{ \mathcal{R}}{}{abcd} &= \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} + 2 \du{K}{[c|a|}{m} \tt{K}{}{d]bm} \numberthis \label{first_gauss_codazzi} 
-\end{align*}
+\subsection{Gauss-Codazzi equations for hypersurface}
  
-Now, I use the eqn $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in \cref{first_gauss_codazzi}. Start with the second term.
- 
-\begin{align*}
-    \du{K}{[c|a|}{m} \tt{K}{}{d]bm} &= \varepsilon \tt{K}{}{[c|a|} \tt{n}{m}{} \; \varepsilon \tt{K}{}{d]b} \tt{n}{}{m} \\
-    &= \tt{n}{m}{} \tt{n}{}{m} \varepsilon^2 \tt{K}{}{[c|a|} \tt{K}{}{d]b} \\
-    &= - \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} 
-\end{align*}
- 
-So, \cref{first_gauss_codazzi} $ \implies$
+The first Gauss-Codazzi eqn was,
  
 \begin{align*}
-    & \tt{ \mathcal{R}}{}{abcd} = \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d} - 2 \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} \numberthis \label{first_gauss_codazzi_final} 
+    & \tt{R}{m}{npq} \tt{h}{a}{m}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d} = \tt{ \mathcal{R}}{a}{bcd}-2K^{\; \; am}_{[c} K_{d]bm} \\
+    \implies&  \tt{R}{}{mnpq} \tt{h}{m}{a}\tt{h}{n}{b}\tt{h}{p}{c } \tt{h}{q}{d} = \tt{ \mathcal{R}}{}{abcd}-2K_{[c|a|}{}^m K_{d]bm} \numberthis \label{first_gauss_codazzi} 
 \end{align*}
  
-The second GC eqn was,
+Now, we use $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in \cref{first_gauss_codazzi}. Start with the second term in the right hand side. $\du{K}{[c|a|}{m} \tt{K}{}{d]bm} = \varepsilon \tt{K}{}{[c|a|} \tt{n}{m}{} \; \varepsilon \tt{K}{}{d]b} \tt{n}{}{m} 
+    = \tt{n}{m}{} \tt{n}{}{m} \varepsilon^2 \tt{K}{}{[c|a|} \tt{K}{}{d]b} 
+    = \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b} $.
+ 
+
+So, \cref{first_gauss_codazzi} becomes
  
 \begin{align*}
-    & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \tt{K}{}{abc} = - \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} \tt{k}{c}{s} \tt{R}{}{mabc} \numberthis \label{second_gauss_codazzi} 
+    &  \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d}=\tt{ \mathcal{R}}{}{abcd} - 2 \varepsilon \tt{K}{}{a[c} \tt{K}{}{d]b}\\
+    & \tt{R}{}{mnpq} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} \tt{h}{q}{d}=\tt{ \mathcal{R}}{}{abcd} + \varepsilon \lera{K_{ad} K_{bc} - K_{ac} K_{bd} } \numberthis \label{first_gauss_codazzi_final} 
 \end{align*}
  
-Now, to substitute $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in the LHS, I have,
+The second Gauss-Codazzi eqn was,
+ 
+\begin{align*}
+    &   \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} \tt{k}{c}{s} \tt{R}{}{mabc}=-\tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \tt{K}{}{abc}  \numberthis \label{second_gauss_codazzi} 
+\end{align*}
+ 
+Substituting $ \tt{K}{}{abc} = \varepsilon \tt{K}{}{ab} \tt{n}{}{c}$ in the right hand side,
  
 \begin{align*}
     & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \lera{ \varepsilon \tt{K}{}{ab} \tt{n}{}{c}} \\
     &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \lera{ \lera{ \nabla_m \tt{K}{}{ab}} \tt{n}{}{c} + \tt{K}{}{ab} \lera{ \nabla_m \tt{n}{}{c}}} \numberthis \label{second_gc_lhs_expanded} 
 \end{align*}
  
-The second term in \cref{second_gc_lhs_expanded} actually goes to zero. Notice that, $ \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0$. This is because $ \tt{n}{a}{} \tt{n}{}{a} = \varepsilon$
+The second term in \cref{second_gc_lhs_expanded} actually goes to zero. Notice that, $ \tt{h}{b}{m} \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0$. This is because $ \tt{n}{a}{} \tt{n}{}{a} = \varepsilon$. So $\tt{h}{b}{m}  \nabla_b \lera{ \tt{n}{a}{} \tt{n}{}{a}} = 0 \implies \tt{h}{b}{m} \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0 $. In the second term, we have this portion $ \tt{h}{m}{p}\tt{k}{c}{s} \nabla_m \tt{n}{}{c} =  \tt{h}{m}{p} \varepsilon \tt{n}{c}{} \tt{n}{}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{}{s}\tt{h}{m}{p}  \tt{n}{c}{} \nabla_m \tt{n}{}{c} = 0  $. And this makes the 2nd term of \cref{second_gc_lhs_expanded} zero.
  
-\begin{align*}
-    & \nabla_b \lera{ \tt{n}{a}{} \tt{n}{}{a}} = 0 \implies \tt{n}{a}{} \nabla_b \tt{n}{}{a} = 0 
-\end{align*}
- 
-So,
- 
-\begin{align*}
-    & \tt{k}{c}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{c}{} \tt{n}{}{s} \nabla_m \tt{n}{}{c} = \varepsilon \tt{n}{}{s} \tt{n}{c}{} \nabla_m \tt{n}{}{c} = 0 
-\end{align*}
- 
-And this makes the 2nd term of \cref{second_gc_lhs_expanded} zero.
- 
-So, \cref{second_gc_lhs_expanded} $ \implies$
+So, \cref{second_gc_lhs_expanded} becomes 
  
 \begin{align*}
     & \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{k}{c}{s} \nabla_m \lera{ \varepsilon \tt{K}{}{ab} \tt{n}{}{c}} \\
@@ -896,10 +964,21 @@ So, \cref{second_gc_lhs_expanded} $ \implies$
     &= \varepsilon \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \tt{n}{}{s} \nabla_m \tt{K}{}{ab} \numberthis \label{second_gc_lhs_reduced} 
 \end{align*}
  
-Using this in the LHS of \cref{second_gauss_codazzi} $ \implies$
- 
+Using this in the RHS of \cref{second_gauss_codazzi},
 
-
+\begin{align*}
+	-& \varepsilon\, \tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} n_s \nabla_m K_{ab} = \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} \tt{k}{c}{s} R_{mabc} \\
+	\Rightarrow\; & -\varepsilon\, n_s\, (\text{stuff}) = \tt{k}{c}{s}\, (\text{stuff}') \\
+	\Rightarrow\; &- \varepsilon\, n_s n^s\, (\text{stuff}) = \tt{k}{c}{s} n^s\, (\text{stuff}') \\
+	\Rightarrow\; & -\varepsilon^2\, (\text{stuff}) = n^c\, (\text{stuff}') \\
+	\Rightarrow\; & -(\text{stuff}) = n^c\, (\text{stuff}') \\
+	\Rightarrow\; & -\tt{h}{m}{[p} \tt{h}{a}{q]} \tt{h}{b}{r} \nabla_m K_{ab} = \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} n^c R_{mabc} \\
+	\Rightarrow\; &- D_{[p} K_{q]r} = \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} n^c R_{mabc} \\
+    \Rightarrow\; & \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} n^c R_{mabc} =- D_{[p} K_{q]r} \\
+    \Rightarrow\; & \frac{1}{2} \tt{h}{m}{p} \tt{h}{a}{q} \tt{h}{b}{r} n^c R_{mabc} = D_{[q} K_{p]r} \\
+      \Rightarrow\; & \frac{1}{2} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} n^q R_{mnpq} = D_{[b} K_{a]c} \\
+      \Rightarrow\; & \frac{1}{2} \tt{h}{m}{a} \tt{h}{n}{b} \tt{h}{p}{c} n^q R_{mnpq} = D_b K_{ac}-D_a K_{bc} \numberthis \label{dummy12}\\  
+\end{align*}
 
 
 
@@ -934,7 +1013,7 @@ We can calculate $f$ in any coordinate system we want. We pick the system where 
 Also, in this case, $g(\partial_0, \partial_0) = \tt{g}{}{00} = \varepsilon |g_{00}|$ and $g^{00} = g^{0a} g^{0b} g_{ab}= g^{00} g^{00} g_{00} = (g^{00})^2 g_{00} \Rightarrow g^{00} = \frac{1}{g_{00}} \Rightarrow |g^{00}| = \frac{1}{|g_{00}|}$. Therefore, $g^{00} = \frac{1}{g_{00}} = \frac{1}{\varepsilon |g_{00}|} = \frac{\varepsilon}{|g_{00}|} = \varepsilon |g^{00}|$. Using this, $n^a \overset{*}{=} \lera{|g^{00}|^{1/2}, 0, 0, 0}$. Hence, $f \overset{*}{=} \varepsilon_{mabc} n^m \kron{a}{1} \kron{b}{2} \kron{c}{3}= \varepsilon_{0123} |g^{00}|^{1/2} = \sqrt{|g|} [0123] |g^{00}|^{1/2} = \sqrt{|g|} |g^{00}|^{1/2}$.
 
 
-Now, reminding ourselves some high-school matrix stuff, the inverse matrix $ A^{-1} $ of a matrix $ A$ is $A^{-1} = \frac{[\text{cofactor}(A)]^T}{\det(A)}$. So, $g^{00} = \frac{\text{cofactor}(g_{00})}{g}$ where cofactor$(g_{00})$ is the determinant of $g_{ab}$ with the row and column of $g_{00}$ deleted. We also notice that the intrinsic metric is given by $\tilde h_{\alpha\beta} = e^a_\alpha e^b_\beta g_{ab} \overset{*}{=} g_{\alpha\beta}$. So the form of the metric $ \tt{g}{}{ab}$ looks like, 
+Now, reminding ourselves of some high-school matrix stuff, the inverse matrix $ A^{-1} $ of a matrix $ A$ is $A^{-1} = \frac{[\text{cofactor}(A)]^T}{\det(A)}$. So, $g^{00} = \frac{\text{cofactor}(g_{00})}{g}$ where cofactor$(g_{00})$ is the determinant of $g_{ab}$ with the row and column of $g_{00}$ deleted. We also notice that the intrinsic metric is given by $\tilde h_{\alpha\beta} = e^a_\alpha e^b_\beta g_{ab} \overset{*}{=} g_{\alpha\beta}$. So the form of the metric $ \tt{g}{}{ab}$ looks like, 
 
 \begin{align*}
 	g_{ab} = \begin{bmatrix} g_{00} & 0 & 0 & 0 \\ 0 & & & \\ 0 & & \tilde h_{\alpha\beta} & \\ 0 & & & \end{bmatrix}

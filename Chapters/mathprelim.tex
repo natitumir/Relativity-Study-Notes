@@ -26,7 +26,7 @@ Let $ U \subseteq \mathbb{R}^n$ and $ f: U \longrightarrow \mathbb{R}$. We defin
     & \pp{f}{x^i} \bigg|_a := \displaystyle\lim_{h \to 0} \frac{ f \lera{ a^1, \ldots, a^i + h, \ldots, a^n} - f \lera{ a^1, \ldots, a^i, \ldots, a^n}}{h} \\
 \end{align*}
 
-If $ \pp{f}{x^i} \big|_a$ exists for all $ i$ $ \lera{ 1 \leq i \leq n}$ for each point $ a \in U$, then we have n new functions in U. If these functions $ \pp{f}{x^i}$ are also continuous on U, then we say that f is continuosly differentiable on U, i.e, $ f \in C^1(U)$.
+If $ \pp{f}{x^i} \big|_a$ exists for all $ i$ $ \lera{ 1 \leq i \leq n}$ for each point $ a \in U$, then we have n new functions in U. If these functions $ \pp{f}{x^i}$ are also continuous on U, then we say that f is continuously differentiable on U, i.e, $ f \in C^1(U)$.
 
 Existence of partial derivatives at point a is not enough to guarantee the differentiability of f at a. To illustrate this point, we use an example. Consider the function, defined on $ \mathbb{R}^2$, by
 
@@ -37,7 +37,7 @@ Existence of partial derivatives at point a is not enough to guarantee the diffe
     \end{cases} \\
 \end{align*}
 
-We evalute the following,
+We evaluate the following,
 
 \begin{align*}
     \pp{f}{x} \bigg|_{(0,0)} &= \displaystyle\lim_{h \to 0} \frac{f(h,0) - f(0,0)}{h} \\
@@ -46,7 +46,7 @@ We evalute the following,
 
 Similarly, $ \pp{f}{y} \big|_{(0,0)} = 0$
 
-So, both of the partial derivaties exist at the point $ (0,0)$. But the function is still not differentiable. To prove that, it suffices to show that the function is not continuous at $ (0,0)$.
+So, both of the partial derivatives exist at the point $ (0,0)$. But the function is still not differentiable. To prove that, it suffices to show that the function is not continuous at $ (0,0)$.
 
 To decide for continuity, we first try to find out the limit of $ f(x,y)$ at $ (0,0)$. Considering the two different paths as in the picture
 
@@ -74,7 +74,7 @@ To decide for continuity, we first try to find out the limit of $ f(x,y)$ at $ (
 
 $ \therefore$ limit along I $ \neq$ limit along II
 
-$ \therefore$ The limit DNE at the point $ (0,0)$ and so $ f(x,y)$ is not continuos at $ (0,0)$. Hence it is not differentiable at the origin even though both of the partial derivatives exist.
+$ \therefore$ The limit DNE at the point $ (0,0)$ and so $ f(x,y)$ is not continuous at $ (0,0)$. Hence it is not differentiable at the origin even though both of the partial derivatives exist.
 
 Let, $ f: U \subseteq \mathbb{R}^n \longrightarrow \mathbb{R}$
 
@@ -87,10 +87,10 @@ If f has continuous first partial derivatives throughout U, then $ f \in C^1(U)$
         & \frac{\partial^j f}{\partial x^{i_1} \partial x^{i_2} \ldots \partial x^{i_j}} \bigg|_a \qquad \lera{ 1 \leq i_1, \ldots, i_j \leq n} \text{ exists} \\
     \end{align*}
 
-    for all $ a \in U$ and they are continuos on U.
+    for all $ a \in U$ and they are continuous on U.
 \end{definition}
 
-Here the order of the derivatives doesnt matter.
+Here the order of the derivatives doesn't matter.
 
 A function $ f: U \subseteq \mathbb{R}^n \longrightarrow \mathbb{R}$ is said to be differentiable at a point a, iff there exists a linear expression $ \sum_{i=1}^{n} b_i \lera{ x^i - a^i}$ which satisfies the following
 
@@ -100,7 +100,7 @@ A function $ f: U \subseteq \mathbb{R}^n \longrightarrow \mathbb{R}$ is said to 
 
 So, we can say that $ f(a) + \sum_{i=1}^{n} b_i \lera{ x^i - a^i}$ approximates $ f(x)$ near the point a.
 
-Using the above expression, or, you can say keeping it at the back of our mind, we can come to another def\textsuperscript{n} of differentiability. Here, a function is said to be differentiable at a, if there exists constants $ b_1, \ldots, b_n$ and a function $ r(x,a)$ such that
+Using the above expression, or, you can say keeping it at the back of our mind, we can come to another def\textsuperscript{n} of differentiability. Here, a function is said to be differentiable at a, if there exist constants $ b_1, \ldots, b_n$ and a function $ r(x,a)$ such that
 
 \begin{align*}
     & f(x) = f(a) + \sum_{i=1}^{n} b_i \lera{ x^i - a^i} + \| x-a \| r(x,a) \\
@@ -113,9 +113,9 @@ When a function $ f: U \subseteq \mathbb{R}^n \longrightarrow \mathbb{R}$ is dif
     & \text{So, } f(x) = f(a) + \sum_{i=1}^{n} \pp{f}{x^i} \bigg|_a \lera{ x^i - a^i} + r(x,a) \| x-a \| \\
 \end{align*}
 
-Keep in mind that, f is differentiable at a, merely guarantees the existence of $ \pp{f}{x^i} \big|_a$. It doesnt guarantee that f is $ C^1$ at the point a.
+Keep in mind that, f is differentiable at a, merely guarantees the existence of $ \pp{f}{x^i} \big|_a$. It doesn't guarantee that f is $ C^1$ at the point a.
 
-If f is $ C^1$ in a neighborhood of a, then f is guaranteed to be differentiable at that neighbourhood.
+If f is $ C^1$ in a neighborhood of a, then f is guaranteed to be differentiable in that neighborhood.
 
 Thus if $ f \in C^1(U)$ where U is an open set, then f is differentiable on U.
 
@@ -128,7 +128,7 @@ The first thing that we must make clear is as follows:—
 \begin{enumerate}
     \item $ f(x) = \lera{ f^1(x), f^2(x), \ldots, f^m(x)}$
 
-    we call the individual functions $ f^i$ to be coordinate functions. We define them as follows. Suppose $ \pi^i : \mathbb{R}^m \longrightarrow \mathbb{R}$ is a function given by $ \pi^i \lera{ x^1, x^2, \ldots, x^m} = x^i$.
+    We call the individual functions $ f^i$ coordinate functions. We define them as follows. Suppose $ \pi^i : \mathbb{R}^m \longrightarrow \mathbb{R}$ is a function given by $ \pi^i \lera{ x^1, x^2, \ldots, x^m} = x^i$.
 
     Now, $ f^i := \pi^i \circ f : U \subseteq \mathbb{R}^n \longrightarrow \mathbb{R}$
 
@@ -182,7 +182,7 @@ For any point $ p \in U$, we define the following:—
     \end{bmatrix} \\
 \end{align*}
 
-This is the Jacobian matrix of the function f at the point P. This matrix defines a map $ Df \big|_p : U \longrightarrow \mathbb{R}^m$. At each point of U, we get different different maps.
+This is the Jacobian matrix of the function f at the point p. This matrix defines a map $ Df \big|_p : U \longrightarrow \mathbb{R}^m$. At each point of U, we get different maps.
 
 So, for the function f (when it is differentiable at the point a),
 
@@ -190,13 +190,13 @@ So, for the function f (when it is differentiable at the point a),
     & f(x) = f(a) + \lera{ Df \big|_a} \lera{ x-a} + r(x,a) \| x-a \| \\
 \end{align*}
 
-$ Df \big|_a$ acting on $ (x-a)$ which basially is
+$ Df \big|_a$ acting on $ (x-a)$ which basically is
 
 \begin{align*}
     & \text{Jac} f(a) \begin{bmatrix} x^1 - a^1 \\ x^2 - a^2 \\ \vdots \\ x^n - a^n \end{bmatrix} \\
 \end{align*}
 
-Now, we come to prove chain rule in its most general version.
+Now, we come to prove the chain rule in its most general version.
 
 \begin{align*}
     & f: U \subseteq \mathbb{R}^n \longrightarrow V \subseteq \mathbb{R}^m \\

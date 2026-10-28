@@ -186,7 +186,7 @@ In short, for every pair of points, we have disjoint open sets that contain thos
         & V \in \mathcal{O}_N \implies \text{preim}_f(V) \in \mathcal{O}_M \\
     \end{align*}
 
-    i.e. preimage of open sets are open.
+    i.e. preimages of open sets are open.
 \end{definition}
 
 We have defined, for $ f: M \longrightarrow N$ and $ V \subseteq N$
@@ -321,7 +321,7 @@ Note:- The map x is bi-continuous w.r.t. the top. spaces $ \lera{ U, \mathcal{O}
 
 \section{Compatibility of charts}
 
-Two charts $ \lera{ U,x}$ and $ \lera{ V,y}$ are $ \mathcal{C}$-compatible is either $ U \cap V \neq \emptyset$ are the maps
+Two charts $ \lera{ U,x}$ and $ \lera{ V,y}$ are $ \mathcal{C}$-compatible if either $ U \cap V = \emptyset$ or the maps
 
 \begin{align*}
     & x \circ y^{-1} : y \lera{ U \cap V} \longrightarrow x \lera{ U \cap V} \\
@@ -346,7 +346,7 @@ is undergraduate-$ \mathcal{C}$
 
 ``$ x \circ y^{-1}$ and $ y \circ x^{-1}$ are called chart-transition maps''
 
-Charts of a top. manifold is automatically $ \mathcal{C}^0$-compatible
+Charts of a top. manifold are automatically $ \mathcal{C}^0$-compatible.
 
 \begin{definition}
     $ \mathcal{C}$-Atlas :=
@@ -374,7 +374,7 @@ Let, $ \lera{ M, \mathcal{O}, \mathcal{A}_M}$ and $ \lera{ N, \mathcal{O}, \math
 
 $ \phi: M \longrightarrow N$ is a map from M to N.
 
-$ \phi$ will be smooth map between M and N if the following holds:—
+$ \phi$ will be a smooth map between M and N if the following holds:—
 
 Let, $ p \in U \subseteq M$, $ \phi(p) \in V \subseteq N$, $ \lera{ U,x}$ and $ \lera{ V,y}$ both be charts.
 
@@ -572,7 +572,7 @@ Now,
 \begin{definition}
     Diffeomorphism :=
 
-    $ \phi: M \longrightarrow N$ be smooth map between smooth mfds. M and N. If $ \phi^{-1}: N \longrightarrow M$ is also smooth, then we call $ \phi$ a diffeomorphism. Diffeomorphism is the structure preserving map between smooth manifolds.
+    $ \phi: M \longrightarrow N$ be smooth map between smooth manifolds M and N. If $ \phi^{-1}: N \longrightarrow M$ is also smooth, then we call $ \phi$ a diffeomorphism. Diffeomorphism is the structure preserving map between smooth manifolds.
 \end{definition}
 
 
@@ -595,7 +595,7 @@ Now,
 
 
 
-At a point p in a d-dimensional manifold M, a special class of tensors are very important and deserves a seperate section of discussion. They are the totally antisymmetric (0,n)-tensors. To define them properly, let me first define an operator called the ``Antisymmetrization Operator''. For an (0,n)-tensor T at a point p in the manifold, and for a set of n linearly independent vectors $ \{ \overset{1}{X}, \overset{2}{X},...,\overset{n}{X}\}$ the action of the antisymmetrization operator $ \hat{A}$ on the tensor T is defined as,
+At a point p in a d-dimensional manifold M, a special class of tensors is very important and deserves a separate section of discussion. They are the totally antisymmetric (0,n)-tensors. To define them properly, let me first define an operator called the ``Antisymmetrization Operator''. For a (0,n)-tensor T at a point p in the manifold, and for a set of n linearly independent vectors $ \{ \overset{1}{X}, \overset{2}{X},...,\overset{n}{X}\}$ the action of the antisymmetrization operator $ \hat{A}$ on the tensor T is defined as,
 
 \begin{align*}
     \hat{A}(T)\lera{\overset{1}{X}, \overset{2}{X},...,\overset{n}{X}} &= \frac{1}{n!} \sum_{ \pi} \delta_\pi \; T \lera{\overset{ \pi(1)}{X}, \overset{\pi(2)}{X},...,\overset{\pi(n)}{X}} \\
@@ -604,9 +604,9 @@ At a point p in a d-dimensional manifold M, a special class of tensors are very 
 where $ \pi$ denotes the different permutations of $ \{ 1,2,...,n \}$ and $ \tt{ \delta}{}{ \pi}$ is the sign of the permutation. 
 
 
-The defintion of $ \hat{A}$ means, $ \tt{\hat{A} \lera{T}}{}{abc} = \tt{T}{}{\left[abc\right]}$, etc. 
+The definition of $ \hat{A}$ means, $ \tt{\hat{A} \lera{T}}{}{abc} = \tt{T}{}{\left[abc\right]}$, etc. 
 
-An n-form is a (0,n)-tensor which is the same as its antisymmetrized version. So, if $ \hat{A} \lera{T}= T$ then T is an n-form at p. As such the components of T in any chart is totally antisymmetric, i.e. antisymmetric under the exchange of any two pairs of indices. $ \tt{T}{}{abc}= \tt{T}{}{[abc]}$.
+An n-form is a (0,n)-tensor which is the same as its antisymmetrized version. So, if $ \hat{A} \lera{T}= T$ then T is an n-form at p. As such the components of T in any chart are totally antisymmetric, i.e. antisymmetric under the exchange of any pair of indices. $ \tt{T}{}{abc}= \tt{T}{}{[abc]}$.
 
 It is obvious that there can not be an n-form where $ n > d$. In that case, at least two of the indices must be the same. For example if $ d=3 $, then a 4-form must have indices like $ \tt{T}{}{1233}$. However, being totally antisymmetric, $ \tt{T}{}{1233}$ must be equal to $ -\tt{T}{}{1233}$ and that is possible only if $ \tt{T}{}{1233}$ is 0. 
 
@@ -675,7 +675,7 @@ So,
     \lera{A \wedge B}_{[a...bc...d]} &= \frac{ \lera{p+q}!}{p! q!} \tt{A}{}{[a...b} \tt{B}{}{c...d]} \numberthis \label{wedge_component}\\
 \end{align*}
 
-For two 1-forms $ \omega$ and $ \sigma$ we know from the definition of one wedge products that $ \omega \wedge \sigma = \omega \otimes \sigma - \sigma \otimes \omega$. This also means $ \omega \wedge \sigma = - \sigma \wedge \omega $. The rule is, anytime we swap two one forms, there is a minus sign. Remembering this rule will lead us to a graded commutation rule for the wedge product of a p-form with a q-form. It is called graded, because the anti-commutation rule depends on the degree of the forms involved. Here is the rule (assuming that $ \omega, \sigma$ are p and q forms, respectively). 
+For two 1-forms $ \omega$ and $ \sigma$ we know from the definition of the wedge product that $ \omega \wedge \sigma = \omega \otimes \sigma - \sigma \otimes \omega$. This also means $ \omega \wedge \sigma = - \sigma \wedge \omega $. The rule is, any time we swap two 1-forms, there is a minus sign. Remembering this rule will lead us to a graded commutation rule for the wedge product of a p-form with a q-form. It is called graded because the anti-commutation rule depends on the degree of the forms involved. Here is the rule (assuming that $ \omega, \sigma$ are p- and q- forms, respectively). 
 
 \begin{align*}
      \sigma \wedge \omega &= \lera{ -1}^{pq} \omega \wedge \sigma \numberthis \label{gradedcommutation} \\
@@ -722,7 +722,7 @@ I will define this using coordinate basis. For derivatives, we need n-form field
 To see the components of dA, we expand the RHS of \cref{exterior_derivative_defined}. $ dA = \frac{1}{p!} \partial_m A_{a_1...a_p} dx^m \wedge dx^{a_1} \wedge ...dx^{a_p} = \frac{ \lera{p+1}!}{p!} \partial_m \tt{A}{}{a_1...a_p} dx^{[m} \otimes dx^{a_1} \otimes...\otimes dx^{a_p]} = \lera{p+1}\partial_{[m} \tt{A}{}{a_1...a_p]} dx^{m} \otimes dx^{a_1} \otimes...\otimes dx^{a_p}$ . So the $ \tt{dA}{}{ma_1...a_p}$ component of $ dA$ is given by $ \tt{dA}{}{ma_1...a_p}= \lera{p+1} \partial_{[m} \tt{A}{}{a_1...a_p]} $ .
 
 
-We reiterate here that the RHS of \cref{exterior_derivative_defined} is a tensor by definition ( exterior derivative of a function is a 1-form and wedge product of differential 1-forms is also a differential form).It is quite fascinating that a fully covariant notion of derivative can be cooked up from using only coordiante based partial derivative. 
+We reiterate here that the RHS of \cref{exterior_derivative_defined} is a tensor by definition (exterior derivative of a function is a 1-form and wedge product of differential 1-forms is also a differential form). It is quite fascinating that a fully covariant notion of derivative can be cooked up from only coordinate-based partial derivatives. 
 
 
 
@@ -752,7 +752,7 @@ We reiterate here that the RHS of \cref{exterior_derivative_defined} is a tensor
 
 
 \section{Integration on a Manifold}
-The following are  very rough sketchy stuff. I was trying to do this and spent an awful lot of time without understanding much. Right now I am just keeping my stuff here and later on I will actually flesh them out.
+The following is very rough, sketchy material. I was trying to do this and spent an awful lot of time without understanding much. Right now I am just keeping my stuff here and later on I will actually flesh it out.
 
 
 
@@ -867,15 +867,15 @@ Now, let me take the following Gaussian Normal coordinates.
 
 \section{Non-coordinate Basis and Tetrad Formalism}
 
-For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. Let us first define the non-coordiante bases. At any point p in the manifold, we can always find a set of four vectors $ \{ E_{\mu}\}$ that follow the relation, 
+For non-coordinate basis, I will use Greek indices and for coordinate basis I will use Latin indices. Let us first define the non-coordinate bases. At any point p in the manifold, we can always find a set of four vectors $ \{ E_{\mu}\}$ that follow the relation, 
 
 \begin{align*}
     g \lera{ \tt{E}{}{ \mu}, \tt{E}{}{ \nu}} &= \tt{ \eta}{}{ \mu \nu } \numberthis \label{tetrad}
 \end{align*}
 
-It is not necesary that the inner product equals $ \tt{ \eta}{}{ \mu \nu}$. However, we will make this choice in the following discussion. 
+It is not necessary that the inner product equals $ \tt{ \eta}{}{ \mu \nu}$. However, we will make this choice in the following discussion. 
 
-Since $ \tt{E}{ \mu}{}$ is a covecotor, it can be expanded in terms of the coordinate basis, 
+Since $ \tt{E}{ \mu}{}$ is a covector, it can be expanded in terms of the coordinate basis, 
 \begin{align*}
     \tt{E}{ \mu}{} &= \tt{E}{ \mu} {a} dx^ {a} \numberthis \label{dummy3}
 \end{align*}
@@ -886,7 +886,7 @@ Now, E can be thought of as a matrix. Our convention is as usual, upper index is
     dx^{a} &= E_{ \mu}^{\;\;a} \tt{E}{ \mu}{} \numberthis \label{dummy4}
 \end{align*}
 
-Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \mu}{}$, that is, $ \tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}}= \kron{ \mu}{ \nu}$. The basis vectors $ \tt{E}{}{ \mu}$ can also be expanded in terms of the coordiante basis vectors $ \partial_a$, as, $\tt{E}{}{ \mu}= F_{ \mu}^{ \;\; a} \partial_a $. The nice thing is that F is nothing but E! Let me show that.
+Now, the non-coordinate basis vectors $ \tt{E}{}{ \mu}$ are dual to $ \tt{E}{ \mu}{}$, that is, $ \tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}}= \kron{ \mu}{ \nu}$. The basis vectors $ \tt{E}{}{ \mu}$ can also be expanded in terms of the coordinate basis vectors $ \partial_a$, as, $\tt{E}{}{ \mu}= F_{ \mu}^{ \;\; a} \partial_a $. The nice thing is that F is nothing but E! Let me show that.
 
 \begin{align*}
     &\tt{E}{ \mu}{} \lera{ \tt{E}{}{ \nu}} = \kron{ \mu}{ \nu} \\
@@ -923,14 +923,14 @@ To summarize, we have the following rules,
     arc=2mm
 ]
 \begin{itemize}
-    \item $ \tt{E }{ \mu}{a}$ is the a-th component of the covector $ \tt{E}{ \mu}{}$ in the coordiante basis $ \{ dx^a \}$ of covectors or the $ \mu$-th component of the vector $ \partial_a$ in the frame basis $ \{ \tt{E}{}{ \mu}\}$ of vectors. 
+    \item $ \tt{E }{ \mu}{a}$ is the a-th component of the covector $ \tt{E}{ \mu}{}$ in the coordinate basis $ \{ dx^a \}$ of covectors or the $ \mu$-th component of the vector $ \partial_a$ in the frame basis $ \{ \tt{E}{}{ \mu}\}$ of vectors. 
     
     \begin{align*}
         \tt{E}{ \mu}{} &= \tt{E}{ \mu}{a } dx^a \\
         \partial_a &=  \tt{E}{ \mu}{a} \tt{E}{ }{ \mu} \\
     \end{align*}
 
-    \item $ E_ \mu {}^a$ is the a-th component of the vector $ \tt{E}{}{ \mu}$ in the coordiante basis $ \{ \partial_a \}$ of vectors or the $ \mu$-th component of the covector $ dx^a $ in the frame basis $ \{ \tt{E}{ \mu}{}\}$ of covectors. 
+    \item $ E_ \mu {}^a$ is the a-th component of the vector $ \tt{E}{}{ \mu}$ in the coordinate basis $ \{ \partial_a \}$ of vectors or the $ \mu$-th component of the covector $ dx^a $ in the frame basis $ \{ \tt{E}{ \mu}{}\}$ of covectors. 
     
     \begin{align*}
         \tt{E}{}{ \mu} &= E_ \mu {}^a \partial_a  \\
@@ -1009,7 +1009,7 @@ And,
 
 
 
-It is nice to see how handy the tensor index gymnastics can be. It is almost like a magic. I can go back and forth between a tensor with its compoenet/s taken in the coordinate basis or the frame basis. For example, say I have a (2,0) tensor $\tt{A}{}{}$. Then, $ \tt{A}{ \mu m}{}= \tt{A}{nm}{} \tt{E}{\mu}{n}$ , $\tt{A}{m \mu}{}= \tt{A}{ \alpha \mu}{} E_\alpha{}^m$ etc. We can easily show these two, and we hope this is enough to convince a normal person about the general validity of this method. 
+It is nice to see how handy the tensor index gymnastics can be. It is almost like magic. I can go back and forth between a tensor with its component(s) taken in the coordinate basis or the frame basis. For example, say I have a (2,0) tensor $\tt{A}{}{}$. Then, $ \tt{A}{ \mu m}{}= \tt{A}{nm}{} \tt{E}{\mu}{n}$ , $\tt{A}{m \mu}{}= \tt{A}{ \alpha \mu}{} E_\alpha{}^m$ etc. We can easily show these two, and we hope this is enough to convince a normal person about the general validity of this method. 
 
 \begin{align*}
     \tt{A}{\mu m }{} &= A \lera{E^\mu, dx^m} \\
@@ -1017,7 +1017,7 @@ It is nice to see how handy the tensor index gymnastics can be. It is almost lik
     &= E^\mu{}_n A \lera{dx^n, dx^m} \\
     &= E^\mu{}_n A^{nm} \\
 \end{align*}
-and , for the second equality,
+and, for the second equality,
 
 \begin{align*}
     \tt{A}{m \mu}{} &= A \lera{dx^m, E^\mu} \\
@@ -1034,7 +1034,7 @@ and , for the second equality,
 
 \subsection{Connection 1-form and Ricci Rotation Coefficient}
 
-Since $ \tt{E}{}{ \mu}$ is a field (at least in a chart U), I can take the covariant derivative of it wrt the basis vector fields of that chart. The result will have to be another vector field and can be expanded in terms of $ \{ \tt{E}{}{ \mu}\}$.
+Since $ \tt{E}{}{ \mu}$ is a field (at least in a chart U), I can take the covariant derivative of it with respect to the basis vector fields of that chart. The result will have to be another vector field and can be expanded in terms of $ \{ \tt{E}{}{ \mu}\}$.
 
 \begin{align*}
     &\cov{ \tt{E}{}{ \mu}}{ \partial_a} = \tt{ \omega}{ \nu}{ \mu a} \tt{E}{}{ \nu} \numberthis \label{dummy7}
@@ -1060,7 +1060,7 @@ This proves that $ \tt{\omega}{\nu}{\mu a}$ is a 1-form in the index a. To show 
      &= \tt{\Lambda}{ \nu}{\alpha} \du{\Lambda}{\mu}{\beta} \tt{\omega}{\rho}{\beta a} \kron{\alpha}{\rho}+ \tt{\Lambda}{\nu}{\alpha} \partial_a \du{\Lambda}{\mu}{\beta} \kron{\alpha}{\beta}\\
      &= \tt{\Lambda}{ \nu}{\alpha} \du{\Lambda}{\mu}{\beta} \tt{\omega}{\alpha}{\beta a}+ \tt{\Lambda}{\nu}{\alpha} \partial_a \du{\Lambda}{\mu}{\alpha} \\
 \end{align*}
-The last term shows the inhomogenous nature of the transformation of $ \tt{\omega}{\nu}{\mu a}$ under LT of the frame.
+The last term shows the inhomogeneous nature of the transformation of $ \tt{\omega}{\nu}{\mu a}$ under LT of the frame.
 
 Our next task is to write down expressions for $ \cov{\tt{A}{\mu}{\nu}}{a}$ just like we know how to expand $ \cov{ A^b{}_c}{a}$ etc. To do that, we follow steps very similar to our treatment of covariant derivatives with Christoffel symbols. In \cref{dummy7} we defined the functions $ \tt{ \omega}{ \mu}{ \nu a}$ as $ \cov{ \tt{E}{}{ \mu}}{ \partial_a} = \tt{ \omega}{ \nu}{ \mu a} \tt{E}{}{ \nu}$. Now we define $ \cov{ \tt{E}{\mu}{}}{ \partial_a} = \tt{ \Omega}{ \mu}{ \nu a} \tt{E}{\nu}{}$. We will show below that, $ \tt{ \Omega}{ \mu}{ \nu a} =- \tt{ \omega}{ \mu}{ \nu a}$. 
 
@@ -1132,7 +1132,7 @@ One immediate inquiry is the expression of $ \tt{\omega}{\nu}{\mu a}$ in terms o
 \end{align*}
 
 
-Similarly, multiplying both sides of \cref{omegaintermsofcris} with $ \du{E}{ \mu}{p} \tt{E}{ \nu}{q}$ so that the two E's with the Christoffel symbol becomes Kronecker deltas and ultimately go away, 
+Similarly, multiplying both sides of \cref{omegaintermsofcris} with $ \du{E}{ \mu}{p} \tt{E}{ \nu}{q}$ so that the two E's with the Christoffel symbol become Kronecker deltas and ultimately go away, 
 
 \begin{align*}
     &\tt{\omega}{\mu}{\nu a} \du{E}{ \mu}{p} \tt{E}{ \nu}{q} = \cris{n}{ma} \du{E}{ \mu}{p } \tt{E}{ \mu}{n} \du{E}{ \nu}{m} \tt{E}{ \nu}{q} - \partial_a \tt{E}{ \mu}{m} \; \du{E}{ \nu}{m} \tt{E}{ \nu}{q} \du{E}{ \mu}{p} \\
@@ -1144,7 +1144,7 @@ Similarly, multiplying both sides of \cref{omegaintermsofcris} with $ \du{E}{ \m
 \end{align*}
 
 
-This leaves us to defining another quantity in this section, called the Ricci rotation coefficients. It is basically the connection one form expressed in the tetrad basis instead of coordinate basis. That is, while a connection one form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the coordinate basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1-form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
+This leaves one more quantity to define in this section, called the Ricci rotation coefficients. It is basically the connection 1-form expressed in the tetrad basis instead of the coordinate basis. That is, while a connection 1-form $ \tt{\omega}{\nu}{\mu a}$ has the 1-form index ``a'' from the coordinate basis, the Ricci rotation coefficient $ \tt{\omega}{\nu}{\mu \rho}$ is the connection 1-form expanded in terms of $ \{ \tt{E}{ \mu}{}\}$. 
 
 \begin{align*}
     &\tt{\omega}{\nu}{\mu \rho} = \tt{\omega}{\nu}{\mu a} \du{E}{ \rho}{a} \numberthis \label{riccirotationdefined}
@@ -1187,13 +1187,25 @@ where I defined, $\partial_\alpha \tt{A}{\mu}{\nu} \equiv \du{E}{\alpha}{a} \par
 	\nabla_a A_b &= \nabla_\mu A_\nu \tt{E}{\mu}{a} \tt{E}{\nu}{b}
 \end{align*}
 
+We can define the fully lowered version of the Ricci rotation coefficients by lowering the first index using $ \eta_{ \mu \nu}$. This $ \tt{ \omega }{ }{ \mu \nu \alpha}$ is captured by the following alternate definition. 
 
-\subsubsection{Properties of Ricci Rotation Coefficients}
+\begin{align*}
+    \omega_{\alpha\beta\mu} := g\left(  \nabla_\mu E_\beta , E_\alpha\right) \numberthis \label{dummy14}
+\end{align*}
 
+Now we need to show that this alternate definition captures the definition of $ \tt{ \omega }{ }{ \alpha \beta \mu }= \eta_{ \alpha \rho} \tt{ \omega}{ \rho}{ \beta \mu}$.
 
-Several properties of Ricci Rotation coefficients are important to understand. Let us list them below,
+\begin{align*}
+\omega_{ \alpha \beta \mu } &= g\left( E_{ \alpha }, \nabla_{ \mu} E_{ \beta}\right) \\
+&= g_{ab } E_{\alpha}{}^{a}\, \omega^{\rho}{}_{\beta \mu} E_{\rho}{}^{b} \\
+&= E_{\alpha b} E_{\rho}{}^{b}\, \omega^{\rho}{}_{\beta \mu} \\
+&= \eta_{\alpha \sigma} E^{\sigma}{}_{b} E_{\rho}{}^{b}\, \omega^{\rho}{}_{ \beta \mu} \\
+&= \eta_{\alpha \sigma}\, \delta^{\sigma}_{\rho}\, \omega^{\rho}{}_{\beta \mu} \\
+&= \eta_{\alpha \rho}\, \omega^{\rho}{}_{\beta  \mu} \\
+&= \omega_{\alpha \beta \mu}
+\end{align*}
 
-(1) Antisymmetry in the first two indices. $ \tt{ \omega}{}{ \mu \nu \alpha}= -\tt{ \omega}{}{ \nu \mu \alpha}$
+An important property of the Ricci rotation coefficients is the antisymmetry in the first two indices. $ \tt{ \omega}{}{ \mu \nu \alpha}= -\tt{ \omega}{}{ \nu \mu \alpha}$
 
 
 \begin{proof}
@@ -1209,28 +1221,135 @@ Several properties of Ricci Rotation coefficients are important to understand. L
 
 \end{proof}
 
-The crucial step in the proof was the constancy of $ \tt{ \eta}{}{ \mu \nu}$ which lead to $ \partial_a \tt{ \eta}{}{ \mu \nu}=0$. Any tetrad frame which shows this property is called a \textbf{rigid} tetrad. 
+The crucial step in the proof was the constancy of $ \tt{ \eta}{}{ \mu \nu}$ which led to $ \partial_a \tt{ \eta}{}{ \mu \nu}=0$. Any tetrad frame which shows this property is called a \textbf{rigid} tetrad. 
 	
 
+Based on the antisymmetry property, there are 24 independent Ricci rotation coefficients. 
+
+The following proposition will help us in some of the calculations. It expresses the covariant derivative of tetrad vectors in terms of the Ricci rotation coefficients.
+
+
+
+
+\begin{proposition}
+$\nabla_a E_{\mu k} = E^{\beta}{}_a\, \omega_{\alpha\mu\beta} E^{\alpha}{}_k $
+\end{proposition}
+
+\begin{proof}\begin{align*}
+\nabla_a E_{\mu k} &= \left( \nabla_a E_\mu \right)^m g_{mk} \\
+&= \left( \omega^{\alpha}{}_{\mu a} E_\alpha \right)^m g_{mk} \\
+&= \omega^{\alpha}{}_{\mu a} E_\alpha{}^m g_{mk} \\
+&= \omega^{\alpha}{}_{\mu a} E_{\alpha k} \\
+&= \omega_{\alpha\mu a} E^{\alpha}{}_k \\
+&= E^{\beta}{}_a\, \omega_{\alpha\mu\beta} E^{\alpha}{}_k
+\end{align*}
+
+\end{proof}
+
+
+
+
+\textcolor{blue}{Maybe some more words about the commutations of the tetrads and how that puts constraints on the Ricci rotation coefficients. }
+
+
+
+\subsubsection{Lie Bracket of Tetrads and Structure Constants}
+
+
+Since the tetrads furnish a set of four vector fields, we can take the Lie bracket of these fields and see what we get.
+\[
+\left[ E_\alpha, E_\beta \right] = C^{\mu}{}_{\alpha\beta} E_\mu
+\]
+The coefficients $C^{\mu}{}_{\alpha\beta}$ are called structure constants. These constants can be expressed in terms of the Ricci rotation coefficients. To see how, consider the Lie bracket acting on a function $f$.
+\begin{align*}
+\left[ E_\alpha, E_\beta \right] f &= E_\alpha\left( E_\beta(f) \right) - E_\beta\left( E_\alpha(f) \right) \\
+&= E_\alpha\left( E_\beta{}^m \partial_m f \right) - E_\beta\left( E_\alpha{}^m \partial_m f \right) \\
+&= E_\alpha\left( E_\beta{}^m \right) \partial_m f + E_\beta{}^m E_\alpha\left( \partial_m f \right) - E_\beta\left( E_\alpha{}^m \right) \partial_m f - E_\alpha{}^m E_\beta\left( \partial_m f \right) \\
+&= E_\alpha{}^n \partial_n E_\beta{}^m \partial_m f + E_\beta{}^m E_\alpha{}^n \partial_n \partial_m f - E_\beta{}^n \partial_n E_\alpha{}^m \partial_m f - E_\alpha{}^m E_\beta{}^n \partial_n \partial_m f \\
+&= \left( E_\alpha{}^n \partial_n E_\beta{}^m - E_\beta{}^n \partial_n E_\alpha{}^m \right) \partial_m f + E_\beta{}^m E_\alpha{}^n \partial_n \partial_m f - E_\beta{}^m E_\alpha{}^n \partial_m \partial_n f \\
+&= \left( E_\alpha{}^n \partial_n E_\beta{}^m - E_\beta{}^n \partial_n E_\alpha{}^m \right) \partial_m f \\
+& \text{We can replace the ordinary derivatives with covariant derivatives.}\\
+&= \left( E_\alpha{}^n \nabla_n E_\beta{}^m - E_\beta{}^n \nabla_n E_\alpha{}^m \right) \partial_m f \\
+&= \left( E_\alpha{}^n \left( \nabla_n E_\beta \right)^m - E_\beta{}^n \left( \nabla_n E_\alpha \right)^m \right) \partial_m f \\
+&= \left( E_\alpha{}^n\, \omega^{\mu}{}_{\beta n} E_\mu{}^m - E_\beta{}^n\, \omega^{\mu}{}_{\alpha n} E_\mu{}^m \right) \partial_m f \\
+&= \left( \omega^{\mu}{}_{\beta\alpha} - \omega^{\mu}{}_{\alpha\beta} \right) E_\mu{}^m \partial_m f \\
+&= \left( \omega^{\mu}{}_{\beta\alpha} - \omega^{\mu}{}_{\alpha\beta} \right) E_\mu(f) \\
+\Rightarrow \left[ E_\alpha, E_\beta \right] f &= \left( \omega^{\mu}{}_{\beta\alpha} - \omega^{\mu}{}_{\alpha\beta} \right) E_\mu(f) \\
+\Rightarrow C^{\mu}{}_{\alpha\beta} E_\mu(f) &= \left( \omega^{\mu}{}_{\beta\alpha} - \omega^{\mu}{}_{\alpha\beta} \right) E_\mu(f) \\
+\Rightarrow C^{\mu}{}_{\alpha\beta} &= \omega^{\mu}{}_{\beta\alpha} - \omega^{\mu}{}_{\alpha\beta}
+\end{align*}
 
 
 
 
 
 
+\subsubsection{The Lambda Symbol}
 
+The $ \Lambda$-symbol is defined as follows: 
+
+\begin{align*}
+\Lambda_{\mu\nu\alpha} &:= \omega_{\mu\nu\alpha} - \omega_{\alpha\nu\mu} \\
+&= \eta_{\mu\rho}\, \omega^{\rho}{}_{\nu\alpha} - \eta_{\alpha\rho}\, \omega^{\rho}{}_{\nu\mu} \\
+&= \eta_{\mu\rho}\, \omega^{\rho}{}_{\nu a} E_\alpha{}^a - \eta_{\alpha\rho}\, \omega^{\rho}{}_{\nu a} E_\mu{}^a \\
+&= \eta_{\mu\rho}\, E^{\rho b} \nabla_a E_{\nu b} E_\alpha{}^a - \eta_{\alpha\rho}\, E^{\rho b} \nabla_a E_{\nu b} E_\mu{}^a \\
+&= E_\mu{}^b E_\alpha{}^a \nabla_a E_{\nu b} - E_\alpha{}^b E_\mu{}^a \nabla_a E_{\nu b} \\
+&= E_\mu{}^a E_\alpha{}^b \nabla_b E_{\nu a} - E_\mu{}^a E_\alpha{}^b \nabla_a E_{\nu b}\\
+&= E_\mu{}^a E_\alpha{}^b \left( \nabla_b E_{\nu a} - \nabla_a E_{\nu b} \right)
+\end{align*}
+
+Interestingly, if we look at the term in the parentheses, $\left(\nabla_b E_{\nu a} - \nabla_a E_{\nu b}\right)$, it is antisymmetric in $(a,b)$. So, we can actually replace the covariant derivative by the ordinary derivative.
+\begin{align*}
+\Lambda_{\mu\nu\alpha} := E_\mu{}^a E_\alpha{}^b \left( \partial_b E_{\nu a} - \partial_a E_{\nu b} \right) \numberthis\label{dummy13}
+\end{align*}
+ 
+So, we can evaluate the $\Lambda$'s with only ordinary derivatives of the tetrad vectors. On the other hand, we can express $\omega_{\mu\nu\alpha}$ in terms of the $\Lambda$'s.
+\begin{align*}
+&\text{(a)}  \Lambda_{\mu\nu\alpha} = \omega_{\mu\nu\alpha} - \omega_{\alpha\nu\mu} = \omega_{\mu\nu\alpha} + \omega_{\nu\alpha\mu} \\
+&\text{(b)} \Lambda_{\nu\alpha\mu} = \omega_{\nu\alpha\mu} - \omega_{\mu\alpha\nu} = \omega_{\nu\alpha\mu} + \omega_{\alpha\mu\nu} \\
+&\text{(c)}  \Lambda_{\alpha\mu\nu} = \omega_{\alpha\mu\nu} - \omega_{\nu\mu\alpha} = \omega_{\alpha\mu\nu} + \omega_{\mu\nu\alpha}
+\end{align*}
+\begin{align*}
+\text{(a)} + \text{(c)} - \text{(b)} \Rightarrow 2\omega_{\mu\nu\alpha} &= \Lambda_{\mu\nu\alpha} + \Lambda_{\alpha\mu\nu} - \Lambda_{\nu\alpha\mu} \\
+\Rightarrow \omega_{\mu\nu\alpha} &= \frac{1}{2}\left( \Lambda_{\mu\nu\alpha} - \Lambda_{\nu\alpha\mu}+ \Lambda_{\alpha\mu\nu}  \right) \numberthis \label{dummy15}
+\end{align*}
+
+The $ \Lambda$'s are antisymmetric in the first and the last indices. $ \Lambda_{\alpha\nu\mu} = \omega_{\alpha\nu\mu} - \omega_{\mu\nu\alpha} = -\left( \omega_{\mu\nu\alpha} - \omega_{\alpha\nu\mu} \right) = -\Lambda_{\mu\nu\alpha}$.
+
+
+\subsection{Ricci Identities}
+
+Here our goal is to expand the Riemann tensor in terms of only Ricci rotation coefficients and their derivatives. Start with the definition of the Riemann tensor.  
+\[
+R(\omega, Z, X, Y) = \omega\left( \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X,Y]} Z \right)
+\]
+The tetrad components of the Riemann tensor are given by,
+\begin{align*}
+R^{\alpha}{}_{\beta\gamma\delta} &= R\left( E^\alpha, E_\beta, E_\gamma, E_\delta \right) \\
+&= E^\alpha\left( \nabla_\gamma \nabla_\delta E_\beta - \nabla_\delta \nabla_\gamma E_\beta - \nabla_{[E_\gamma, E_\delta]} E_\beta \right) \\
+&= E^\alpha\left( \nabla_\gamma\left( \omega^{\rho}{}_{\beta\delta} E_\rho \right) - \nabla_\delta\left( \omega^{\rho}{}_{\beta\gamma} E_\rho \right) - C^{\mu}{}_{\gamma\delta} \nabla_\mu E_\beta \right)  \\
+&= E^\alpha\Big( \left( \partial_\gamma \omega^{\rho}{}_{\beta\delta} \right) E_\rho + \omega^{\rho}{}_{\beta\delta} \nabla_\gamma E_\rho - \left( \partial_\delta \omega^{\rho}{}_{\beta\gamma} \right) E_\rho  - \omega^{\rho}{}_{\beta\gamma} \nabla_\delta E_\rho - C^{\mu}{}_{\gamma\delta}\, \omega^{\sigma}{}_{\beta\mu} E_\sigma \Big) \\
+&= \partial_\gamma \omega^{\rho}{}_{\beta\delta}\, \delta^{\alpha}_{\rho} - \partial_\delta \omega^{\rho}{}_{\beta\gamma}\, \delta^{\alpha}_{\rho} + \omega^{\rho}{}_{\beta\delta}\, \omega^{\mu}{}_{\rho\gamma}\, \delta^{\alpha}_{\mu}  - \omega^{\rho}{}_{\beta\gamma}\, \omega^{\mu}{}_{\rho\delta}\, \delta^{\alpha}_{\mu} - C^{\mu}{}_{\gamma\delta}\, \omega^{\sigma}{}_{\beta\mu}\, \delta^{\alpha}_{\sigma} \\
+&= \partial_\gamma \omega^{\alpha}{}_{\beta\delta} - \partial_\delta \omega^{\alpha}{}_{\beta\gamma} + \omega^{\alpha}{}_{\rho\gamma}\, \omega^{\rho}{}_{\beta\delta} - \omega^{\alpha}{}_{\rho\delta}\, \omega^{\rho}{}_{\beta\gamma} - C^{\rho}{}_{\gamma\delta}\, \omega^{\alpha}{}_{\beta\rho} \\
+&= \partial_\gamma \omega^{\alpha}{}_{\beta\delta} - \partial_\delta \omega^{\alpha}{}_{\beta\gamma} + \omega^{\alpha}{}_{\rho\gamma}\, \omega^{\rho}{}_{\beta\delta} - \omega^{\alpha}{}_{\rho\delta}\, \omega^{\rho}{}_{\beta\gamma} - \left( \omega^{\rho}{}_{\delta\gamma} - \omega^{\rho}{}_{\gamma\delta} \right) \omega^{\alpha}{}_{\beta\rho} \\
+&= \partial_\gamma \omega^{\alpha}{}_{\beta\delta} - \partial_\delta \omega^{\alpha}{}_{\beta\gamma} + \omega^{\alpha}{}_{\rho\gamma}\, \omega^{\rho}{}_{\beta\delta} - \omega^{\alpha}{}_{\rho\delta}\, \omega^{\rho}{}_{\beta\gamma} + \omega^{\alpha}{}_{\beta\rho}\, \omega^{\rho}{}_{\gamma\delta} - \omega^{\alpha}{}_{\beta\rho}\, \omega^{\rho}{}_{\delta\gamma} \\
+\Rightarrow \tt{R}{}{ \alpha \beta \gamma \delta } &= \partial_{ \gamma} \tt{ \omega}{}{ \alpha \beta \delta} - \partial_{ \delta} \tt{ \omega}{}{ \alpha \beta \gamma} + \tt{ \omega}{}{ \alpha \rho \gamma}\, \tt{ \omega}{ \rho}{ \beta \delta} - \tt{ \omega}{}{ \alpha \rho \delta}\, \tt{ \omega}{ \rho}{ \beta \gamma} + \tt{ \omega}{}{ \alpha \beta \rho}\, \tt{ \omega}{ \rho}{ \gamma \delta} - \tt{ \omega}{}{ \alpha \beta \rho}\, \tt{ \omega}{ \rho}{ \delta \gamma}\\
+\Rightarrow \tt{R}{}{ \alpha \beta \gamma \delta } &= \partial_{ \gamma} \tt{ \omega}{}{ \alpha \beta \delta} - \partial_{ \delta} \tt{ \omega}{}{ \alpha \beta \gamma} + \tt{ \omega}{}{  \rho \alpha \delta}\, \tt{ \omega}{ \rho}{ \beta \gamma} -   \tt{ \omega}{}{  \rho \alpha \gamma}\, \tt{ \omega}{ \rho}{ \beta \delta} + \tt{ \omega}{}{ \alpha \beta \rho}\, \tt{ \omega}{ \rho}{ \gamma \delta} - \tt{ \omega}{}{ \alpha \beta \rho}\, \tt{ \omega}{ \rho}{ \delta \gamma} \numberthis \label{dummy16}
+\end{align*}
+
+In the penultimate line the lowering of the $ \alpha$ index is allowed because of the tetrad is rigid, and so, for example, $ \tt{ \eta }{}{ \alpha \sigma} \partial_{ \gamma} \tt{ \omega}{ \sigma}{ \beta \delta}= \partial_{ \gamma} \lera{ \tt{ \eta}{}{ \alpha \sigma} \tt{ \omega}{ \sigma}{ \beta \delta}}= \partial_{ \gamma} \tt{ \omega}{}{ \alpha \beta \delta}$. 
 \subsection{Tensor Valued Forms and Exterior Derivatives}
 
 \subsubsection{Torsion and Curvature 2-forms}
-I will first simply define the Torsion and Curvature 2-forms, then show that these definitions work. There are other ways of arriving at these definitions that might be more direct, but since we have to memorize these anyways, I would simply state the definition without motivation. 
+We will first simply define the Torsion and Curvature 2-forms, then show that these definitions work. There are other ways of arriving at these definitions that might be more direct, but since we have to memorize these anyway, we will simply state the definition without motivation. 
 
-The torsion 2-form is defined as (suppressing the latin indices),
+The torsion 2-form is defined as (suppressing the Latin indices),
 
 \begin{align*}
     \tt{T}{ \mu }{} = d \tt{E}{ \mu}{} + \tt{\omega}{\mu}{\nu} \wedge \tt{E}{ \nu}{}  \numberthis \label{torsionform}\\
 \end{align*}
 
-The curvature 2-form is defined as (again, supressing the latin indices),
+The curvature 2-form is defined as (again, suppressing the Latin indices),
 
 \begin{align*}
     \tt{R}{ \mu}{ \nu} = d \tt{\omega}{\mu}{\nu} + \tt{\omega}{\mu}{\alpha} \wedge \tt{\omega}{\alpha}{\nu}  \numberthis \label{curvatureform}\\
@@ -1259,7 +1378,7 @@ Now, \begin{align*}
     &= \partial_a \tt{E}{ \mu}{b} +\tt{\omega}{\mu}{\alpha a} \tt{E}{ \alpha}{b} - \lera{ a \leftrightarrow b}\\
     &= \partial_a \tt{E}{ \mu}{b} +\tt{\omega}{\mu}{\nu a} \tt{E}{ \nu}{b} -\partial_b \tt{E}{ \mu}{a} -\tt{\omega}{\mu}{\nu b} \tt{E}{ \nu}{a} \\
     &=\partial_a \tt{E}{ \mu}{b}-\partial_b \tt{E}{ \mu}{a}+\tt{\omega}{\mu}{\nu a} \tt{E}{ \nu}{b}-\tt{\omega}{\mu}{\nu b} \tt{E}{ \nu}{a}\\
-    & \text{This matches with \cref{torsionform_rhs_expanded}}
+    & \text{This matches \cref{torsionform_rhs_expanded}}
 \end{align*}
 
 
@@ -1268,9 +1387,7 @@ Now, \begin{align*}
 
 
 
-
-
-
+\section{Newmann-Penrose Formalism}
 
 
 

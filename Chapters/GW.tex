@@ -1,13 +1,13 @@
 \chapter{Gravitational Waves}
 \label{ch:gw}
-I will be following several GR textbooks, often to the letter(not quite). 
+I will be following several GR textbooks, often to the letter (not quite). 
 
-There are some parts of GW wave theory that I am still a bit hazy on, and I will need more clarification on them. Keeping this aspect aside, let me dive in.
+There are some parts of GW theory that I am still a bit hazy on, and I will need more clarification on them. Keeping this aspect aside, let me dive in.
 
 
 \section{The Harmonic Gauge}
 
-In GR, gauge is simply a choice of a class of coordinate system that follows a specific condition. The condition is called the ``gauge condition" or ``gauge choice". The harmonic gauge is defined as follows,
+In GR, gauge is simply a choice of a class of coordinate system that follows a specific condition. The condition is called the ``gauge condition'' or ``gauge choice''. The harmonic gauge is defined as follows,
 
 \begin{align*}
     \Gamma^m \equiv g^{ab} \Gamma^m_{ab} &=0 \\
@@ -16,7 +16,7 @@ In GR, gauge is simply a choice of a class of coordinate system that follows a s
 
 Two questions immediately follow this - is it always possible to impose this gauge, and why is the name "harmonic"? I will address the first one below. As for the second one, I am not sure.
 
-To answer the first question in affirmative, I need to show that given \textcolor{blue}{any} coordinate system, it is always possible to go to a new coordinate where the gauge condition is satisfied. This is what is meant when it is claimed that it is always possible to impose this or that gauge condition.
+To answer the first question in the affirmative, I need to show that given \textcolor{blue}{any} coordinate system, it is always possible to go to a new coordinate system where the gauge condition is satisfied. This is what is meant when it is claimed that it is always possible to impose this or that gauge condition.
 
 
 We know how $\Gamma^a_{bc}$ transforms under a coordinate transformation.
@@ -42,7 +42,7 @@ So, the new coordinate system will satisfy the gauge condition (i.e. $\Gamma'^a=
 
 It is claimed without proof that solutions to these PDEs exist. 
 
-Now, Paolo Pani textbook claims that the name ``harmonic" comes from the fact that under this gauge, $\nabla_a\nabla^a \Phi=0$ becomes $\partial_a \partial^b \Phi=0$. Why is that called harmonic I do not know.[\textcolor{blue}{Ask}], but in the meantime let me show that it is a valid claim.
+Now, Paolo Pani's textbook claims that the name ``harmonic'' comes from the fact that under this gauge, $\nabla_a\nabla^a \Phi=0$ becomes $\partial_a \partial^a \Phi=0$. I do not know why that is called harmonic [\textcolor{blue}{Ask}], but in the meantime let me show that it is a valid claim.
 
 \begin{align*}
    &     \nabla_a \nabla^a \Phi =0 \\
@@ -57,7 +57,7 @@ Now, Paolo Pani textbook claims that the name ``harmonic" comes from the fact th
 
 \section{Perturbative Approach}
 
-Let $\overset{0}{g}_{ab}$ is  a known solution to the EFE. Let $\overset{0}{T}_{ab}$ be the stress-energy tensor sourcing this solution. Now, perturb $\overset{0}{T}_{ab}$ by $\delta T_{ab}$ , i.e. $T_{ab} = \overset{0}{T}_{ab}+ \delta T_{ab}$. This perturbation changes the metric from $\overset{0}{g}_{ab}$ to $g_{ab}= \overset{0}{g}_{ab}+ h_{ab}$ where $\abs{h_{ab}}<<\abs{\overset{0}{g}_{ab}}$.
+Let $\overset{0}{g}_{ab}$ be a known solution to the EFE. Let $\overset{0}{T}_{ab}$ be the stress-energy tensor sourcing this solution. Now, perturb $\overset{0}{T}_{ab}$ by $\delta T_{ab}$ , i.e. $T_{ab} = \overset{0}{T}_{ab}+ \delta T_{ab}$. This perturbation changes the metric from $\overset{0}{g}_{ab}$ to $g_{ab}= \overset{0}{g}_{ab}+ h_{ab}$ where $\abs{h_{ab}}<<\abs{\overset{0}{g}_{ab}}$.
 
 Now, I define the upper index $\tt{h}{ab}{}$ as $\tt{h}{ab}{}= \tt{\overset{0}{g}   }{ma}{}\tt{\overset{0}{g}}{nb}{}\tt{h}{}{mn}$. That is, $\tt{h}{}{ab}$ is such that its indices (\textcolor{blue}{I do not know if calling h a tensor is justified. People seem to call it a tensor wrt the background metric. But if I am following the rule of tensor transformation, it is definitely not clear that h follows that rule, even when I am going from one coordinate system to another that follows the same metric structure of background+small perturbation. I will need to ask about this.}) can be made up and down with the background metric. With this definition, the upper index $\tt{g}{ab}{}$ is, up to $O(h)$, $\tt{g}{ab}{}= \tt{\overset{0}{g }}{ab}{}-\tt{h}{ab}{}+ O(\tt{h}{2}{})$
 A quick proof of this is to see if $\tt{g}{ab}{}\tt{g}{}{bc}$ is equal to $\delta^a_c$ up to order h. 
@@ -68,7 +68,7 @@ A quick proof of this is to see if $\tt{g}{ab}{}\tt{g}{}{bc}$ is equal to $\delt
     &= \delta^a_c+O(h^2)\\
 \end{align*}
 
-To be clear, EFE are invariant under arbitrary coordinate transformations. However, in this perturbative framework, only those transformations are allowed that allows us to write the metric as $g_{ab}= \overset{0}{g}_{ab}+ h_{ab}$ where $\abs{h_{ab}}<<\abs{\overset{0}{g}_{ab}}$. Now, I would like to find the equation that governs $h_{ab}$. The tentative plan is this, I will expand the left and right hand sides of EFE up to order h, and ignore the higher order terms. Then the background metric(i.e. Ricci tensor, $\tt{\overset{0}{R}}{}{ab}$) in left hand side will correspond to the background stress energy tensor, $\tt{\overset{0}{T}}{}{ab}$ and since we have assumed that the backgrond metric is the solution of the background EFE, I will simply remove those parts from LHS and RHS. The rest will be an equation for $h_{ab}$.
+To be clear, EFE are invariant under arbitrary coordinate transformations. However, in this perturbative framework, only those transformations are allowed that allow us to write the metric as $g_{ab}= \overset{0}{g}_{ab}+ h_{ab}$ where $\abs{h_{ab}}<<\abs{\overset{0}{g}_{ab}}$. Now, I would like to find the equation that governs $h_{ab}$. The tentative plan is this, I will expand the left and right hand sides of EFE up to order h, and ignore the higher order terms. Then the background metric (i.e. Ricci tensor, $\tt{\overset{0}{R}}{}{ab}$) in the left-hand side will correspond to the background stress energy tensor, $\tt{\overset{0}{T}}{}{ab}$ and since we have assumed that the background metric is the solution of the background EFE, I will simply remove those parts from LHS and RHS. The rest will be an equation for $h_{ab}$.
 
 Now there are three necessary ingredients that I want to build and expand up to $O(h)$ as these are building blocks of EFE.
 \begin{itemize}
@@ -104,7 +104,7 @@ In the convention that I am following, Riemann tensor is given by,
 \end{align*}
 
 
-Now, what is the Ricci tensor, $\tt{R}{}{ab}$ look like?
+Now, what does the Ricci tensor, $\tt{R}{}{ab}$, look like?
 
 \begin{align*}
     \tt{R}{m}{apb} =& \riemann{m}{a}{p}{b}{r}  \\
@@ -132,7 +132,7 @@ In the last equality, the first term in parentheses is just $\tt{\overset{0}{R}}
     &= \lera{\partial_m \tt{\delta\Gamma}{m}{ab} +\ttw{\overset{0}{\Gamma}{}}{m}{rm}\tt{\delta\Gamma}{r}{ab} -\tt{\delta\Gamma}{m}{rb}\ttw{\overset{0}{\Gamma}{}}{r}{am} } -\lera{\partial_b \tt{\delta\Gamma}{m}{am}+\ttw{\overset{0}{\Gamma}{}}{m}{rb}\tt{\delta\Gamma}{r}{am}-\tt{\delta\Gamma}{m}{rm}\ttw{\overset{0}{\Gamma}{}}{r}{ab}} \\
     & \text{The first and second parentheses look like background covariant derivatives  } \\
     &\text{of $\tt{\delta\Gamma}{m}{ab}$ and $\tt{\delta\Gamma}{m}{am}$, but we are missing one term in each parenthesis. }\\
-    & \text{so we add and substract that missing term.}\\
+    & \text{So we add and subtract that missing term.}\\
     &= \lera{\partial_m \tt{\delta\Gamma}{m}{ab} +\ttw{\overset{0}{\Gamma}{}}{m}{rm}\tt{\delta\Gamma}{r}{ab} -\ttw{\overset{0}{\Gamma}{}}{r}{am}\tt{\delta\Gamma}{m}{rb} -\ttw{\overset{0}{\Gamma}{}}{r}{bm}\tt{\delta\Gamma}{m}{ar}}\\ 
     &-\lera{\partial_b \tt{\delta\Gamma}{m}{am}+\ttw{\overset{0}{\Gamma}{}}{m}{rb}\tt{\delta\Gamma}{r}{am}-\ttw{\overset{0}{\Gamma}{}}{r}{ab}\tt{\delta\Gamma}{m}{rm}-\ttw{\overset{0}{\Gamma}{}}{r}{mb}\tt{\delta\Gamma}{m}{ar}} \\
     &= \tt{\overset{0}{\nabla}}{}{m}\tt{\delta\Gamma}{m}{ab} - \tt{\overset{0}{\nabla}}{}{b}\tt{\delta\Gamma}{m}{am} \\
